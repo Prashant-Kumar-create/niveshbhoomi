@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nivesh Bhoomi — Real Estate Finance Calculators India</title>
+<meta name="description" content="Free professional real estate finance calculators for India. IRR, XIRR, Construction Finance, EMI, ROE, Loan-to-Value, Debt Yield. CFA-grade tools. niveshbhoomi.in"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:#0c0a07; --surface:#161410; --s2:#1e1b16; --s3:#252018;
+  --border:#2a2520; --border2:#3a3028;
+  --gold:#d4891a; --gold2:#f0a830; --gold3:rgba(212,137,26,0.12);
+  --text:#e8e0d0; --t2:#9a8f7a; --t3:#5a5040;
+  --green:#4a9a5a; --red:#c04a4a; --blue:#4a7ac0; --orange:#c07a3a;
+  --r:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;min-height:100vh;}
+
+/* HEADER */
+.hdr{background:linear-gradient(180deg,#080600,var(--surface));border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+.hdr-in{max-width:1100px;margin:0 auto;padding:16px 20px 0;}
+.logo-row{display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--gold);letter-spacing:2px;}
+.logo span{color:var(--t2);font-weight:400;}
+.logo-url{font-size:11px;color:var(--t3);background:var(--s2);padding:3px 10px;border-radius:20px;border:1px solid var(--border);}
+.logo-badge{font-size:10px;font-weight:700;color:var(--gold2);background:var(--gold3);padding:3px 10px;border-radius:20px;border:1px solid rgba(212,137,26,0.2);margin-left:auto;}
+.tagline{font-size:11px;color:var(--t3);margin-bottom:16px;letter-spacing:0.3px;}
+.tabs{display:flex;gap:2px;overflow-x:auto;}
+.tab{padding:9px 16px;background:transparent;color:var(--t3);border:none;border-radius:6px 6px 0 0;cursor:pointer;font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;white-space:nowrap;font-family:'DM Sans',sans-serif;transition:all .15s;}
+.tab:hover{color:var(--t2);}
+.tab.active{background:var(--gold);color:#080600;}
+
+/* LAYOUT */
+.main{max-width:1100px;margin:0 auto;padding:24px 16px;}
+.sec{display:none;}.sec.active{display:block;}
+
+/* CARDS */
+.card{background:var(--surface);border-radius:var(--r);padding:22px;border:1px solid var(--border);}
+.card+.card{margin-top:16px;}
+.ctitle{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--gold);margin-bottom:6px;}
+.cdesc{font-size:11px;color:var(--t3);margin-bottom:20px;line-height:1.6;}
+.two{display:grid;grid-template-columns:340px 1fr;gap:20px;}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.four{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;}
+.two-eq{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+/* INPUTS */
+.lbl{display:block;font-size:9px;color:var(--t3);margin-bottom:5px;text-transform:uppercase;letter-spacing:1.5px;font-weight:600;}
+.inp{width:100%;padding:10px 12px;background:var(--s2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:14px;transition:border .15s;}
+.inp:focus{border-color:var(--gold);}
+select.inp{cursor:pointer;}
+.inp-prefix{position:relative;}
+.inp-prefix span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--t3);font-size:13px;pointer-events:none;}
+.inp-prefix input{padding-left:26px;}
+.sl-wrap{margin-bottom:14px;}
+.sl-row{display:flex;align-items:center;gap:10px;}
+input[type=range]{flex:1;accent-color:var(--gold);cursor:pointer;}
+.sl-v{font-size:12px;color:var(--gold);min-width:88px;text-align:right;font-weight:600;}
+
+/* RESULTS */
+.metric{background:var(--s2);border-radius:10px;padding:16px;border-left:3px solid var(--border2);}
+.m-green{border-left-color:var(--green);}.m-red{border-left-color:var(--red);}
+.m-blue{border-left-color:var(--blue);}.m-gold{border-left-color:var(--gold);}
+.m-orange{border-left-color:var(--orange);}
+.m-val{font-size:24px;font-weight:700;margin-bottom:2px;}
+.m-lbl{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;}
+.m-note{font-size:11px;color:var(--t3);margin-top:4px;}
+.m-sig{font-size:10px;margin-top:5px;font-weight:600;}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;}
+th{padding:9px 12px;font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:1.5px;text-align:left;border-bottom:1px solid var(--border);font-weight:600;}
+td{padding:10px 12px;font-size:12px;border-bottom:1px solid rgba(42,37,32,0.5);}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(255,255,255,0.02);}
+
+/* MISC */
+.divider{border-top:1px solid var(--border);margin:16px 0;}
+.row-kv{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(42,37,32,0.5);}
+.row-kv:last-child{border-bottom:none;}
+.kv-k{font-size:12px;color:var(--t2);}
+.kv-v{font-size:13px;font-weight:600;}
+.alert{padding:12px 14px;border-radius:8px;font-size:12px;line-height:1.6;margin-top:12px;}
+.a-warn{background:rgba(192,122,58,.1);border:1px solid rgba(192,122,58,.2);color:#e0a060;}
+.a-good{background:rgba(74,154,90,.1);border:1px solid rgba(74,154,90,.2);color:#6acc7a;}
+.a-info{background:rgba(212,137,26,.08);border:1px solid rgba(212,137,26,.2);color:var(--gold2);}
+.a-danger{background:rgba(192,74,74,.1);border:1px solid rgba(192,74,74,.2);color:#e08080;}
+.pb-bg{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:4px;}
+.pb-fill{height:100%;border-radius:3px;transition:width .4s;}
+.tag{font-size:9px;font-weight:700;padding:3px 8px;border-radius:10px;letter-spacing:.5px;display:inline-block;}
+.tag-green{background:rgba(74,154,90,.15);color:#6acc7a;}
+.tag-red{background:rgba(192,74,74,.15);color:#e08080;}
+.tag-gold{background:rgba(212,137,26,.15);color:var(--gold2);}
+.tag-blue{background:rgba(74,122,192,.15);color:#7aaae0;}
+.hero-num{font-size:48px;font-weight:700;line-height:1;}
+.section-intro{background:var(--gold3);border:1px solid rgba(212,137,26,.15);border-radius:10px;padding:14px 18px;margin-bottom:20px;font-size:12px;color:var(--t2);line-height:1.7;}
+.section-intro strong{color:var(--gold);}
+
+/* XIRR table inputs */
+.xirr-row input{padding:7px 10px;font-size:12px;margin-bottom:0;}
+.btn{padding:9px 20px;background:var(--gold);color:#080600;border:none;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif;letter-spacing:.5px;transition:opacity .15s;}
+.btn:hover{opacity:.85;}
+.btn-ghost{background:transparent;color:var(--t2);border:1px solid var(--border2);}
+
+/* MOBILE */
+@media(max-width:768px){
+  .two,.two-eq,.three,.four{grid-template-columns:1fr;}
+}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-in">
+    <div class="logo-row">
+      <div class="logo">निवेश<span>भूमि</span></div>
+      <div class="logo-url">niveshbhoomi.in</div>
+      <div style="font-size:12px;color:var(--t3)">Real Estate Finance Calculators</div>
+      <div class="logo-badge">FREE · CFA-Grade · India</div>
+    </div>
+    <p class="tagline">Professional calculators for real estate investors, developers & finance professionals · No login · No ads · 100% free</p>
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('irr',this)">① IRR / NPV</button>
+      <button class="tab" onclick="showTab('xirr',this)">② XIRR</button>
+      <button class="tab" onclick="showTab('construction',this)">③ Construction Finance</button>
+      <button class="tab" onclick="showTab('roe',this)">④ ROE / Equity Return</button>
+      <button class="tab" onclick="showTab('ltv',this)">⑤ LTV & Debt Yield</button>
+      <button class="tab" onclick="showTab('emi',this)">⑥ EMI & Loan Cost</button>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ════════════════════════════════════════════════════════
+     TAB 1: IRR / NPV CALCULATOR
+════════════════════════════════════════════════════════ -->
+<div id="tab-irr" class="sec active">
+  <div class="section-intro">
+    <strong>IRR (Internal Rate of Return)</strong> is the annualized return on your total investment including purchase, rental income, and sale proceeds. <strong>NPV (Net Present Value)</strong> tells you how much value the deal creates above your minimum required return. If NPV &gt; 0, the deal beats your benchmark. These are the two most important metrics in professional real estate analysis.
+  </div>
+  <div class="two">
+    <!-- INPUTS -->
+    <div>
+      <div class="card">
+        <div class="ctitle">Property & Purchase</div>
+        <label class="lbl">City (for stamp duty auto-fill)</label>
+        <select class="inp" id="i-city" onchange="calcIRR()">
+          <option value="6">Delhi NCR — 6%</option>
+          <option value="6">Mumbai MMR — 6%</option>
+          <option value="5.6" selected>Bangalore — 5.6%</option>
+          <option value="6">Hyderabad — 6%</option>
+          <option value="6">Pune — 6%</option>
+          <option value="7">Chennai — 7%</option>
+          <option value="6">Jaipur — 6%</option>
+          <option value="4.9">Ahmedabad — 4.9%</option>
+          <option value="7">Kolkata — 7%</option>
+          <option value="custom">Custom stamp duty</option>
+        </select>
+        <div id="custom-stamp-wrap" style="display:none">
+          <label class="lbl">Custom Stamp Duty (%)</label>
+          <input type="number" class="inp" id="i-stamp-custom" value="6" min="1" max="12" step="0.1" oninput="calcIRR()"/>
+        </div>
+
+        <label class="lbl">Property Purchase Price (₹)</label>
+        <input type="number" class="inp" id="i-price" value="12000000" step="100000" oninput="calcIRR()"/>
+
+        <label class="lbl">Loan Amount (₹) <span style="color:var(--t3);font-size:10px">— enter 0 for all-cash</span></label>
+        <input type="number" class="inp" id="i-loan" value="8400000" step="100000" oninput="calcIRR()"/>
+
+        <label class="lbl">Loan Interest Rate (% p.a.)</label>
+        <input type="number" class="inp" id="i-rate" value="8.75" step="0.25" min="1" max="20" oninput="calcIRR()"/>
+
+        <label class="lbl">Loan Tenure (Years)</label>
+        <input type="number" class="inp" id="i-tenure" value="20" step="1" min="1" max="30" oninput="calcIRR()"/>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <div class="ctitle">Income & Exit Assumptions</div>
+        <label class="lbl">Monthly Rent at Purchase (₹)</label>
+        <input type="number" class="inp" id="i-rent" value="35000" step="1000" oninput="calcIRR()"/>
+
+        <label class="lbl">Annual Rent Growth (%)</label>
+        <input type="number" class="inp" id="i-rentg" value="5" step="0.5" min="0" max="20" oninput="calcIRR()"/>
+
+        <label class="lbl">Vacancy + Maintenance (% of gross rent)</label>
+        <input type="number" class="inp" id="i-vac" value="15" step="1" min="0" max="40" oninput="calcIRR()"/>
+
+        <label class="lbl">Hold Period (Years)</label>
+        <input type="number" class="inp" id="i-hold" value="7" step="1" min="1" max="25" oninput="calcIRR()"/>
+
+        <label class="lbl">Expected Annual Price Appreciation (%)</label>
+        <input type="number" class="inp" id="i-ap" value="9" step="0.5" min="0" max="25" oninput="calcIRR()"/>
+
+        <label class="lbl">Exit Transaction Cost (% of sale price)</label>
+        <input type="number" class="inp" id="i-exit-cost" value="2" step="0.5" min="0" max="5" oninput="calcIRR()"/>
+
+        <label class="lbl">Your Hurdle / Discount Rate (% p.a.)</label>
+        <input type="number" class="inp" id="i-hurdle" value="12" step="0.5" min="1" max="25" oninput="calcIRR()"/>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div>
+      <!-- Hero metrics -->
+      <div class="card" style="margin-bottom:16px">
+        <div class="ctitle">Return Metrics</div>
+        <div class="four" style="margin-bottom:16px" id="irr-top"></div>
+        <div class="four" id="irr-bottom"></div>
+      </div>
+
+      <!-- Capital structure -->
+      <div class="two-eq" style="margin-bottom:16px">
+        <div class="card">
+          <div class="ctitle">Capital Structure</div>
+          <div id="irr-capital"></div>
+        </div>
+        <div class="card">
+          <div class="ctitle">Exit Analysis</div>
+          <div id="irr-exit"></div>
+        </div>
+      </div>
+
+      <!-- CF Table -->
+      <div class="card">
+        <div class="ctitle">Year-by-Year Cash Flow</div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr>
+              <th>Yr</th><th>Gross Rent</th><th>Net Rent</th><th>EMI</th>
+              <th>Net Cash Flow</th><th>Property Value</th><th>Loan Balance</th><th>Equity</th>
+            </tr></thead>
+            <tbody id="irr-cf"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB 2: XIRR CALCULATOR
+════════════════════════════════════════════════════════ -->
+<div id="tab-xirr" class="sec">
+  <div class="section-intro">
+    <strong>XIRR</strong> calculates IRR for <strong>irregular, real-world cash flows</strong> — construction-linked payment plans, tranche disbursements, rental top-ups, or any investment where payments happen on specific dates, not neatly every year. This is what professionals use when a deal doesn't fit a simple annual model. Enter your actual dates and amounts.
+  </div>
+  <div class="two-eq">
+    <div class="card">
+      <div class="ctitle">Cash Flow Entries</div>
+      <div class="cdesc">Outflows (payments made) = negative. Inflows (rent received, sale proceeds) = positive. Must have at least one negative and one positive.</div>
+      <div id="xirr-rows"></div>
+      <div style="display:flex;gap:10px;margin-top:8px">
+        <button class="btn" onclick="addXIRRRow()">+ Add Row</button>
+        <button class="btn btn-ghost" onclick="resetXIRR()">Reset</button>
+        <button class="btn btn-ghost" onclick="loadXIRRExample()">Load Example</button>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:16px">
+        <div class="ctitle">XIRR Result</div>
+        <div id="xirr-result">
+          <div style="color:var(--t3);font-size:13px;padding:20px 0">Enter at least 2 cash flows to calculate.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ctitle">How to Use XIRR</div>
+        <div style="font-size:12px;color:var(--t2);line-height:1.8">
+          <div style="margin-bottom:8px"><strong style="color:var(--gold)">Booking advance:</strong> Enter as negative on booking date</div>
+          <div style="margin-bottom:8px"><strong style="color:var(--gold)">Construction payments:</strong> Each tranche as negative on payment date</div>
+          <div style="margin-bottom:8px"><strong style="color:var(--gold)">Rental income:</strong> Monthly/annual inflows as positive</div>
+          <div style="margin-bottom:8px"><strong style="color:var(--gold)">Sale proceeds:</strong> Final positive on exit date (after loan repayment)</div>
+          <div style="margin-bottom:8px"><strong style="color:var(--gold)">Good XIRR:</strong> &gt;15% for residential, &gt;18% for commercial</div>
+          <div><strong style="color:var(--gold)">XIRR vs IRR:</strong> XIRR is more accurate for real deals because it accounts for exact timing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB 3: CONSTRUCTION FINANCE
+════════════════════════════════════════════════════════ -->
+<div id="tab-construction" class="sec">
+  <div class="section-intro">
+    <strong>Construction Finance Calculator</strong> — for developers raising debt to fund a project, and for investors evaluating a developer's financial structure. Models the complete construction loan: drawdown schedule, interest during construction (IDC), total project cost, and post-completion profitability. This is what NBFCs and PE funds analyze before lending.
+  </div>
+  <div class="two">
+    <div>
+      <div class="card">
+        <div class="ctitle">Project Parameters</div>
+        <label class="lbl">Total Saleable Area (sq.ft)</label>
+        <input type="number" class="inp" id="c-area" value="100000" step="5000" oninput="calcConstruction()"/>
+        <label class="lbl">Average Selling Price (₹/sqft)</label>
+        <input type="number" class="inp" id="c-sp" value="8500" step="100" oninput="calcConstruction()"/>
+        <label class="lbl">Land Cost (₹)</label>
+        <input type="number" class="inp" id="c-land" value="30000000" step="1000000" oninput="calcConstruction()"/>
+        <label class="lbl">Construction Cost (₹/sqft)</label>
+        <input type="number" class="inp" id="c-cc" value="2800" step="100" oninput="calcConstruction()"/>
+        <label class="lbl">Other Costs — approvals, marketing, etc. (₹)</label>
+        <input type="number" class="inp" id="c-other" value="5000000" step="500000" oninput="calcConstruction()"/>
+        <label class="lbl">Construction Timeline (Months)</label>
+        <input type="number" class="inp" id="c-months" value="36" step="6" min="6" max="120" oninput="calcConstruction()"/>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <div class="ctitle">Debt Structure</div>
+        <label class="lbl">Construction Loan Amount (₹)</label>
+        <input type="number" class="inp" id="c-loan" value="40000000" step="1000000" oninput="calcConstruction()"/>
+        <label class="lbl">Construction Finance Rate (% p.a.)</label>
+        <input type="number" class="inp" id="c-rate" value="14" step="0.25" min="8" max="22" oninput="calcConstruction()"/>
+        <label class="lbl">% of Revenue from Pre-sales (before completion)</label>
+        <input type="number" class="inp" id="c-presale" value="60" step="5" min="0" max="100" oninput="calcConstruction()"/>
+        <label class="lbl">Developer Equity Contribution (₹)</label>
+        <input type="number" class="inp" id="c-equity" value="20000000" step="1000000" oninput="calcConstruction()"/>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:16px">
+        <div class="ctitle">Project Economics</div>
+        <div class="four" style="margin-bottom:16px" id="c-top"></div>
+        <div class="four" id="c-bottom"></div>
+      </div>
+      <div class="two-eq" style="margin-bottom:16px">
+        <div class="card">
+          <div class="ctitle">Cost Breakdown</div>
+          <div id="c-costs"></div>
+        </div>
+        <div class="card">
+          <div class="ctitle">Lender Metrics</div>
+          <div id="c-lender"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ctitle">Construction Drawdown Schedule</div>
+        <div style="overflow-x:auto"><table>
+          <thead><tr><th>Phase</th><th>% Drawn</th><th>Amount</th><th>Cumulative Interest</th><th>Collection (Pre-sales)</th></tr></thead>
+          <tbody id="c-schedule"></tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB 4: ROE / EQUITY RETURN
+════════════════════════════════════════════════════════ -->
+<div id="tab-roe" class="sec">
+  <div class="section-intro">
+    <strong>Return on Equity (ROE)</strong> measures what you actually earn on the cash you put in — not on the full property value. Because of leverage, ROE is almost always higher than the property's appreciation rate. This calculator also shows <strong>Cash-on-Cash Return</strong> (annual rental income vs equity deployed) and the <strong>Equity Build-up</strong> from loan repayment compounding your ownership.
+  </div>
+  <div class="two">
+    <div>
+      <div class="card">
+        <div class="ctitle">Investment Inputs</div>
+        <label class="lbl">Property Purchase Price (₹)</label>
+        <input type="number" class="inp" id="r-price" value="10000000" step="100000" oninput="calcROE()"/>
+        <label class="lbl">Stamp Duty + Registration (₹) — or enter actual</label>
+        <input type="number" class="inp" id="r-sd" value="700000" step="10000" oninput="calcROE()"/>
+        <label class="lbl">Interior / Furnishing Cost (₹)</label>
+        <input type="number" class="inp" id="r-interior" value="500000" step="50000" oninput="calcROE()"/>
+        <label class="lbl">Loan Amount (₹)</label>
+        <input type="number" class="inp" id="r-loan" value="7000000" step="100000" oninput="calcROE()"/>
+        <label class="lbl">Loan Interest Rate (% p.a.)</label>
+        <input type="number" class="inp" id="r-rate" value="8.75" step="0.25" oninput="calcROE()"/>
+        <label class="lbl">Loan Tenure (Years)</label>
+        <input type="number" class="inp" id="r-tenure" value="20" step="1" oninput="calcROE()"/>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <div class="ctitle">Income & Growth</div>
+        <label class="lbl">Monthly Rent (₹)</label>
+        <input type="number" class="inp" id="r-rent" value="28000" step="500" oninput="calcROE()"/>
+        <label class="lbl">Annual Rent Growth (% p.a.)</label>
+        <input type="number" class="inp" id="r-rentg" value="5" step="0.5" oninput="calcROE()"/>
+        <label class="lbl">Vacancy + Expenses (% of gross rent)</label>
+        <input type="number" class="inp" id="r-vac" value="15" step="1" oninput="calcROE()"/>
+        <label class="lbl">Annual Property Appreciation (% p.a.)</label>
+        <input type="number" class="inp" id="r-ap" value="9" step="0.5" oninput="calcROE()"/>
+        <label class="lbl">Analysis Period (Years)</label>
+        <input type="number" class="inp" id="r-years" value="5" step="1" min="1" max="20" oninput="calcROE()"/>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:16px">
+        <div class="ctitle">Return on Equity Summary</div>
+        <div class="four" id="roe-top" style="margin-bottom:16px"></div>
+        <div class="three" id="roe-bottom"></div>
+      </div>
+      <div class="card" style="margin-bottom:16px">
+        <div class="ctitle">Equity Build-up Over Time</div>
+        <div style="overflow-x:auto"><table>
+          <thead><tr><th>Year</th><th>Property Value</th><th>Loan Balance</th><th>Your Equity</th><th>CoC Return</th><th>Equity ROE</th></tr></thead>
+          <tbody id="roe-table"></tbody>
+        </table></div>
+      </div>
+      <div class="card">
+        <div class="ctitle">Leverage Effect</div>
+        <div id="roe-leverage"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB 5: LTV & DEBT YIELD
+════════════════════════════════════════════════════════ -->
+<div id="tab-ltv" class="sec">
+  <div class="section-intro">
+    <strong>Loan-to-Value (LTV)</strong> is what % of the property value is financed by debt. <strong>Debt Yield</strong> is the NOI (Net Operating Income) divided by loan amount — the most important metric for lenders because it's independent of interest rates. <strong>DSCR</strong> (Debt Service Coverage Ratio) tells you how comfortably rental income covers your EMI. These three metrics are what any NBFC or bank will calculate before approving your loan.
+  </div>
+  <div class="two">
+    <div>
+      <div class="card">
+        <div class="ctitle">Property & Income</div>
+        <label class="lbl">Property Market Value (₹)</label>
+        <input type="number" class="inp" id="l-value" value="15000000" step="500000" oninput="calcLTV()"/>
+        <label class="lbl">Gross Annual Rent / NOI (₹ p.a.)</label>
+        <input type="number" class="inp" id="l-noi-gross" value="540000" step="12000" oninput="calcLTV()"/>
+        <label class="lbl">Operating Expenses (% of gross rent)</label>
+        <input type="number" class="inp" id="l-opex" value="20" step="1" min="0" max="50" oninput="calcLTV()"/>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <div class="ctitle">Loan Details</div>
+        <label class="lbl">Loan Amount Requested (₹)</label>
+        <input type="number" class="inp" id="l-loan" value="10000000" step="500000" oninput="calcLTV()"/>
+        <label class="lbl">Loan Interest Rate (% p.a.)</label>
+        <input type="number" class="inp" id="l-rate" value="9.5" step="0.25" oninput="calcLTV()"/>
+        <label class="lbl">Loan Tenure (Years)</label>
+        <input type="number" class="inp" id="l-tenure" value="15" step="1" oninput="calcLTV()"/>
+        <label class="lbl">Property Type</label>
+        <select class="inp" id="l-type" onchange="calcLTV()">
+          <option value="res">Residential</option>
+          <option value="com">Commercial</option>
+          <option value="ind">Industrial / Warehouse</option>
+          <option value="plot">Plot / Land</option>
+        </select>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <div class="ctitle">Lender Benchmarks</div>
+        <div id="ltv-benchmarks"></div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:16px">
+        <div class="ctitle">Key Lending Metrics</div>
+        <div class="four" style="margin-bottom:16px" id="ltv-top"></div>
+        <div class="three" id="ltv-bottom"></div>
+      </div>
+      <div class="card" style="margin-bottom:16px">
+        <div class="ctitle">Loan Eligibility vs Constraints</div>
+        <div id="ltv-eligibility"></div>
+      </div>
+      <div class="card">
+        <div class="ctitle">What Lenders Actually Look For</div>
+        <div id="ltv-guide" style="font-size:12px;color:var(--t2);line-height:1.8"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB 6: EMI & LOAN COST CALCULATOR
+════════════════════════════════════════════════════════ -->
+<div id="tab-emi" class="sec">
+  <div class="section-intro">
+    <strong>EMI Calculator</strong> — complete home loan analysis including total interest cost, amortization schedule, prepayment impact, and effective annual cost. Also calculates the <strong>true cost of borrowing</strong> including processing fees, insurance, and other charges that banks don't show upfront.
+  </div>
+  <div class="two">
+    <div>
+      <div class="card">
+        <div class="ctitle">Loan Details</div>
+        <label class="lbl">Loan Amount (₹)</label>
+        <input type="number" class="inp" id="e-loan" value="8000000" step="100000" oninput="calcEMI()"/>
+        <label class="lbl">Annual Interest Rate (%)</label>
+        <input type="number" class="inp" id="e-rate" value="8.75" step="0.25" min="1" max="20" oninput="calcEMI()"/>
+        <label class="lbl">Tenure (Years)</label>
+        <input type="number" class="inp" id="e-tenure" value="20" step="1" min="1" max="30" oninput="calcEMI()"/>
+        <label class="lbl">Processing Fee (₹)</label>
+        <input type="number" class="inp" id="e-proc" value="10000" step="1000" oninput="calcEMI()"/>
+        <label class="lbl">Loan Insurance / PMAY subsidy adjustment (₹)</label>
+        <input type="number" class="inp" id="e-ins" value="0" step="1000" oninput="calcEMI()"/>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <div class="ctitle">Prepayment Analysis</div>
+        <label class="lbl">One-time Prepayment Amount (₹) — 0 for none</label>
+        <input type="number" class="inp" id="e-prepay" value="0" step="100000" oninput="calcEMI()"/>
+        <label class="lbl">Prepayment at End of Year</label>
+        <input type="number" class="inp" id="e-prepay-yr" value="5" step="1" min="1" max="29" oninput="calcEMI()"/>
+        <label class="lbl">After Prepayment: Reduce</label>
+        <select class="inp" id="e-prepay-opt" onchange="calcEMI()">
+          <option value="tenure">Tenure (keep EMI same)</option>
+          <option value="emi">EMI (keep tenure same)</option>
+        </select>
+        <div class="divider"></div>
+        <label class="lbl">Compare With: Alternative Rate (%)</label>
+        <input type="number" class="inp" id="e-compare" value="8.25" step="0.25" min="1" max="20" oninput="calcEMI()"/>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:16px">
+        <div class="ctitle">EMI Breakdown</div>
+        <div class="four" style="margin-bottom:16px" id="emi-top"></div>
+        <div class="three" id="emi-bottom"></div>
+      </div>
+      <div class="card" style="margin-bottom:16px">
+        <div class="ctitle">Prepayment Impact</div>
+        <div id="emi-prepay"></div>
+      </div>
+      <div class="card">
+        <div class="ctitle">Amortization (First 10 Years)</div>
+        <div style="overflow-x:auto"><table>
+          <thead><tr><th>Year</th><th>Opening Balance</th><th>Principal Paid</th><th>Interest Paid</th><th>Closing Balance</th><th>% Paid Off</th></tr></thead>
+          <tbody id="emi-amort"></tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end .main -->
+
+<div style="text-align:center;font-size:11px;color:var(--t3);border-top:1px solid var(--border);padding:20px 16px;margin-top:32px;line-height:1.8;">
+  <strong style="color:var(--gold)">निवेशभूमि · Nivesh Bhoomi</strong> · niveshbhoomi.in<br/>
+  Professional real estate finance calculators · Free forever · No login · No ads<br/>
+  <span style="font-size:10px">All calculations are for educational purposes. Consult a SEBI-registered advisor and CA before investing. Results depend on actual market conditions.</span>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+// HELPERS
+// ══════════════════════════════════════════════════════════════
+const fi = id => parseFloat(document.getElementById(id)?.value)||0;
+const gi = id => document.getElementById(id)?.value;
+
+function fI(n){return new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(n);}
+function fC(n){
+  const a=Math.abs(n);
+  const s=n<0?"-":"";
+  if(a>=10000000) return s+"₹"+(a/10000000).toFixed(2)+" Cr";
+  if(a>=100000)   return s+"₹"+(a/100000).toFixed(2)+" L";
+  return fI(n);
+}
+function pct(n,d=2){return(isFinite(n)?n:0).toFixed(d)+"%";}
+function num(n){return(isFinite(n)?n:0).toLocaleString("en-IN");}
+
+function emiCalc(p,r,n){
+  if(p<=0||r<=0||n<=0) return 0;
+  const mr=r/1200;
+  return p*mr*Math.pow(1+mr,n)/(Math.pow(1+mr,n)-1);
+}
+
+function calcIRRfn(cfs){
+  if(!cfs||cfs.length<2) return NaN;
+  let r=0.1;
+  for(let i=0;i<3000;i++){
+    let npv=cfs.reduce((s,c,t)=>s+c/Math.pow(1+r,t),0);
+    let dnpv=cfs.reduce((s,c,t)=>s-t*c/Math.pow(1+r,t+1),0);
+    if(Math.abs(dnpv)<1e-12) break;
+    const nr=r-npv/dnpv;
+    if(Math.abs(nr-r)<1e-9){r=nr;break;}
+    r=Math.max(-0.9999,Math.min(10,nr));
+  }
+  return r*100;
+}
+
+function calcNPV(cfs,dr){return cfs.reduce((s,c,t)=>s+c/Math.pow(1+dr/100,t),0);}
+
+function metric(val,lbl,note,cls,sig){
+  return `<div class="metric ${cls||''}">
+    <div class="m-val" style="color:var(--${cls?.replace('m-','')||'text'})">${val}</div>
+    <div class="m-lbl">${lbl}</div>
+    ${note?`<div class="m-note">${note}</div>`:''}
+    ${sig?`<div class="m-sig" style="color:var(--${cls?.replace('m-','')||'text'})">${sig}</div>`:''}
+  </div>`;
+}
+
+function kvRow(k,v,vc){
+  return `<div class="row-kv"><span class="kv-k">${k}</span><span class="kv-v" style="color:${vc||'var(--text)'}">${v}</span></div>`;
+}
+
+function showTab(id,el){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(el) el.classList.add('active');
+  // trigger calc
+  const fns={irr:calcIRR,xirr:calcXIRR,construction:calcConstruction,roe:calcROE,ltv:calcLTV,emi:calcEMI};
+  if(fns[id]) fns[id]();
+}
+
+// ══════════════════════════════════════════════════════════════
+// TAB 1: IRR / NPV
+// ══════════════════════════════════════════════════════════════
+function getStampDuty(){
+  const sel=document.getElementById('i-city');
+  if(!sel) return 6;
+  const v=sel.value;
+  if(v==='custom'){
+    document.getElementById('custom-stamp-wrap').style.display='block';
+    return fi('i-stamp-custom');
+  }
+  document.getElementById('custom-stamp-wrap').style.display='none';
+  return parseFloat(v)||6;
+}
+
+function calcIRR(){
+  const price=fi('i-price'), loan=fi('i-loan'), rate=fi('i-rate'),
+        tenure=fi('i-tenure'), rent=fi('i-rent'), rentg=fi('i-rentg'),
+        vac=fi('i-vac'), hold=fi('i-hold'), ap=fi('i-ap'),
+        exitCost=fi('i-exit-cost'), hurdle=fi('i-hurdle');
+  const sd=price*(getStampDuty()/100);
+  const reg=price*0.01;
+  const totalCost=price+sd+reg;
+  const equity=totalCost-loan;
+  if(equity<=0){
+    document.getElementById('irr-top').innerHTML=`<div class="alert a-danger" style="grid-column:1/-1">Loan amount exceeds property cost including stamp duty. Please reduce loan amount.</div>`;
+    return;
+  }
+  const emi=emiCalc(loan,rate,tenure*12);
+  const cfs=[-equity];
+  let bal=loan, curRent=rent*12;
+  const rows=[];
+  for(let y=1;y<=hold;y++){
+    const propVal=price*Math.pow(1+ap/100,y);
+    const nr=curRent*(1-vac/100);
+    const yrEMI=emi*12;
+    const interest=bal*(rate/100);
+    const principal=Math.min(yrEMI-interest,bal);
+    bal=Math.max(0,bal-principal);
+    const net=nr-yrEMI;
+    rows.push({y,propVal,curRent,nr,yrEMI,net,bal,equity:propVal-bal});
+    if(y<hold) curRent*=(1+rentg/100);
+    if(y<hold) cfs.push(net);
+  }
+  const exitVal=price*Math.pow(1+ap/100,hold);
+  const exitProceeds=exitVal*(1-exitCost/100)-bal;
+  const lastNet=rows[rows.length-1]?.nr - emi*12;
+  cfs.push(lastNet+exitProceeds);
+
+  const irr=calcIRRfn(cfs);
+  const npv=calcNPV(cfs,hurdle);
+  const grossY=rent*12/price*100;
+  const netY=rent*12*(1-vac/100)/price*100;
+  const coc=(rent*12*(1-vac/100)-emi*12)/equity*100;
+  const dscr=emi>0?(rent*12*(1-vac/100))/(emi*12):99;
+  const em=(equity+cfs.slice(1).reduce((a,b)=>a+b,0))/equity;
+  const capRate=rent*12*(1-vac/100)/price*100;
+
+  const ic=irr>hurdle?'m-green':'m-red';
+  const nc=npv>0?'m-green':'m-red';
+  document.getElementById('irr-top').innerHTML=
+    metric(pct(irr),'IRR',`Hurdle: ${hurdle}%`,ic,irr>hurdle?'▲ Exceeds hurdle':'▼ Below hurdle')+
+    metric(fC(npv),'Net Present Value',`At ${hurdle}% discount rate`,nc,npv>0?'▲ Value creating':'▼ Value destroying')+
+    metric(em.toFixed(2)+'x','Equity Multiple (MOIC)',`Total equity grown ${em.toFixed(2)}x`,em>2?'m-green':em>1.5?'m-orange':'m-red')+
+    metric(pct(coc),'Cash-on-Cash Yr 1','Annual rent ÷ equity',coc>0?'m-green':'m-red');
+
+  const dc=dscr>1.25?'m-green':dscr>1?'m-orange':'m-red';
+  document.getElementById('irr-bottom').innerHTML=
+    metric(pct(grossY),'Gross Rental Yield','Rent ÷ price','m-blue')+
+    metric(pct(netY),'Net Rental Yield',`After ${vac}% vacancy+costs`,'m-blue')+
+    metric(dscr.toFixed(2),'DSCR',dscr>1.25?'Safe debt coverage':dscr>1?'Tight — monitor closely':'Danger — shortfall',dc)+
+    metric(pct(capRate),'Cap Rate','NOI ÷ property value','m-gold');
+
+  document.getElementById('irr-capital').innerHTML=
+    kvRow('Purchase Price',fC(price))+
+    kvRow('Stamp Duty ('+getStampDuty()+'%)',fC(sd),'var(--orange)')+
+    kvRow('Registration (1%)',fC(reg),'var(--orange)')+
+    kvRow('Total Acquisition Cost',fC(totalCost))+
+    kvRow('Loan',fC(loan))+
+    kvRow('Equity Required',fC(equity),'var(--gold)')+
+    kvRow('Monthly EMI',fI(emi),'var(--orange)')+
+    kvRow('Total Interest ('+tenure+'Y)',fC(emi*tenure*12-loan),'var(--red)');
+
+  document.getElementById('irr-exit').innerHTML=
+    kvRow('Hold Period',hold+' years')+
+    kvRow('Exit Property Value',fC(exitVal),'var(--green)')+
+    kvRow('Loan Balance at Exit',fC(bal),'var(--red)')+
+    kvRow('Transaction Cost at Exit',fC(exitVal*exitCost/100),'var(--orange)')+
+    kvRow('Net Exit Proceeds',fC(exitProceeds),'var(--green)')+
+    `<div class="alert ${irr>hurdle?'a-good':irr>hurdle*0.7?'a-warn':'a-danger'}" style="margin-top:12px">
+      ${irr>hurdle?'✓ Strong deal — IRR beats your hurdle rate by '+pct(irr-hurdle,1):
+        irr>0?'⚠ Positive returns but below hurdle — negotiate price or terms':
+        '✗ Negative IRR — deal destroys value at these assumptions'}
+    </div>`;
+
+  let cfHTML='';
+  rows.forEach(r=>{
+    cfHTML+=`<tr>
+      <td style="color:var(--gold)">${r.y}</td>
+      <td>${fC(r.curRent)}</td>
+      <td>${fC(r.nr)}</td>
+      <td style="color:var(--orange)">${fC(r.yrEMI)}</td>
+      <td style="color:${r.net>0?'var(--green)':'var(--red)'};font-weight:600">${fC(r.net)}</td>
+      <td>${fC(r.propVal)}</td>
+      <td style="color:var(--red)">${fC(r.bal)}</td>
+      <td style="color:var(--green);font-weight:600">${fC(r.equity)}</td>
+    </tr>`;
+  });
+  document.getElementById('irr-cf').innerHTML=cfHTML;
+}
+
+// ══════════════════════════════════════════════════════════════
+// TAB 2: XIRR
+// ══════════════════════════════════════════════════════════════
+let xirrRows=[
+  {date:'2024-01-15',amount:-3000000},
+  {date:'2024-07-15',amount:-2000000},
+  {date:'2025-01-15',amount:-1500000},
+  {date:'2025-07-15',amount:300000},
+  {date:'2026-01-15',amount:300000},
+  {date:'2026-07-15',amount:300000},
+  {date:'2027-01-15',amount:8500000},
+];
+
+function renderXIRRRows(){
+  document.getElementById('xirr-rows').innerHTML=xirrRows.map((r,i)=>`
+    <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:8px;align-items:center">
+      <div>
+        ${i===0?'<label class="lbl">Date</label>':''}
+        <input type="date" class="inp xirr-row" style="margin-bottom:0" value="${r.date}" onchange="xirrRows[${i}].date=this.value;calcXIRR()"/>
+      </div>
+      <div>
+        ${i===0?'<label class="lbl">Amount (₹) — negative=outflow</label>':''}
+        <input type="number" class="inp xirr-row" style="margin-bottom:0" value="${r.amount}" step="10000" onchange="xirrRows[${i}].amount=parseFloat(this.value)||0;calcXIRR()"/>
+      </div>
+      <div style="${i===0?'margin-top:18px':''}">
+        <button onclick="xirrRows.splice(${i},1);renderXIRRRows();calcXIRR();" style="padding:8px 12px;background:rgba(192,74,74,.15);color:#e08080;border:1px solid rgba(192,74,74,.2);border-radius:6px;cursor:pointer;font-size:12px">✕</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function addXIRRRow(){
+  const lastDate=xirrRows[xirrRows.length-1]?.date||'2024-01-01';
+  const d=new Date(lastDate);d.setMonth(d.getMonth()+6);
+  xirrRows.push({date:d.toISOString().split('T')[0],amount:300000});
+  renderXIRRRows();calcXIRR();
+}
+
+function resetXIRR(){xirrRows=[{date:'2024-01-01',amount:-5000000},{date:'2026-01-01',amount:8000000}];renderXIRRRows();calcXIRR();}
+
+function loadXIRRExample(){
+  xirrRows=[
+    {date:'2023-03-01',amount:-2500000},
+    {date:'2023-09-01',amount:-2500000},
+    {date:'2024-03-01',amount:-2000000},
+    {date:'2024-09-01',amount:350000},
+    {date:'2025-03-01',amount:370000},
+    {date:'2025-09-01',amount:390000},
+    {date:'2026-03-01',amount:9500000},
+  ];
+  renderXIRRRows();calcXIRR();
+}
+
+function calcXIRRfn(dates,amounts){
+  if(!dates||dates.length<2) return NaN;
+  const d0=new Date(dates[0]);
+  const t=dates.map(d=>(new Date(d)-d0)/(365.25*24*3600*1000));
+  let r=0.1;
+  for(let i=0;i<2000;i++){
+    let npv=amounts.reduce((s,a,j)=>s+a/Math.pow(1+r,t[j]),0);
+    let dnpv=amounts.reduce((s,a,j)=>s-t[j]*a/Math.pow(1+r,t[j]+1),0);
+    if(Math.abs(dnpv)<1e-12) break;
+    const nr=r-npv/dnpv;
+    if(Math.abs(nr-r)<1e-9){r=nr;break;}
+    r=Math.max(-0.9999,Math.min(10,nr));
+  }
+  return r*100;
+}
+
+function calcXIRR(){
+  const dates=xirrRows.map(r=>r.date);
+  const amounts=xirrRows.map(r=>r.amount);
+  const hasNeg=amounts.some(a=>a<0), hasPos=amounts.some(a=>a>0);
+  if(!hasNeg||!hasPos||xirrRows.length<2){
+    document.getElementById('xirr-result').innerHTML='<div style="color:var(--t3);padding:16px 0;font-size:13px">Need at least one negative (outflow) and one positive (inflow) entry.</div>';
+    return;
+  }
+  const xirr=calcXIRRfn(dates,amounts);
+  const totalIn=amounts.filter(a=>a>0).reduce((s,a)=>s+a,0);
+  const totalOut=Math.abs(amounts.filter(a=>a<0).reduce((s,a)=>s+a,0));
+  const moic=totalIn/totalOut;
+  const d0=new Date(dates[0]),dN=new Date(dates[dates.length-1]);
+  const years=(dN-d0)/(365.25*24*3600*1000);
+  const c=xirr>15?'m-green':xirr>10?'m-orange':'m-red';
+  document.getElementById('xirr-result').innerHTML=`
+    <div class="four" style="margin-bottom:16px">
+      ${metric(pct(xirr),'XIRR','Annualized IRR on actual dates',c,xirr>15?'▲ Strong return':xirr>0?'◎ Positive return':'▼ Negative return')}
+      ${metric(moic.toFixed(2)+'x','Money-on-Money','Total inflows ÷ outflows',moic>2?'m-green':moic>1.5?'m-orange':'m-red')}
+      ${metric(fC(totalOut),'Total Invested','Sum of all outflows','m-red')}
+      ${metric(fC(totalIn),'Total Returned','Sum of all inflows','m-green')}
+    </div>
+    ${kvRow('Investment Period',years.toFixed(1)+' years')}
+    ${kvRow('Total Invested',fC(totalOut),'var(--red)')}
+    ${kvRow('Total Returned',fC(totalIn),'var(--green)')}
+    ${kvRow('Net Profit / Loss',fC(totalIn-totalOut),totalIn>totalOut?'var(--green)':'var(--red)')}
+    ${kvRow('XIRR',pct(xirr),xirr>15?'var(--green)':xirr>0?'var(--gold)':'var(--red)')}
+    <div class="alert ${xirr>15?'a-good':xirr>10?'a-warn':xirr>0?'a-info':'a-danger'}" style="margin-top:12px">
+      ${xirr>20?'Exceptional returns. Verify assumptions are realistic.':
+        xirr>15?'Strong return. Beats most alternative investments.':
+        xirr>12?'Good return. Slightly above equity market benchmark.':
+        xirr>8?'Moderate return. Similar to diversified equity funds.':
+        xirr>0?'Below-average return. FD or liquid funds may do better.':
+        'Negative XIRR. This deal loses money. Re-examine exit assumptions.'}
+    </div>`;
+}
+
+// ══════════════════════════════════════════════════════════════
+// TAB 3: CONSTRUCTION FINANCE
+// ══════════════════════════════════════════════════════════════
+function calcConstruction(){
+  const area=fi('c-area'), sp=fi('c-sp'), land=fi('c-land'),
+        cc=fi('c-cc'), other=fi('c-other'), months=fi('c-months'),
+        loan=fi('c-loan'), rate=fi('c-rate'),
+        presalePct=fi('c-presale'), devEquity=fi('c-equity');
+
+  const salesRevenue=area*sp;
+  const constructionCost=area*cc;
+  const totalProjectCost=land+constructionCost+other;
+  const totalFinancing=loan+devEquity;
+  const financingGap=totalProjectCost-totalFinancing;
+
+  // IDC — interest during construction (average drawn = 60% of loan)
+  const avgDraw=loan*0.6;
+  const idc=avgDraw*(rate/100)*(months/12);
+  const totalCostWithIDC=totalProjectCost+idc;
+
+  const grossMargin=salesRevenue-totalCostWithIDC;
+  const grossMarginPct=grossMargin/salesRevenue*100;
+  const devReturn=grossMargin/devEquity*100;
+  const costPsf=totalCostWithIDC/area;
+  const marginPsf=sp-costPsf;
+
+  // Lender metrics
+  const noi=salesRevenue*0.08; // rough NOI assumption for commercial
+  const loanToGDV=loan/salesRevenue*100;
+  const ltc=loan/totalProjectCost*100;
+  const debtYield=salesRevenue*0.06/loan*100;
+
+  document.getElementById('c-top').innerHTML=
+    metric(fC(salesRevenue),'Total Sales Revenue','Area × avg selling price','m-green')+
+    metric(fC(totalCostWithIDC),'Total Project Cost','incl. IDC','m-red')+
+    metric(fC(grossMargin),'Gross Development Profit',null,grossMargin>0?'m-green':'m-red',grossMargin>0?'▲ Profitable':'▼ Loss-making')+
+    metric(pct(grossMarginPct),'Gross Margin %',grossMarginPct>20?'Healthy margin':'Tight margin',grossMarginPct>20?'m-green':grossMarginPct>10?'m-orange':'m-red');
+
+  document.getElementById('c-bottom').innerHTML=
+    metric(pct(devReturn),'Developer ROE','Profit ÷ equity invested',devReturn>30?'m-green':devReturn>20?'m-orange':'m-red')+
+    metric(pct(loanToGDV),'Loan-to-GDV','Loan ÷ Gross Dev Value',loanToGDV<65?'m-green':loanToGDV<75?'m-orange':'m-red')+
+    metric(pct(ltc),'Loan-to-Cost','Loan ÷ total project cost',ltc<70?'m-green':ltc<80?'m-orange':'m-red')+
+    metric('₹'+num(Math.round(costPsf)),'All-in Cost per sqft','incl IDC','m-gold');
+
+  document.getElementById('c-costs').innerHTML=
+    kvRow('Land Cost',fC(land))+
+    kvRow('Construction ('+num(area)+' sqft × ₹'+num(cc)+')',fC(constructionCost),'var(--orange)')+
+    kvRow('Other Costs (approvals, marketing)',fC(other))+
+    kvRow('Interest During Construction (IDC)',fC(idc),'var(--red)')+
+    kvRow('Total Project Cost',fC(totalCostWithIDC),'var(--text)')+
+    kvRow('Financing Gap',fC(financingGap),financingGap>0?'var(--red)':'var(--green)')+
+    `<div class="alert ${financingGap>0?'a-danger':'a-good'}" style="margin-top:10px">${financingGap>0?'⚠ Financing gap of '+fC(financingGap)+'. Additional equity or mezzanine needed.':'✓ Project is fully funded with current structure.'}</div>`;
+
+  document.getElementById('c-lender').innerHTML=
+    kvRow('Construction Finance Rate',rate+'% p.a.')+
+    kvRow('IDC (Interest During Construction)',fC(idc),'var(--red)')+
+    kvRow('Loan-to-GDV',pct(loanToGDV),loanToGDV<65?'var(--green)':'var(--orange)')+
+    kvRow('Loan-to-Cost',pct(ltc),ltc<70?'var(--green)':'var(--orange)')+
+    kvRow('Pre-sales Collection','₹'+fC(salesRevenue*presalePct/100))+
+    `<div class="divider"></div>
+    <div style="font-size:11px;color:var(--t3);line-height:1.7">
+      <strong style="color:var(--gold2)">NBFC comfort zone:</strong><br/>
+      LTV/LTC &lt; 70% ✓<br/>
+      Loan-to-GDV &lt; 65% ✓<br/>
+      Developer equity &gt; 20% of cost ✓<br/>
+      Strong pre-sales before disbursement ✓
+    </div>`;
+
+  const phases=[
+    {ph:'Foundation',pct:20},{ph:'Plinth',pct:15},{ph:'Structure 50%',pct:25},
+    {ph:'Structure 100%',pct:15},{ph:'Finishing',pct:15},{ph:'Completion',pct:10},
+  ];
+  let cum=0, cumIdc=0, schedHTML='';
+  phases.forEach(p=>{
+    const drawn=loan*(p.pct/100);
+    cum+=p.pct;
+    cumIdc+=drawn*(rate/100)*(months/12/6);
+    const collection=salesRevenue*(presalePct/100)*(p.pct/100);
+    schedHTML+=`<tr>
+      <td>${p.ph}</td>
+      <td>${p.pct}% (cum. ${cum}%)</td>
+      <td>${fC(drawn)}</td>
+      <td style="color:var(--red)">${fC(cumIdc)}</td>
+      <td style="color:var(--green)">${fC(collection)}</td>
+    </tr>`;
+  });
+  document.getElementById('c-schedule').innerHTML=schedHTML;
+}
+
+// ══════════════════════════════════════════════════════════════
+// TAB 4: ROE
+// ══════════════════════════════════════════════════════════════
+function calcROE(){
+  const price=fi('r-price'), sd=fi('r-sd'), interior=fi('r-interior'),
+        loan=fi('r-loan'), rate=fi('r-rate'), tenure=fi('r-tenure'),
+        rent=fi('r-rent'), rentg=fi('r-rentg'), vac=fi('r-vac'),
+        ap=fi('r-ap'), years=fi('r-years');
+
+  const totalInvested=price+sd+interior;
+  const equity=totalInvested-loan;
+  const emi=emiCalc(loan,rate,tenure*12);
+  const netRentY1=rent*12*(1-vac/100);
+  const coc=(netRentY1-emi*12)/equity*100;
+  const grossYield=rent*12/price*100;
+  const netYield=netRentY1/price*100;
+
+  // Unlevered return (as if all cash)
+  const unlevReturn=ap+(netRentY1/price*100);
+
+  let bal=loan, curRent=rent*12;
+  let tableHTML='', totalCF=0;
+  for(let y=1;y<=years;y++){
+    const propVal=price*Math.pow(1+ap/100,y);
+    const nr=curRent*(1-vac/100);
+    const yrEMI=emi*12;
+    const interest=bal*(rate/100);
+    const principal=Math.min(yrEMI-interest,bal);
+    bal=Math.max(0,bal-principal);
+    const myEquity=propVal-bal;
+    const curCoc=(nr-yrEMI)/equity*100;
+    const roe=(myEquity-equity)/equity*100;
+    totalCF+=nr-yrEMI;
+    tableHTML+=`<tr>
+      <td style="color:var(--gold)">${y}</td>
+      <td>${fC(propVal)}</td>
+      <td style="color:var(--red)">${fC(bal)}</td>
+      <td style="color:var(--green);font-weight:600">${fC(myEquity)}</td>
+      <td style="color:${curCoc>0?'var(--green)':'var(--red)'}">${pct(curCoc)}</td>
+      <td style="color:var(--green);font-weight:600">${pct(roe)}</td>
+    </tr>`;
+    curRent*=(1+rentg/100);
+  }
+
+  const finalPropVal=price*Math.pow(1+ap/100,years);
+  const finalEquity=finalPropVal-bal;
+  const totalROE=(finalEquity-equity+totalCF)/equity*100;
+
+  document.getElementById('roe-top').innerHTML=
+    metric(fC(equity),'Equity Deployed','Down payment + costs','m-gold')+
+    metric(pct(coc),'Cash-on-Cash Yr 1','Net rent ÷ equity',coc>0?'m-green':'m-red',coc>0?'Positive cashflow':'Negative cashflow')+
+    metric(pct(grossYield),'Gross Rental Yield','Annual rent ÷ price','m-blue')+
+    metric(pct(totalROE),'Total ROE ('+years+'Y)','Capital gain + income',totalROE>50?'m-green':'m-orange');
+
+  document.getElementById('roe-bottom').innerHTML=
+    metric(fI(emi),'Monthly EMI',null,'m-orange')+
+    metric(fC(finalEquity),'Equity in Yr '+years,'Property value - loan','m-green')+
+    metric(fC(finalEquity-equity),'Equity Created','Net wealth addition','m-green');
+
+  document.getElementById('roe-table').innerHTML=tableHTML;
+
+  const levReturn=totalROE/years;
+  const unlevROEAnn=(ap+(netRentY1/price*100));
+  document.getElementById('roe-leverage').innerHTML=`
+    ${kvRow('Unlevered Return (no loan)',pct(unlevROEAnn)+' p.a.','var(--blue)')}
+    ${kvRow('Levered Return (with '+pct((loan/price)*100,0)+' LTV)',pct(levReturn)+' p.a. on equity','var(--green)')}
+    ${kvRow('Leverage Boost','+'+pct(levReturn-unlevROEAnn)+' p.a.','var(--gold)')}
+    ${kvRow('EMI / Rent Coverage',pct(emi*12/(rent*12)*100)+' of gross rent covered by EMI',emi*12/(rent*12)<0.8?'var(--green)':'var(--orange)')}
+    <div class="alert a-info" style="margin-top:12px">
+      <strong>Leverage multiplies your return on equity</strong> — your ₹${fC(equity)} equity controls a ₹${fC(price)} asset. Every 1% property appreciation equals ${pct(price/equity)}% return on your equity. This is why leveraged real estate builds wealth faster than debt-free purchases — but also amplifies losses if prices fall.
+    </div>`;
+}
+
+// ══════════════════════════════════════════════════════════════
+// TAB 5: LTV & DEBT YIELD
+// ══════════════════════════════════════════════════════════════
+function calcLTV(){
+  const value=fi('l-value'), noiGross=fi('l-noi-gross'), opex=fi('l-opex'),
+        loan=fi('l-loan'), rate=fi('l-rate'), tenure=fi('l-tenure');
+  const type=gi('l-type');
+
+  const noi=noiGross*(1-opex/100);
+  const ltv=loan/value*100;
+  const emi=emiCalc(loan,rate,tenure*12);
+  const dscr=emi>0?noi/(emi*12):99;
+  const debtYield=noi/loan*100;
+  const capRate=noi/value*100;
+  const breakeven=emi>0?emi*12/noiGross*100:0;
+
+  // Max loan by different constraints
+  const maxLTVpct=type==='res'?75:type==='com'?65:type==='ind'?60:55;
+  const maxByLTV=value*(maxLTVpct/100);
+  const maxByDSCR=noi/(1.25*rate/100); // rough: NOI/1.25 / annual rate
+  const maxByDY=noi/0.09; // 9% min debt yield
+  const maxLoan=Math.min(maxByLTV,maxByDSCR,maxByDY);
+
+  const ltvC=ltv<maxLTVpct?'m-green':ltv<maxLTVpct+10?'m-orange':'m-red';
+  const dc=dscr>1.25?'m-green':dscr>1?'m-orange':'m-red';
+  const dyC=debtYield>9?'m-green':debtYield>7?'m-orange':'m-red';
+
+  document.getElementById('ltv-top').innerHTML=
+    metric(pct(ltv),'Loan-to-Value',`Max allowed: ${maxLTVpct}%`,ltvC,ltv<=maxLTVpct?'✓ Within limit':'✗ Exceeds limit')+
+    metric(pct(debtYield),'Debt Yield','NOI ÷ loan amount',dyC,debtYield>9?'✓ Lender comfortable':'⚠ Below typical 9% min')+
+    metric(dscr.toFixed(2),'DSCR','NOI ÷ annual debt service',dc,dscr>1.25?'✓ Strong coverage':dscr>1?'⚠ Thin coverage':'✗ Insufficient')+
+    metric(pct(capRate),'Cap Rate','NOI ÷ property value','m-blue');
+
+  document.getElementById('ltv-bottom').innerHTML=
+    metric(fC(noi),'Net Operating Income','Gross rent × (1-opex%)','m-gold')+
+    metric(fI(emi),'Monthly Debt Service','EMI on requested loan','m-orange')+
+    metric(pct(breakeven),'Break-even Occupancy','Min occupancy to cover debt',breakeven<75?'m-green':'m-orange');
+
+  document.getElementById('ltv-eligibility').innerHTML=`
+    <div style="margin-bottom:12px">
+      <div style="font-size:11px;color:var(--t3);margin-bottom:6px">Loan Request: ${fC(loan)}</div>
+      <div style="font-size:11px;color:var(--t3);margin-bottom:4px">Max Eligible: ${fC(maxLoan)}</div>
+      <div class="pb-bg"><div class="pb-fill" style="width:${Math.min(100,loan/maxLoan*100)}%;background:${loan<=maxLoan?'var(--green)':'var(--red)'}"></div></div>
+    </div>
+    ${kvRow('Max by LTV ('+maxLTVpct+'%)',fC(maxByLTV),maxByLTV>=loan?'var(--green)':'var(--red)')}
+    ${kvRow('Max by DSCR (1.25x)',fC(maxByDSCR),maxByDSCR>=loan?'var(--green)':'var(--red)')}
+    ${kvRow('Max by Debt Yield (9%)',fC(maxByDY),maxByDY>=loan?'var(--green)':'var(--red)')}
+    ${kvRow('Binding Constraint',maxLoan===maxByLTV?'LTV':maxLoan===maxByDSCR?'DSCR':'Debt Yield','var(--gold)')}
+    <div class="alert ${loan<=maxLoan?'a-good':'a-danger'}" style="margin-top:10px">
+      ${loan<=maxLoan?'✓ Loan request is within lender eligibility on all three metrics.':
+      '✗ Loan exceeds maximum eligible amount of '+fC(maxLoan)+'. Reduce loan by '+fC(loan-maxLoan)+' or improve NOI.'}
+    </div>`;
+
+  const benchmarks={
+    res: [{m:'Max LTV',v:'75%'},{m:'Min DSCR',v:'1.20x'},{m:'Min Debt Yield',v:'8%'},{m:'Max Tenure',v:'30 years'},{m:'Typical Rate',v:'8.5–9.5%'}],
+    com: [{m:'Max LTV',v:'65%'},{m:'Min DSCR',v:'1.30x'},{m:'Min Debt Yield',v:'9%'},{m:'Max Tenure',v:'15 years'},{m:'Typical Rate',v:'9.5–11%'}],
+    ind: [{m:'Max LTV',v:'60%'},{m:'Min DSCR',v:'1.35x'},{m:'Min Debt Yield',v:'10%'},{m:'Max Tenure',v:'12 years'},{m:'Typical Rate',v:'10–12%'}],
+    plot:[{m:'Max LTV',v:'55%'},{m:'Min DSCR',v:'N/A'},{m:'Min Debt Yield',v:'N/A'},{m:'Max Tenure',v:'10 years'},{m:'Typical Rate',v:'10–13%'}],
+  };
+  document.getElementById('ltv-benchmarks').innerHTML=
+    (benchmarks[type]||benchmarks.res).map(b=>kvRow(b.m,b.v,'var(--gold)')).join('');
+
+  document.getElementById('ltv-guide').innerHTML=`
+    <strong style="color:var(--gold)">Debt Yield</strong> is the lender's true safety metric. It's NOI ÷ Loan — independent of interest rates. If rates rise, DSCR falls but Debt Yield stays the same. NBFCs and PE lenders typically require minimum 8–10% debt yield.<br/><br/>
+    <strong style="color:var(--gold)">Why DSCR matters to you:</strong> A DSCR of 1.25 means your rental income is 25% more than your debt payments. This is your buffer. If occupancy falls or rates rise, you're not immediately in default.<br/><br/>
+    <strong style="color:var(--gold)">LTV vs Loan-to-Cost:</strong> LTV uses market value. LTC uses actual project cost. Lenders use both — whichever gives the lower loan amount is the binding constraint.`;
+}
+
+// ══════════════════════════════════════════════════════════════
+// TAB 6: EMI
+// ══════════════════════════════════════════════════════════════
+function calcEMI(){
+  const loan=fi('e-loan'), rate=fi('e-rate'), tenure=fi('e-tenure'),
+        proc=fi('e-proc'), ins=fi('e-ins'),
+        prepay=fi('e-prepay'), prepayYr=fi('e-prepay-yr'),
+        compareRate=fi('e-compare');
+  const opt=gi('e-prepay-opt');
+
+  const emi=emiCalc(loan,rate,tenure*12);
+  const totalPay=emi*tenure*12;
+  const totalInterest=totalPay-loan;
+  const effectiveLoan=loan+proc-ins;
+  const apr=calcIRRfn([-effectiveLoan,...Array(tenure*12).fill(emi)])*12;
+
+  // Comparison rate
+  const emi2=emiCalc(loan,compareRate,tenure*12);
+  const saving=emi-emi2;
+
+  // Prepayment calculation
+  let prepayHTML='';
+  if(prepay>0){
+    let bal=loan, months=0;
+    for(let m=1;m<=prepayYr*12;m++){
+      const interest=bal*(rate/1200);
+      const principal=emi-interest;
+      bal=Math.max(0,bal-principal);
+      months++;
+    }
+    if(prepay>=bal){
+      prepayHTML=`<div class="alert a-good">Full prepayment after ${prepayYr} years. Total paid: ${fC(loan-(bal-prepay<0?bal:prepay)+(emi*months))}. Loan closed.</div>`;
+    } else {
+      bal-=prepay;
+      if(opt==='tenure'){
+        // Find new tenure
+        let newTenure=0, tempBal=bal;
+        while(tempBal>0&&newTenure<360){
+          const i=tempBal*(rate/1200);
+          const p=emi-i;
+          if(p<=0) break;
+          tempBal-=p;newTenure++;
+        }
+        const savedMonths=tenure*12-prepayYr*12-newTenure;
+        const savedInterest=savedMonths*emi;
+        prepayHTML=`
+          ${kvRow('Prepayment Amount',fC(prepay),'var(--gold)')}
+          ${kvRow('Balance After Prepayment',fC(bal))}
+          ${kvRow('New Remaining Tenure',Math.round(newTenure/12)+' yrs '+newTenure%12+' mo')}
+          ${kvRow('Months Saved',savedMonths+' months','var(--green)')}
+          ${kvRow('Interest Saved',fC(savedInterest),'var(--green)')}
+          <div class="alert a-good" style="margin-top:10px">Prepaying ₹${fC(prepay)} in year ${prepayYr} saves ${fC(savedInterest)} in interest and closes loan ${Math.round(savedMonths/12*10)/10} years early.</div>`;
+      } else {
+        const newEMI=emiCalc(bal,rate,(tenure-prepayYr)*12);
+        const emiSaving=(emi-newEMI)*((tenure-prepayYr)*12);
+        prepayHTML=`
+          ${kvRow('Prepayment Amount',fC(prepay),'var(--gold)')}
+          ${kvRow('New EMI After Prepayment',fI(newEMI),'var(--green)')}
+          ${kvRow('Monthly EMI Reduction',fI(emi-newEMI),'var(--green)')}
+          ${kvRow('Total Interest Saved',fC(emiSaving),'var(--green)')}
+          <div class="alert a-good" style="margin-top:10px">Prepaying ₹${fC(prepay)} reduces your EMI by ${fI(emi-newEMI)}/month and saves ${fC(emiSaving)} total.</div>`;
+      }
+    }
+  } else {
+    prepayHTML=`<div style="color:var(--t3);font-size:12px;padding:8px 0">Enter a prepayment amount above to see impact.</div>`;
+  }
+
+  document.getElementById('emi-top').innerHTML=
+    metric(fI(emi),'Monthly EMI',null,'m-gold')+
+    metric(fC(totalInterest),'Total Interest Paid','Over full tenure','m-red',pct(totalInterest/loan*100)+'% of principal')+
+    metric(fC(totalPay),'Total Amount Paid','Principal + interest','m-orange')+
+    metric(pct(apr*100,2),'Effective APR','incl. processing fee','m-blue');
+
+  document.getElementById('emi-bottom').innerHTML=
+    metric(fC(saving>0?saving*tenure*12:emi2*tenure*12-emi*tenure*12),saving>0?'Saving vs '+compareRate+'%':'Extra cost vs '+compareRate+'%',null,saving>0?'m-green':'m-red')+
+    metric(pct(totalInterest/totalPay*100),'Interest as % of total',null,'m-orange')+
+    metric(fI(emi/2),'Fortnightly EMI equiv.','If you pay 2x/month',null);
+
+  document.getElementById('emi-prepay').innerHTML=prepayHTML;
+
+  // Amortization (10 years max)
+  let bal=loan, amHTML='';
+  const showYears=Math.min(10,tenure);
+  for(let y=1;y<=showYears;y++){
+    const opening=bal;
+    let yearInt=0, yearPrin=0;
+    for(let m=0;m<12;m++){
+      const interest=bal*(rate/1200);
+      const principal=Math.min(emi-interest,bal);
+      yearInt+=interest; yearPrin+=principal;
+      bal=Math.max(0,bal-principal);
+    }
+    amHTML+=`<tr>
+      <td style="color:var(--gold)">${y}</td>
+      <td>${fC(opening)}</td>
+      <td style="color:var(--green)">${fC(yearPrin)}</td>
+      <td style="color:var(--red)">${fC(yearInt)}</td>
+      <td>${fC(bal)}</td>
+      <td style="color:var(--blue)">${pct((loan-bal)/loan*100)}</td>
+    </tr>`;
+  }
+  if(tenure>10) amHTML+=`<tr><td colspan="6" style="color:var(--t3);text-align:center;font-style:italic">... ${tenure-10} more years</td></tr>`;
+  document.getElementById('emi-amort').innerHTML=amHTML;
+}
+
+// ══════════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════════
+renderXIRRRows();
+calcIRR();
+calcXIRR();
+</script>
+</body>
+</html>
