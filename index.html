@@ -115,6 +115,15 @@ body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans
 .tab.active{color:var(--gold);border-bottom-color:var(--gold);}
 .tab-loan {color:var(--green)!important;}
 .tab-loan.active{color:var(--green)!important;border-bottom-color:var(--green)!important;}
+.tab-divider {
+  display:flex;align-items:center;padding:0 8px;
+  color:var(--border2);font-size:16px;pointer-events:none;
+}
+.tab-group-label {
+  font-size:9px;font-weight:700;letter-spacing:1.5px;
+  color:var(--t3);padding:0 6px;display:flex;align-items:center;
+  text-transform:uppercase;pointer-events:none;white-space:nowrap;
+}
 
 /* ── LAYOUT ── */
 .main{max-width:1100px;margin:0 auto;padding:28px 16px;}
@@ -372,15 +381,204 @@ select.form-input { cursor:pointer; }
 }
 .wa-float:hover::after { opacity:1; }
 
+/* ══════════════════════════════════════
+   NEW SIMPLE TOOLS STYLES
+══════════════════════════════════════ */
+
+/* ── SIMPLE TOOL HERO ── */
+.simple-hero {
+  background: linear-gradient(135deg, #1a1208 0%, #2d1f08 50%, #1a1208 100%);
+  border-radius: var(--r);
+  padding: 32px 36px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.simple-hero::before {
+  content: '';
+  position: absolute;
+  right: -80px; top: -80px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(212,137,26,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.simple-hero-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; font-weight: 900;
+  color: #f0e8d0; margin-bottom: 6px;
+}
+.simple-hero-text h2 span { color: var(--gold2); }
+.simple-hero-text p {
+  font-size: 13px; color: rgba(240,232,208,0.6);
+  line-height: 1.6; max-width: 420px;
+}
+.simple-hero-cta {
+  padding: 12px 28px;
+  background: var(--gold2); color: #080600;
+  border: none; border-radius: 8px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer; transition: opacity .15s;
+  white-space: nowrap; flex-shrink: 0;
+}
+.simple-hero-cta:hover { opacity: 0.88; }
+
+/* ── THREE SIMPLE TOOL CARDS ── */
+.simple-tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.simple-tool-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: box-shadow .2s, transform .15s;
+}
+.simple-tool-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+.stc-header {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--s2);
+}
+.stc-header-row {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 4px;
+}
+.stc-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: var(--gold4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.stc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px; font-weight: 700; color: var(--text);
+}
+.stc-subtitle { font-size: 11px; color: var(--t3); line-height: 1.5; }
+.stc-body { padding: 18px 20px; }
+.stc-input-wrap { margin-bottom: 12px; }
+.stc-label {
+  display: block; font-size: 9px; font-weight: 700;
+  color: var(--t3); text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 5px;
+}
+.stc-input {
+  width: 100%; padding: 10px 14px;
+  background: var(--s2); border: 1.5px solid var(--border);
+  border-radius: 8px; color: var(--text); font-size: 13px;
+  font-family: 'Plus Jakarta Sans', sans-serif; outline: none;
+  transition: border .15s, background .15s;
+}
+.stc-input:focus { border-color: var(--gold); background: #fff; }
+select.stc-input { cursor: pointer; }
+.stc-result {
+  background: linear-gradient(135deg, var(--gold3), rgba(184,114,10,0.04));
+  border: 1.5px solid rgba(184,114,10,0.2);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 14px;
+}
+.stc-result-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--gold); line-height: 1;
+  margin-bottom: 2px;
+}
+.stc-result-lbl {
+  font-size: 10px; font-weight: 700;
+  color: var(--t3); text-transform: uppercase; letter-spacing: 1.5px;
+}
+.stc-result-sub {
+  font-size: 11px; color: var(--t2);
+  margin-top: 8px; line-height: 1.6;
+  padding-top: 8px; border-top: 1px solid rgba(184,114,10,0.15);
+}
+.stc-result-green { color: var(--green) !important; }
+.stc-result-red { color: var(--red) !important; }
+.stc-cta {
+  display: block; width: 100%;
+  margin-top: 12px; padding: 10px;
+  background: var(--gold); color: #fff;
+  border: none; border-radius: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer; transition: opacity .15s;
+  text-align: center;
+}
+.stc-cta:hover { opacity: 0.85; }
+
+/* Lender comparison table */
+.lender-compare-table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+.lender-compare-table th {
+  font-size: 9px; color: var(--t3);
+  text-transform: uppercase; letter-spacing: 1.5px;
+  padding: 8px 10px; text-align: left;
+  border-bottom: 2px solid var(--border); font-weight: 700;
+}
+.lender-compare-table td {
+  padding: 9px 10px; font-size: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.lender-compare-table tr:last-child td { border-bottom: none; }
+.lender-compare-table tr:hover td { background: var(--s2); }
+.lender-best-badge {
+  display: inline-block;
+  font-size: 9px; font-weight: 700;
+  padding: 2px 7px; border-radius: 10px;
+  background: rgba(45,122,58,0.12);
+  color: var(--green);
+  border: 1px solid rgba(45,122,58,0.2);
+  margin-left: 4px;
+}
+
+/* Advanced tools toggle */
+.advanced-toggle-bar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px;
+  background: var(--s3); border: 1px solid var(--border2);
+  border-radius: var(--r);
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background .15s;
+}
+.advanced-toggle-bar:hover { background: var(--bg2); }
+.advanced-toggle-title {
+  font-size: 12px; font-weight: 700; color: var(--t2);
+  flex: 1;
+}
+.advanced-toggle-sub {
+  font-size: 11px; color: var(--t3);
+}
+.advanced-toggle-arrow {
+  font-size: 14px; color: var(--gold);
+  transition: transform .25s;
+}
+.advanced-toggle-arrow.open { transform: rotate(180deg); }
+.advanced-tools-section { display: none; }
+.advanced-tools-section.open { display: block; }
+
 /* ── MOBILE ── */
 @media(max-width:768px){
-  .two,.two-eq,.three,.four,.form-grid,.services-grid{grid-template-columns:1fr;}
+  .two,.two-eq,.three,.four,.form-grid,.services-grid,.simple-tools-grid{grid-template-columns:1fr;}
   .form-full{grid-column:1;}
   .hero-inner{flex-direction:column;}
   .hero-cta-group{align-items:flex-start;}
   .profile-card{flex-direction:column;}
   .loan-hero{padding:24px 18px;}
   .loan-hero-title{font-size:22px;}
+  .simple-hero{flex-direction:column;}
+  .simple-hero-text h2{font-size:20px;}
 }
 ::-webkit-scrollbar{width:4px;height:4px;}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
@@ -399,16 +597,16 @@ select.form-input { cursor:pointer; }
     <div class="hero-left">
       <div class="hero-logo">निवेश<em>भूमि</em></div>
       <div class="hero-url">niveshbhoomi.in</div>
-      <div class="hero-tagline">Professional real estate finance calculators &amp; home loan advisory for Delhi NCR investors and buyers</div>
+      <div class="hero-tagline">Home loan eligibility, EMI & lender comparison — instant answers, free advisory in Delhi NCR</div>
       <div class="hero-badges">
-        <span class="badge">FREE · CFA-Grade Tools</span>
-        <span class="badge badge-green">✓ No Login · No Ads</span>
+        <span class="badge">FREE · No Login</span>
+        <span class="badge badge-green">✓ 15+ Lenders Compared</span>
         <span class="badge">🏠 Home Loan DSA · Delhi NCR</span>
       </div>
     </div>
     <div class="hero-cta-group">
-      <button class="hero-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[6])">Get Free Loan Consultation →</button>
-      <a class="hero-cta hero-cta-ghost" href="#calculators">Use Free Calculators ↓</a>
+      <button class="hero-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[9])">Get Free Loan Consultation →</button>
+      <a class="hero-cta hero-cta-ghost" href="#tools">Check Eligibility ↓</a>
     </div>
   </div>
 </div>
@@ -416,16 +614,22 @@ select.form-input { cursor:pointer; }
 <!-- ══════════════════════════════════════
      STICKY TABS
 ══════════════════════════════════════ -->
-<div class="hdr" id="calculators">
+<div class="hdr" id="tools">
   <div class="hdr-in">
     <div class="tabs">
-      <button class="tab active" onclick="showTab('irr',this)">① IRR / NPV</button>
-      <button class="tab" onclick="showTab('xirr',this)">② XIRR</button>
-      <button class="tab" onclick="showTab('construction',this)">③ Construction Finance</button>
-      <button class="tab" onclick="showTab('roe',this)">④ ROE / Equity Return</button>
-      <button class="tab" onclick="showTab('ltv',this)">⑤ LTV & Debt Yield</button>
-      <button class="tab" onclick="showTab('emi',this)">⑥ EMI & Loan Cost</button>
-      <button class="tab tab-loan" onclick="showTab('loan',this)">🏠 Get a Loan</button>
+      <!-- Simple tools -->
+      <button class="tab active" onclick="showTab('simple',this)">🏠 Eligibility & EMI</button>
+      <button class="tab tab-loan" onclick="showTab('loan',this)">📋 Get a Loan</button>
+      <!-- Divider -->
+      <span class="tab-divider">|</span>
+      <span class="tab-group-label">Advanced</span>
+      <!-- Advanced tools -->
+      <button class="tab" onclick="showTab('irr',this)">IRR / NPV</button>
+      <button class="tab" onclick="showTab('xirr',this)">XIRR</button>
+      <button class="tab" onclick="showTab('construction',this)">Construction</button>
+      <button class="tab" onclick="showTab('roe',this)">ROE</button>
+      <button class="tab" onclick="showTab('ltv',this)">LTV & Debt Yield</button>
+      <button class="tab" onclick="showTab('emi',this)">EMI Detail</button>
     </div>
   </div>
 </div>
@@ -433,9 +637,175 @@ select.form-input { cursor:pointer; }
 <div class="main">
 
 <!-- ════════════════════════════════════════════════════════
-     TAB 1: IRR / NPV
+     TAB 0: SIMPLE TOOLS (NEW — DEFAULT LANDING)
 ════════════════════════════════════════════════════════ -->
-<div id="tab-irr" class="sec active">
+<div id="tab-simple" class="sec active">
+
+  <!-- Hero strip -->
+  <div class="simple-hero">
+    <div class="simple-hero-text">
+      <h2>Find out in <span>60 seconds</span> —<br/>how much loan you can get</h2>
+      <p>Three simple questions answered instantly. No jargon, no forms, no pressure. Just numbers.</p>
+    </div>
+    <button class="simple-hero-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[1])">Talk to Prashant Free →</button>
+  </div>
+
+  <!-- Three tool cards -->
+  <div class="simple-tools-grid">
+
+    <!-- CARD 1: Eligibility -->
+    <div class="simple-tool-card">
+      <div class="stc-header">
+        <div class="stc-header-row">
+          <div class="stc-icon">💰</div>
+          <div>
+            <div class="stc-title">How much loan can I get?</div>
+          </div>
+        </div>
+        <div class="stc-subtitle">Enter your salary — get an instant loan estimate</div>
+      </div>
+      <div class="stc-body">
+        <div class="stc-input-wrap">
+          <label class="stc-label">Monthly Take-home Salary (₹)</label>
+          <input type="number" class="stc-input" id="s-income" value="60000" step="5000" oninput="calcEligibility()"/>
+        </div>
+        <div class="stc-input-wrap">
+          <label class="stc-label">Existing EMIs per month (₹)</label>
+          <input type="number" class="stc-input" id="s-existing-emi" value="0" step="1000" oninput="calcEligibility()"/>
+        </div>
+        <div class="stc-input-wrap">
+          <label class="stc-label">Loan Tenure</label>
+          <select class="stc-input" id="s-tenure-elig" onchange="calcEligibility()">
+            <option value="20" selected>20 years</option>
+            <option value="25">25 years</option>
+            <option value="30">30 years</option>
+            <option value="15">15 years</option>
+          </select>
+        </div>
+        <div class="stc-result" id="elig-result">
+          <div class="stc-result-val" id="elig-val">—</div>
+          <div class="stc-result-lbl">Maximum loan you may get</div>
+          <div class="stc-result-sub" id="elig-sub"></div>
+        </div>
+        <button class="stc-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[1])">Get this sanctioned — free →</button>
+      </div>
+    </div>
+
+    <!-- CARD 2: EMI -->
+    <div class="simple-tool-card">
+      <div class="stc-header">
+        <div class="stc-header-row">
+          <div class="stc-icon">📅</div>
+          <div>
+            <div class="stc-title">What will my EMI be?</div>
+          </div>
+        </div>
+        <div class="stc-subtitle">Enter loan amount — see monthly payment instantly</div>
+      </div>
+      <div class="stc-body">
+        <div class="stc-input-wrap">
+          <label class="stc-label">Loan Amount (₹)</label>
+          <input type="number" class="stc-input" id="s-loan-amt" value="5000000" step="100000" oninput="calcSimpleEMI()"/>
+        </div>
+        <div class="stc-input-wrap">
+          <label class="stc-label">Interest Rate (% per year)</label>
+          <select class="stc-input" id="s-rate-sel" onchange="calcSimpleEMI()">
+            <option value="8.35">8.35% — Lowest available</option>
+            <option value="8.5">8.50% — SBI / Union Bank</option>
+            <option value="8.75" selected>8.75% — HDFC / ICICI</option>
+            <option value="9.0">9.00% — Bajaj / Axis</option>
+            <option value="9.5">9.50% — NBFCs</option>
+          </select>
+        </div>
+        <div class="stc-input-wrap">
+          <label class="stc-label">Loan Tenure</label>
+          <select class="stc-input" id="s-tenure-emi" onchange="calcSimpleEMI()">
+            <option value="20" selected>20 years</option>
+            <option value="25">25 years</option>
+            <option value="30">30 years</option>
+            <option value="15">15 years</option>
+            <option value="10">10 years</option>
+          </select>
+        </div>
+        <div class="stc-result" id="emi-simple-result">
+          <div class="stc-result-val" id="emi-simple-val">—</div>
+          <div class="stc-result-lbl">Monthly EMI</div>
+          <div class="stc-result-sub" id="emi-simple-sub"></div>
+        </div>
+        <button class="stc-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[1])">Get the best rate for you →</button>
+      </div>
+    </div>
+
+    <!-- CARD 3: Lender Compare -->
+    <div class="simple-tool-card">
+      <div class="stc-header">
+        <div class="stc-header-row">
+          <div class="stc-icon">🏦</div>
+          <div>
+            <div class="stc-title">Which bank is best for me?</div>
+          </div>
+        </div>
+        <div class="stc-subtitle">Compare rates across 8 major lenders instantly</div>
+      </div>
+      <div class="stc-body">
+        <div class="stc-input-wrap">
+          <label class="stc-label">Loan Amount (₹)</label>
+          <input type="number" class="stc-input" id="s-cmp-loan" value="5000000" step="100000" oninput="calcLenderCompare()"/>
+        </div>
+        <div class="stc-input-wrap">
+          <label class="stc-label">Your Profile</label>
+          <select class="stc-input" id="s-cmp-profile" onchange="calcLenderCompare()">
+            <option value="sal_govt">Salaried — Govt / PSU</option>
+            <option value="sal_pvt" selected>Salaried — Private</option>
+            <option value="self">Self Employed</option>
+          </select>
+        </div>
+        <div class="stc-input-wrap">
+          <label class="stc-label">Loan Tenure</label>
+          <select class="stc-input" id="s-cmp-tenure" onchange="calcLenderCompare()">
+            <option value="20" selected>20 years</option>
+            <option value="25">25 years</option>
+            <option value="30">30 years</option>
+            <option value="15">15 years</option>
+          </select>
+        </div>
+        <div id="lender-compare-result" style="margin-top:14px;overflow-x:auto"></div>
+        <button class="stc-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[1])">Apply through Prashant — free →</button>
+      </div>
+    </div>
+
+  </div><!-- /simple-tools-grid -->
+
+  <!-- Quick explainer strip -->
+  <div class="card" style="padding:20px 28px;">
+    <div style="display:flex;align-items:flex-start;gap:32px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:180px;">
+        <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">How eligibility works</div>
+        <div style="font-size:12px;color:var(--t2);line-height:1.8;">
+          Most banks allow EMI up to <strong>50% of your net salary</strong>. So if you earn ₹60,000/month, your max EMI is ₹30,000 — which means a loan of roughly ₹30–35 lakh at current rates.
+        </div>
+      </div>
+      <div style="flex:1;min-width:180px;">
+        <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">What affects your rate</div>
+        <div style="font-size:12px;color:var(--t2);line-height:1.8;">
+          CIBIL score above 750 gets the best rates. Govt employees get lower rates than private sector. Existing loans reduce your eligible amount.
+        </div>
+      </div>
+      <div style="flex:1;min-width:180px;">
+        <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Need a more detailed analysis?</div>
+        <div style="font-size:12px;color:var(--t2);line-height:1.8;">
+          Use the <strong>Advanced Tools</strong> above — IRR, ROE, LTV — for deep investment analysis. Or <a href="#" onclick="showTab('loan',document.querySelectorAll('.tab')[1]);return false;" style="color:var(--gold);font-weight:600;">talk to Prashant free</a> for a personalised assessment.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB: IRR / NPV
+════════════════════════════════════════════════════════ -->
+<div id="tab-irr" class="sec">
   <div class="section-intro">
     <strong>IRR (Internal Rate of Return)</strong> is the annualized return on your total investment including purchase, rental income, and sale proceeds. <strong>NPV (Net Present Value)</strong> tells you how much value the deal creates above your minimum required return. If NPV &gt; 0, the deal beats your benchmark.
   </div>
@@ -517,7 +887,7 @@ select.form-input { cursor:pointer; }
 </div>
 
 <!-- ════════════════════════════════════════════════════════
-     TAB 2: XIRR
+     TAB: XIRR
 ════════════════════════════════════════════════════════ -->
 <div id="tab-xirr" class="sec">
   <div class="section-intro">
@@ -555,7 +925,7 @@ select.form-input { cursor:pointer; }
 </div>
 
 <!-- ════════════════════════════════════════════════════════
-     TAB 3: CONSTRUCTION FINANCE
+     TAB: CONSTRUCTION FINANCE
 ════════════════════════════════════════════════════════ -->
 <div id="tab-construction" class="sec">
   <div class="section-intro">
@@ -612,7 +982,7 @@ select.form-input { cursor:pointer; }
 </div>
 
 <!-- ════════════════════════════════════════════════════════
-     TAB 4: ROE
+     TAB: ROE
 ════════════════════════════════════════════════════════ -->
 <div id="tab-roe" class="sec">
   <div class="section-intro">
@@ -668,7 +1038,7 @@ select.form-input { cursor:pointer; }
 </div>
 
 <!-- ════════════════════════════════════════════════════════
-     TAB 5: LTV & DEBT YIELD
+     TAB: LTV & DEBT YIELD
 ════════════════════════════════════════════════════════ -->
 <div id="tab-ltv" class="sec">
   <div class="section-intro">
@@ -716,7 +1086,7 @@ select.form-input { cursor:pointer; }
 </div>
 
 <!-- ════════════════════════════════════════════════════════
-     TAB 6: EMI
+     TAB: EMI DETAIL
 ════════════════════════════════════════════════════════ -->
 <div id="tab-emi" class="sec">
   <div class="section-intro">
@@ -772,7 +1142,7 @@ select.form-input { cursor:pointer; }
 </div>
 
 <!-- ════════════════════════════════════════════════════════
-     TAB 7: GET A LOAN (Lead Capture)
+     TAB: GET A LOAN (Lead Capture) — UNCHANGED
 ════════════════════════════════════════════════════════ -->
 <div id="tab-loan" class="sec">
 
@@ -832,7 +1202,7 @@ select.form-input { cursor:pointer; }
   <!-- Form + Profile side by side -->
   <div class="two-eq" style="gap:24px;align-items:start">
 
-    <!-- LEAD FORM -->
+    <!-- LEAD FORM — completely unchanged -->
     <div class="card" style="padding:28px">
       <div class="ctitle" style="font-size:18px;margin-bottom:4px">Request Free Consultation</div>
       <p style="font-size:12px;color:var(--t3);margin-bottom:22px;line-height:1.6">Fill in your details — I'll reach out within 2 hours on WhatsApp or call.</p>
@@ -977,7 +1347,7 @@ select.form-input { cursor:pointer; }
       All calculations are for educational purposes. Consult a SEBI-registered advisor and CA before investing.</div>
     </div>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <button onclick="showTab('loan',document.querySelectorAll('.tab')[6])" style="padding:10px 20px;background:var(--gold);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;">Get Loan Help →</button>
+      <button onclick="showTab('loan',document.querySelectorAll('.tab')[1])" style="padding:10px 20px;background:var(--gold);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;">Get Loan Help →</button>
       <a href="https://www.linkedin.com/in/prashant-kumar-3104401b5/" target="_blank" style="padding:10px 20px;background:transparent;color:var(--t2);border:1.5px solid var(--border2);border-radius:8px;font-size:12px;font-weight:600;text-decoration:none">LinkedIn</a>
     </div>
   </div>
@@ -1029,16 +1399,123 @@ function kvRow(k,v,vc){
   return `<div class="row-kv"><span class="kv-k">${k}</span><span class="kv-v" style="color:${vc||'var(--text)'}">${v}</span></div>`;
 }
 
+/* ── TAB SWITCHER ── */
 function showTab(id,el){
   document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+id).classList.add('active');
   if(el)el.classList.add('active');
-  const fns={irr:calcIRR,xirr:calcXIRR,construction:calcConstruction,roe:calcROE,ltv:calcLTV,emi:calcEMI};
+  const fns={
+    simple:()=>{calcEligibility();calcSimpleEMI();calcLenderCompare();},
+    irr:calcIRR,xirr:calcXIRR,construction:calcConstruction,
+    roe:calcROE,ltv:calcLTV,emi:calcEMI
+  };
   if(fns[id])fns[id]();
 }
 
-// ── IRR ──
+/* ══════════════════════════════════════
+   NEW SIMPLE TOOLS LOGIC
+══════════════════════════════════════ */
+
+/* Tool 1: Eligibility */
+function calcEligibility(){
+  const income = fi('s-income');
+  const existingEMI = fi('s-existing-emi');
+  const tenure = fi('s-tenure-elig') || 20;
+  const rate = 8.75; // benchmark rate
+
+  if(income <= 0){ document.getElementById('elig-val').textContent='—'; return; }
+
+  // Most banks: max EMI = 50% of net income
+  const maxEMI = income * 0.50 - existingEMI;
+  if(maxEMI <= 0){
+    document.getElementById('elig-val').textContent = '₹0';
+    document.getElementById('elig-sub').textContent = 'Your existing EMIs exceed the 50% income limit. Clearing some loans will improve eligibility.';
+    return;
+  }
+
+  // Back-calculate loan from EMI
+  const mr = rate / 1200;
+  const n = tenure * 12;
+  const maxLoan = maxEMI * (Math.pow(1+mr,n) - 1) / (mr * Math.pow(1+mr,n));
+
+  document.getElementById('elig-val').textContent = fC(maxLoan);
+  document.getElementById('elig-sub').innerHTML =
+    `Your eligible EMI: <strong>${fI(maxEMI)}/mo</strong> &nbsp;|&nbsp; ` +
+    `At ${rate}% for ${tenure} yrs &nbsp;|&nbsp; ` +
+    `Down payment needed: ~<strong>${fC(maxLoan * 0.2)}</strong>`;
+}
+
+/* Tool 2: Simple EMI */
+function calcSimpleEMI(){
+  const loan = fi('s-loan-amt');
+  const rate = fi('s-rate-sel') || 8.75;
+  const tenure = fi('s-tenure-emi') || 20;
+
+  if(loan <= 0){ document.getElementById('emi-simple-val').textContent='—'; return; }
+
+  const emi = emiCalc(loan, rate, tenure * 12);
+  const totalPay = emi * tenure * 12;
+  const totalInterest = totalPay - loan;
+
+  document.getElementById('emi-simple-val').textContent = fI(emi);
+  document.getElementById('emi-simple-sub').innerHTML =
+    `Total interest over ${tenure} yrs: <strong style="color:var(--red)">${fC(totalInterest)}</strong><br/>` +
+    `Total amount paid: <strong>${fC(totalPay)}</strong> &nbsp;|&nbsp; ` +
+    `Interest = <strong>${pct(totalInterest/totalPay*100,0)}</strong> of total`;
+}
+
+/* Tool 3: Lender Compare */
+function calcLenderCompare(){
+  const loan = fi('s-cmp-loan') || 5000000;
+  const profile = gi('s-cmp-profile') || 'sal_pvt';
+  const tenure = fi('s-cmp-tenure') || 20;
+
+  // Rate table: [lender, sal_govt, sal_pvt, self, processing]
+  const lenders = [
+    ['SBI',           8.50, 8.60, 8.85, '₹10,000'],
+    ['Union Bank',    8.35, 8.50, 8.75, '₹15,000'],
+    ['HDFC Bank',     8.60, 8.75, 9.00, '0.5%'],
+    ['ICICI Bank',    8.65, 8.75, 9.10, '0.5%'],
+    ['Kotak Mahindra',8.70, 8.85, 9.25, '0.5%'],
+    ['Axis Bank',     8.75, 9.00, 9.40, '1%'],
+    ['Bajaj Finserv', 8.85, 9.00, 9.50, '₹7,999'],
+    ['PNB Housing',   9.00, 9.20, 9.75, '1%'],
+  ];
+
+  const pIdx = profile === 'sal_govt' ? 1 : profile === 'sal_pvt' ? 2 : 3;
+  const rows = lenders.map(l => ({
+    name: l[0], rate: l[pIdx], proc: l[4],
+    emi: emiCalc(loan, l[pIdx], tenure * 12)
+  }));
+  rows.sort((a,b) => a.emi - b.emi);
+  const minEMI = rows[0].emi;
+
+  let html = `<table class="lender-compare-table">
+    <thead><tr><th>Lender</th><th>Rate</th><th>EMI/mo</th><th>vs Best</th></tr></thead>
+    <tbody>`;
+  rows.forEach((r,i) => {
+    const diff = r.emi - minEMI;
+    const diffStr = i===0 ? '<span class="lender-best-badge">BEST</span>' : `+${fI(diff).replace('₹','₹')}`;
+    html += `<tr>
+      <td style="font-weight:${i===0?'700':'400'};color:${i===0?'var(--green)':'inherit'}">${r.name}</td>
+      <td>${r.rate.toFixed(2)}%</td>
+      <td style="font-weight:600">${fI(r.emi)}</td>
+      <td style="font-size:11px;color:${i===0?'var(--green)':'var(--t3)'}">${diffStr}</td>
+    </tr>`;
+  });
+  html += `</tbody></table>
+    <div style="font-size:10px;color:var(--t3);margin-top:8px;line-height:1.5;">
+      Indicative rates. Actual rates depend on CIBIL score, income, and lender policy. Rates as of early 2025.
+    </div>`;
+  document.getElementById('lender-compare-result').innerHTML = html;
+}
+
+/* ══════════════════════════════════════
+   EXISTING ADVANCED TOOLS — UNCHANGED
+══════════════════════════════════════ */
+
+/* ── IRR ── */
 function getStampDuty(){
   const sel=document.getElementById('i-city');
   if(!sel)return 6;
@@ -1107,7 +1584,7 @@ function calcIRR(){
   document.getElementById('irr-cf').innerHTML=cfHTML;
 }
 
-// ── XIRR ──
+/* ── XIRR ── */
 let xirrRows=[
   {date:'2024-01-15',amount:-3000000},{date:'2024-07-15',amount:-2000000},
   {date:'2025-01-15',amount:-1500000},{date:'2025-07-15',amount:300000},
@@ -1190,7 +1667,7 @@ function calcXIRR(){
     </div>`;
 }
 
-// ── CONSTRUCTION ──
+/* ── CONSTRUCTION ── */
 function calcConstruction(){
   const area=fi('c-area'),sp=fi('c-sp'),land=fi('c-land'),cc=fi('c-cc'),
         other=fi('c-other'),months=fi('c-months'),loan=fi('c-loan'),
@@ -1232,7 +1709,7 @@ function calcConstruction(){
   document.getElementById('c-schedule').innerHTML=schedHTML;
 }
 
-// ── ROE ──
+/* ── ROE ── */
 function calcROE(){
   const price=fi('r-price'),sd=fi('r-sd'),interior=fi('r-interior'),
         loan=fi('r-loan'),rate=fi('r-rate'),tenure=fi('r-tenure'),
@@ -1269,7 +1746,7 @@ function calcROE(){
     `<div class="alert a-info" style="margin-top:12px">Every 1% property appreciation = <strong>${pct(price/equity)}</strong> return on your equity. Leverage multiplies your returns.</div>`;
 }
 
-// ── LTV ──
+/* ── LTV ── */
 function calcLTV(){
   const value=fi('l-value'),noiGross=fi('l-noi-gross'),opex=fi('l-opex'),
         loan=fi('l-loan'),rate=fi('l-rate'),tenure=fi('l-tenure');
@@ -1317,7 +1794,7 @@ function calcLTV(){
     <strong style="color:var(--gold)">LTV vs Loan-to-Cost:</strong> Lenders use both — whichever gives the lower loan is binding.`;
 }
 
-// ── EMI ──
+/* ── EMI (Advanced) ── */
 function calcEMI(){
   const loan=fi('e-loan'),rate=fi('e-rate'),tenure=fi('e-tenure'),
         proc=fi('e-proc'),ins=fi('e-ins'),prepay=fi('e-prepay'),
@@ -1364,7 +1841,7 @@ function calcEMI(){
   document.getElementById('emi-amort').innerHTML=amHTML;
 }
 
-// ── FORM SUBMIT ──
+/* ── FORM SUBMIT — unchanged ── */
 function handleSubmit(e){
   document.getElementById("lead-form").style.display="none";
   document.getElementById("success-msg").style.display="block";
@@ -1378,10 +1855,11 @@ function handleSubmit(e){
   setTimeout(()=>{window.open("https://wa.me/918130521740?text="+waMsg,"_blank");},1000);
 }
 
-// ── INIT ──
+/* ── INIT ── */
 renderXIRRRows();
-calcIRR();
-calcXIRR();
+calcEligibility();
+calcSimpleEMI();
+calcLenderCompare();
 </script>
 </body>
 </html>
