@@ -8,133 +8,55 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  --bg:#faf8f4;
-  --bg2:#f4f0e8;
-  --surface:#ffffff;
-  --s2:#f9f7f2;
-  --s3:#f0ebe0;
-  --border:#e8e0d0;
-  --border2:#d8cfc0;
-  --gold:#b8720a;
-  --gold2:#d4891a;
-  --gold3:rgba(184,114,10,0.08);
-  --gold4:rgba(184,114,10,0.15);
-  --text:#1a1610;
-  --t2:#5a5040;
-  --t3:#9a8f7a;
-  --green:#2d7a3a;
-  --green-bg:rgba(45,122,58,0.08);
-  --red:#b03030;
-  --red-bg:rgba(176,48,48,0.08);
-  --blue:#2a5fa0;
-  --blue-bg:rgba(42,95,160,0.08);
+  --bg:#faf8f4;--bg2:#f4f0e8;--surface:#ffffff;--s2:#f9f7f2;--s3:#f0ebe0;
+  --border:#e8e0d0;--border2:#d8cfc0;
+  --gold:#b8720a;--gold2:#d4891a;--gold3:rgba(184,114,10,0.08);--gold4:rgba(184,114,10,0.15);
+  --text:#1a1610;--t2:#5a5040;--t3:#9a8f7a;
+  --green:#2d7a3a;--green-bg:rgba(45,122,58,0.08);
+  --red:#b03030;--red-bg:rgba(176,48,48,0.08);
+  --blue:#2a5fa0;--blue-bg:rgba(42,95,160,0.08);
   --orange:#a05a1a;
-  --shadow:0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
-  --shadow-lg:0 4px 24px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow:0 1px 3px rgba(0,0,0,0.06),0 4px 16px rgba(0,0,0,0.04);
+  --shadow-lg:0 4px 24px rgba(0,0,0,0.08),0 1px 3px rgba(0,0,0,0.04);
   --r:12px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;min-height:100vh;}
 
-/* ── HERO BANNER ── */
-.hero-banner {
-  background: linear-gradient(135deg, #1a1208 0%, #2d1f08 40%, #1a1208 100%);
-  color: #f0e8d0;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-}
-.hero-banner::before {
-  content:'';
-  position:absolute;inset:0;
-  background: radial-gradient(ellipse at 70% 50%, rgba(212,137,26,0.12) 0%, transparent 65%);
-  pointer-events:none;
-}
-.hero-inner {
-  max-width:1100px;margin:0 auto;padding:36px 24px 32px;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
-}
-.hero-left {}
-.hero-logo {
-  font-family:'Playfair Display',serif;
-  font-size:32px;font-weight:900;
-  color:#f0e8d0;letter-spacing:1px;
-  line-height:1;margin-bottom:4px;
-}
-.hero-logo em { color: var(--gold2); font-style:normal; }
-.hero-url { font-size:11px;color:rgba(240,232,208,0.45);letter-spacing:2px;margin-bottom:10px; }
-.hero-tagline { font-size:13px;color:rgba(240,232,208,0.65);line-height:1.6;max-width:500px; }
-.hero-badges { display:flex;gap:8px;flex-wrap:wrap;margin-top:14px; }
-.badge {
-  font-size:10px;font-weight:700;letter-spacing:0.8px;
-  padding:4px 12px;border-radius:20px;
-  background:rgba(212,137,26,0.15);
-  color:var(--gold2);
-  border:1px solid rgba(212,137,26,0.25);
-}
-.badge-green { background:rgba(45,122,58,0.15);color:#5acc6a;border-color:rgba(45,122,58,0.25); }
-.hero-cta-group { display:flex;flex-direction:column;align-items:flex-end;gap:10px; }
-.hero-cta {
-  display:inline-block;
-  padding:12px 24px;
-  background:var(--gold2);
-  color:#080600;
-  border-radius:8px;
-  font-size:12px;font-weight:700;letter-spacing:0.5px;
-  text-decoration:none;
-  white-space:nowrap;
-  transition:opacity .15s;
-  cursor:pointer;
-  border:none;
-}
-.hero-cta:hover { opacity:0.88; }
-.hero-cta-ghost {
-  background:transparent;
-  color:rgba(240,232,208,0.7);
-  border:1px solid rgba(240,232,208,0.2);
-  font-size:11px;padding:8px 18px;
-}
+/* ── HERO ── */
+.hero-banner{background:linear-gradient(135deg,#1a1208 0%,#2d1f08 40%,#1a1208 100%);color:#f0e8d0;padding:0;position:relative;overflow:hidden;}
+.hero-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(212,137,26,0.12) 0%,transparent 65%);pointer-events:none;}
+.hero-inner{max-width:1100px;margin:0 auto;padding:36px 24px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.hero-logo{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:#f0e8d0;letter-spacing:1px;line-height:1;margin-bottom:4px;}
+.hero-logo em{color:var(--gold2);font-style:normal;}
+.hero-url{font-size:11px;color:rgba(240,232,208,0.45);letter-spacing:2px;margin-bottom:10px;}
+.hero-tagline{font-size:13px;color:rgba(240,232,208,0.65);line-height:1.6;max-width:500px;}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{font-size:10px;font-weight:700;letter-spacing:0.8px;padding:4px 12px;border-radius:20px;background:rgba(212,137,26,0.15);color:var(--gold2);border:1px solid rgba(212,137,26,0.25);}
+.badge-green{background:rgba(45,122,58,0.15);color:#5acc6a;border-color:rgba(45,122,58,0.25);}
+.hero-cta-group{display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+.hero-cta{display:inline-block;padding:12px 24px;background:var(--gold2);color:#080600;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:0.5px;text-decoration:none;white-space:nowrap;transition:opacity .15s;cursor:pointer;border:none;}
+.hero-cta:hover{opacity:0.88;}
+.hero-cta-ghost{background:transparent;color:rgba(240,232,208,0.7);border:1px solid rgba(240,232,208,0.2);font-size:11px;padding:8px 18px;}
 
-/* ── HEADER (sticky, light) ── */
-.hdr{
-  background:var(--surface);
-  border-bottom:1px solid var(--border);
-  position:sticky;top:0;z-index:100;
-  box-shadow:0 2px 8px rgba(0,0,0,0.06);
-}
+/* ── HEADER ── */
+.hdr{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
 .hdr-in{max-width:1100px;margin:0 auto;padding:0 20px;}
 .tabs{display:flex;gap:2px;overflow-x:auto;padding:2px 0;}
-.tab{
-  padding:12px 16px;background:transparent;
-  color:var(--t3);border:none;border-bottom:2px solid transparent;
-  cursor:pointer;font-size:11px;font-weight:600;letter-spacing:.6px;
-  text-transform:uppercase;white-space:nowrap;
-  font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s;
-}
+.tab{padding:12px 16px;background:transparent;color:var(--t3);border:none;border-bottom:2px solid transparent;cursor:pointer;font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;white-space:nowrap;font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s;}
 .tab:hover{color:var(--t2);}
 .tab.active{color:var(--gold);border-bottom-color:var(--gold);}
-.tab-loan {color:var(--green)!important;}
+.tab-loan{color:var(--green)!important;}
 .tab-loan.active{color:var(--green)!important;border-bottom-color:var(--green)!important;}
-.tab-divider {
-  display:flex;align-items:center;padding:0 8px;
-  color:var(--border2);font-size:16px;pointer-events:none;
-}
-.tab-group-label {
-  font-size:9px;font-weight:700;letter-spacing:1.5px;
-  color:var(--t3);padding:0 6px;display:flex;align-items:center;
-  text-transform:uppercase;pointer-events:none;white-space:nowrap;
-}
+.tab-rate{color:var(--blue)!important;}
+.tab-rate.active{color:var(--blue)!important;border-bottom-color:var(--blue)!important;}
+.tab-divider{display:flex;align-items:center;padding:0 8px;color:var(--border2);font-size:16px;pointer-events:none;}
+.tab-group-label{font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--t3);padding:0 6px;display:flex;align-items:center;text-transform:uppercase;pointer-events:none;white-space:nowrap;}
 
 /* ── LAYOUT ── */
 .main{max-width:1100px;margin:0 auto;padding:28px 16px;}
 .sec{display:none;}.sec.active{display:block;}
-
-/* ── CARDS ── */
-.card{
-  background:var(--surface);border-radius:var(--r);
-  padding:22px;border:1px solid var(--border);
-  box-shadow:var(--shadow);
-}
+.card{background:var(--surface);border-radius:var(--r);padding:22px;border:1px solid var(--border);box-shadow:var(--shadow);}
 .card+.card{margin-top:16px;}
 .ctitle{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;}
 .cdesc{font-size:11px;color:var(--t3);margin-bottom:20px;line-height:1.6;}
@@ -145,22 +67,12 @@ body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans
 
 /* ── INPUTS ── */
 .lbl{display:block;font-size:9px;color:var(--t3);margin-bottom:5px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;}
-.inp{
-  width:100%;padding:10px 14px;
-  background:var(--s2);border:1.5px solid var(--border);
-  border-radius:8px;color:var(--text);font-size:13px;
-  font-family:'Plus Jakarta Sans',sans-serif;outline:none;margin-bottom:14px;
-  transition:border .15s, background .15s;
-}
+.inp{width:100%;padding:10px 14px;background:var(--s2);border:1.5px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;font-family:'Plus Jakarta Sans',sans-serif;outline:none;margin-bottom:14px;transition:border .15s,background .15s;}
 .inp:focus{border-color:var(--gold);background:#fff;}
 select.inp{cursor:pointer;}
 
 /* ── RESULTS ── */
-.metric{
-  background:var(--s2);border-radius:10px;padding:16px;
-  border:1px solid var(--border);
-  border-top:3px solid var(--border2);
-}
+.metric{background:var(--s2);border-radius:10px;padding:16px;border:1px solid var(--border);border-top:3px solid var(--border2);}
 .m-green{border-top-color:var(--green);background:var(--green-bg);}
 .m-red{border-top-color:var(--red);background:var(--red-bg);}
 .m-blue{border-top-color:var(--blue);background:var(--blue-bg);}
@@ -191,394 +103,165 @@ tr:hover td{background:var(--s2);}
 .a-danger{background:rgba(176,48,48,.08);border:1px solid rgba(176,48,48,.2);color:var(--red);}
 .pb-bg{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:4px;}
 .pb-fill{height:100%;border-radius:3px;transition:width .4s;}
-.section-intro{
-  background:linear-gradient(135deg, var(--gold3), var(--bg2));
-  border:1px solid rgba(184,114,10,.15);
-  border-left:4px solid var(--gold2);
-  border-radius:0 10px 10px 0;
-  padding:14px 18px;margin-bottom:20px;
-  font-size:12px;color:var(--t2);line-height:1.7;
-}
+.section-intro{background:linear-gradient(135deg,var(--gold3),var(--bg2));border:1px solid rgba(184,114,10,.15);border-left:4px solid var(--gold2);border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:20px;font-size:12px;color:var(--t2);line-height:1.7;}
 .section-intro strong{color:var(--gold);}
-.btn{
-  padding:10px 22px;background:var(--gold);color:#fff;
-  border:none;border-radius:8px;cursor:pointer;
-  font-size:12px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;
-  letter-spacing:.5px;transition:opacity .15s;
-}
+.btn{padding:10px 22px;background:var(--gold);color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:.5px;transition:opacity .15s;}
 .btn:hover{opacity:.85;}
 .btn-ghost{background:transparent;color:var(--t2);border:1.5px solid var(--border2);}
 .xirr-row input{padding:7px 10px;font-size:12px;margin-bottom:0;}
 
-/* ── LOAN ENQUIRY SECTION ── */
-.loan-hero {
-  background: linear-gradient(135deg, #f0ebe0 0%, #e8e0cc 100%);
-  border: 1px solid var(--border2);
-  border-radius: var(--r);
-  padding: 36px;
-  margin-bottom: 24px;
-  position: relative;
-  overflow: hidden;
-}
-.loan-hero::before {
-  content:'';
-  position:absolute;
-  right:-60px;top:-60px;
-  width:240px;height:240px;
-  background:radial-gradient(circle, rgba(184,114,10,0.1) 0%, transparent 70%);
-  pointer-events:none;
-}
-.loan-hero-title {
-  font-family:'Playfair Display',serif;
-  font-size:28px;font-weight:900;
-  color:var(--text);margin-bottom:6px;
-  line-height:1.2;
-}
-.loan-hero-title span { color:var(--gold); }
-.loan-hero-sub { font-size:13px;color:var(--t2);line-height:1.7;max-width:540px;margin-bottom:20px; }
-.trust-row { display:flex;gap:20px;flex-wrap:wrap;margin-bottom:0; }
-.trust-item {
-  display:flex;align-items:center;gap:8px;
-  font-size:12px;color:var(--t2);font-weight:500;
-}
-.trust-icon {
-  width:32px;height:32px;border-radius:50%;
-  background:var(--gold4);
-  display:flex;align-items:center;justify-content:center;
-  font-size:14px;flex-shrink:0;
-}
-
-/* ── FORM ── */
-.form-grid { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
-.form-full { grid-column:1/-1; }
-.form-label {
-  display:block;font-size:10px;font-weight:700;
-  color:var(--t2);text-transform:uppercase;letter-spacing:1.2px;
-  margin-bottom:6px;
-}
-.form-input {
-  width:100%;padding:12px 16px;
-  background:#fff;border:1.5px solid var(--border);
-  border-radius:8px;color:var(--text);font-size:13px;
-  font-family:'Plus Jakarta Sans',sans-serif;outline:none;
-  transition:border .15s,box-shadow .15s;
-}
-.form-input:focus {
-  border-color:var(--gold);
-  box-shadow:0 0 0 3px rgba(184,114,10,0.1);
-}
-select.form-input { cursor:pointer; }
-.submit-btn {
-  width:100%;padding:14px;
-  background:linear-gradient(135deg, var(--gold2), var(--gold));
-  color:#fff;border:none;border-radius:8px;
-  font-size:14px;font-weight:700;letter-spacing:0.5px;
-  font-family:'Plus Jakarta Sans',sans-serif;
-  cursor:pointer;transition:opacity .2s, transform .1s;
-  margin-top:4px;
-}
-.submit-btn:hover { opacity:0.9; transform:translateY(-1px); }
-.submit-btn:active { transform:translateY(0); }
-.form-note {
-  font-size:11px;color:var(--t3);text-align:center;
-  margin-top:8px;line-height:1.5;
-}
-.success-msg {
-  display:none;
-  background:var(--green-bg);
-  border:1.5px solid rgba(45,122,58,0.25);
-  border-radius:10px;padding:24px;
-  text-align:center;
-}
-.success-msg h3 { color:var(--green);font-size:18px;margin-bottom:8px;font-family:'Playfair Display',serif; }
-.success-msg p { color:var(--t2);font-size:13px;line-height:1.6; }
-
-/* ── SERVICES GRID ── */
-.services-grid { display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px; }
-.service-card {
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--r);padding:20px;
-  box-shadow:var(--shadow);
-  transition:box-shadow .2s, transform .2s;
-}
-.service-card:hover { box-shadow:var(--shadow-lg);transform:translateY(-2px); }
-.service-icon { font-size:28px;margin-bottom:10px; }
-.service-title { font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px; }
-.service-desc { font-size:12px;color:var(--t3);line-height:1.6; }
-.service-rate { font-size:11px;font-weight:700;color:var(--green);margin-top:8px; }
-
-/* ── LENDER LOGOS STRIP ── */
-.lenders-strip {
-  background:var(--s2);border:1px solid var(--border);
-  border-radius:var(--r);padding:16px 20px;
-  margin-bottom:24px;
-}
-.lenders-title { font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px; }
-.lenders-row { display:flex;gap:10px;flex-wrap:wrap; }
-.lender-pill {
-  padding:6px 14px;
-  background:var(--surface);
-  border:1px solid var(--border2);
-  border-radius:20px;
-  font-size:11px;font-weight:600;
-  color:var(--t2);
-}
-
-/* ── ABOUT / PROFILE ── */
-.profile-card {
-  background: linear-gradient(135deg, #1a1208, #2d1f08);
-  border-radius: var(--r);
-  padding: 32px;
-  color: #f0e8d0;
-  display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;
-}
-.profile-avatar {
-  width:72px;height:72px;border-radius:50%;
-  background:rgba(212,137,26,0.2);
-  border:2px solid rgba(212,137,26,0.3);
-  display:flex;align-items:center;justify-content:center;
-  font-size:28px;flex-shrink:0;
-}
-.profile-name {
-  font-family:'Playfair Display',serif;
-  font-size:22px;font-weight:700;color:#f0e8d0;margin-bottom:3px;
-}
-.profile-cred { font-size:11px;color:var(--gold2);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px; }
-.profile-bio { font-size:12px;color:rgba(240,232,208,0.65);line-height:1.8;max-width:560px;margin-bottom:14px; }
-.profile-links { display:flex;gap:10px;flex-wrap:wrap; }
-.profile-link {
-  padding:8px 18px;border-radius:8px;
-  font-size:11px;font-weight:700;letter-spacing:.5px;
-  text-decoration:none;cursor:pointer;border:none;
-  font-family:'Plus Jakarta Sans',sans-serif;
-  transition:opacity .15s;
-  display:inline-block;
-}
-.profile-link:hover { opacity:0.85; }
-.pl-gold { background:var(--gold2);color:#080600; }
-.pl-ghost { background:transparent;color:rgba(240,232,208,0.6);border:1px solid rgba(240,232,208,0.2); }
-
-/* ── WHATSAPP FLOAT ── */
-.wa-float {
-  position:fixed;bottom:24px;right:24px;z-index:200;
-  width:56px;height:56px;border-radius:50%;
-  background:#25D366;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 20px rgba(37,211,102,0.4);
-  text-decoration:none;font-size:26px;
-  transition:transform .2s;
-}
-.wa-float:hover { transform:scale(1.1); }
-.wa-float::after {
-  content:'Get Loan Help';
-  position:absolute;right:64px;
-  background:#1a1208;color:#f0e8d0;
-  font-size:11px;font-weight:700;letter-spacing:.5px;
-  padding:6px 12px;border-radius:6px;
-  white-space:nowrap;
-  opacity:0;transition:opacity .2s;
-  font-family:'Plus Jakarta Sans',sans-serif;
-}
-.wa-float:hover::after { opacity:1; }
+/* ── SIMPLE TOOLS ── */
+.simple-hero{background:linear-gradient(135deg,#1a1208 0%,#2d1f08 50%,#1a1208 100%);border-radius:var(--r);padding:32px 36px;margin-bottom:24px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.simple-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:280px;height:280px;background:radial-gradient(circle,rgba(212,137,26,0.15) 0%,transparent 70%);pointer-events:none;}
+.simple-hero-text h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:#f0e8d0;margin-bottom:6px;}
+.simple-hero-text h2 span{color:var(--gold2);}
+.simple-hero-text p{font-size:13px;color:rgba(240,232,208,0.6);line-height:1.6;max-width:420px;}
+.simple-hero-cta{padding:12px 28px;background:var(--gold2);color:#080600;border:none;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:0.5px;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:opacity .15s;white-space:nowrap;flex-shrink:0;}
+.simple-hero-cta:hover{opacity:0.88;}
+.simple-tools-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:24px;}
+.simple-tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;transition:box-shadow .2s,transform .15s;}
+.simple-tool-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);}
+.stc-header{padding:18px 20px 14px;border-bottom:1px solid var(--border);background:var(--s2);}
+.stc-header-row{display:flex;align-items:center;gap:10px;margin-bottom:4px;}
+.stc-icon{width:36px;height:36px;border-radius:10px;background:var(--gold4);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.stc-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--text);}
+.stc-subtitle{font-size:11px;color:var(--t3);line-height:1.5;}
+.stc-body{padding:18px 20px;}
+.stc-input-wrap{margin-bottom:12px;}
+.stc-label{display:block;font-size:9px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:5px;}
+.stc-input{width:100%;padding:10px 14px;background:var(--s2);border:1.5px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;font-family:'Plus Jakarta Sans',sans-serif;outline:none;transition:border .15s,background .15s;}
+.stc-input:focus{border-color:var(--gold);background:#fff;}
+select.stc-input{cursor:pointer;}
+.stc-result{background:linear-gradient(135deg,var(--gold3),rgba(184,114,10,0.04));border:1.5px solid rgba(184,114,10,0.2);border-radius:10px;padding:14px 16px;margin-top:14px;}
+.stc-result-val{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:2px;}
+.stc-result-lbl{font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:1.5px;}
+.stc-result-sub{font-size:11px;color:var(--t2);margin-top:8px;line-height:1.6;padding-top:8px;border-top:1px solid rgba(184,114,10,0.15);}
+.stc-cta{display:block;width:100%;margin-top:12px;padding:10px;background:var(--gold);color:#fff;border:none;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:0.5px;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:opacity .15s;text-align:center;}
+.stc-cta:hover{opacity:0.85;}
+.lender-compare-table{width:100%;border-collapse:collapse;margin-top:14px;}
+.lender-compare-table th{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:1.5px;padding:8px 10px;text-align:left;border-bottom:2px solid var(--border);font-weight:700;}
+.lender-compare-table td{padding:9px 10px;font-size:12px;border-bottom:1px solid var(--border);}
+.lender-compare-table tr:last-child td{border-bottom:none;}
+.lender-compare-table tr:hover td{background:var(--s2);}
+.lender-best-badge{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;background:rgba(45,122,58,0.12);color:var(--green);border:1px solid rgba(45,122,58,0.2);margin-left:4px;}
 
 /* ══════════════════════════════════════
-   NEW SIMPLE TOOLS STYLES
+   PERSONALIZED RATE ENGINE (NEW)
 ══════════════════════════════════════ */
+.rate-hero{background:linear-gradient(135deg,#0a1f3a 0%,#112d52 50%,#0a1f3a 100%);border-radius:var(--r);padding:32px 36px;margin-bottom:24px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.rate-hero::before{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(42,95,160,0.2) 0%,transparent 70%);pointer-events:none;}
+.rate-hero h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:#e8f0fc;margin-bottom:6px;}
+.rate-hero h2 span{color:#7db8f7;}
+.rate-hero p{font-size:13px;color:rgba(232,240,252,0.6);line-height:1.6;max-width:460px;}
+.rate-hero-badge{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.rate-badge{font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;background:rgba(42,95,160,0.2);color:#7db8f7;border:1px solid rgba(42,95,160,0.3);}
 
-/* ── SIMPLE TOOL HERO ── */
-.simple-hero {
-  background: linear-gradient(135deg, #1a1208 0%, #2d1f08 50%, #1a1208 100%);
-  border-radius: var(--r);
-  padding: 32px 36px;
-  margin-bottom: 24px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.simple-hero::before {
-  content: '';
-  position: absolute;
-  right: -80px; top: -80px;
-  width: 280px; height: 280px;
-  background: radial-gradient(circle, rgba(212,137,26,0.15) 0%, transparent 70%);
-  pointer-events: none;
-}
-.simple-hero-text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px; font-weight: 900;
-  color: #f0e8d0; margin-bottom: 6px;
-}
-.simple-hero-text h2 span { color: var(--gold2); }
-.simple-hero-text p {
-  font-size: 13px; color: rgba(240,232,208,0.6);
-  line-height: 1.6; max-width: 420px;
-}
-.simple-hero-cta {
-  padding: 12px 28px;
-  background: var(--gold2); color: #080600;
-  border: none; border-radius: 8px;
-  font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  cursor: pointer; transition: opacity .15s;
-  white-space: nowrap; flex-shrink: 0;
-}
-.simple-hero-cta:hover { opacity: 0.88; }
+.cibil-meter{margin:0 0 20px;}
+.cibil-track{position:relative;height:12px;border-radius:6px;background:linear-gradient(to right,#b03030 0%,#c06020 20%,#d4891a 40%,#8aaa30 65%,#2d7a3a 85%,#1a5c2a 100%);margin:8px 0;}
+.cibil-thumb{position:absolute;top:50%;transform:translate(-50%,-50%);width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--blue);box-shadow:0 2px 8px rgba(0,0,0,0.2);transition:left .3s;}
+.cibil-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--t3);margin-top:4px;}
 
-/* ── THREE SIMPLE TOOL CARDS ── */
-.simple-tools-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 24px;
-}
-.simple-tool-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  transition: box-shadow .2s, transform .15s;
-}
-.simple-tool-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-}
-.stc-header {
-  padding: 18px 20px 14px;
-  border-bottom: 1px solid var(--border);
-  background: var(--s2);
-}
-.stc-header-row {
-  display: flex; align-items: center; gap: 10px; margin-bottom: 4px;
-}
-.stc-icon {
-  width: 36px; height: 36px; border-radius: 10px;
-  background: var(--gold4);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px; flex-shrink: 0;
-}
-.stc-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px; font-weight: 700; color: var(--text);
-}
-.stc-subtitle { font-size: 11px; color: var(--t3); line-height: 1.5; }
-.stc-body { padding: 18px 20px; }
-.stc-input-wrap { margin-bottom: 12px; }
-.stc-label {
-  display: block; font-size: 9px; font-weight: 700;
-  color: var(--t3); text-transform: uppercase; letter-spacing: 1.5px;
-  margin-bottom: 5px;
-}
-.stc-input {
-  width: 100%; padding: 10px 14px;
-  background: var(--s2); border: 1.5px solid var(--border);
-  border-radius: 8px; color: var(--text); font-size: 13px;
-  font-family: 'Plus Jakarta Sans', sans-serif; outline: none;
-  transition: border .15s, background .15s;
-}
-.stc-input:focus { border-color: var(--gold); background: #fff; }
-select.stc-input { cursor: pointer; }
-.stc-result {
-  background: linear-gradient(135deg, var(--gold3), rgba(184,114,10,0.04));
-  border: 1.5px solid rgba(184,114,10,0.2);
-  border-radius: 10px;
-  padding: 14px 16px;
-  margin-top: 14px;
-}
-.stc-result-val {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px; font-weight: 700;
-  color: var(--gold); line-height: 1;
-  margin-bottom: 2px;
-}
-.stc-result-lbl {
-  font-size: 10px; font-weight: 700;
-  color: var(--t3); text-transform: uppercase; letter-spacing: 1.5px;
-}
-.stc-result-sub {
-  font-size: 11px; color: var(--t2);
-  margin-top: 8px; line-height: 1.6;
-  padding-top: 8px; border-top: 1px solid rgba(184,114,10,0.15);
-}
-.stc-result-green { color: var(--green) !important; }
-.stc-result-red { color: var(--red) !important; }
-.stc-cta {
-  display: block; width: 100%;
-  margin-top: 12px; padding: 10px;
-  background: var(--gold); color: #fff;
-  border: none; border-radius: 8px;
-  font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  cursor: pointer; transition: opacity .15s;
-  text-align: center;
-}
-.stc-cta:hover { opacity: 0.85; }
+.rate-profile-grid{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:start;}
+.rate-inputs-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);}
+.rate-results-area{}
 
-/* Lender comparison table */
-.lender-compare-table { width: 100%; border-collapse: collapse; margin-top: 14px; }
-.lender-compare-table th {
-  font-size: 9px; color: var(--t3);
-  text-transform: uppercase; letter-spacing: 1.5px;
-  padding: 8px 10px; text-align: left;
-  border-bottom: 2px solid var(--border); font-weight: 700;
-}
-.lender-compare-table td {
-  padding: 9px 10px; font-size: 12px;
-  border-bottom: 1px solid var(--border);
-}
-.lender-compare-table tr:last-child td { border-bottom: none; }
-.lender-compare-table tr:hover td { background: var(--s2); }
-.lender-best-badge {
-  display: inline-block;
-  font-size: 9px; font-weight: 700;
-  padding: 2px 7px; border-radius: 10px;
-  background: rgba(45,122,58,0.12);
-  color: var(--green);
-  border: 1px solid rgba(45,122,58,0.2);
-  margin-left: 4px;
-}
+.rate-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);margin-bottom:16px;}
+.rate-card-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
 
-/* Advanced tools toggle */
-.advanced-toggle-bar {
-  display: flex; align-items: center; gap: 12px;
-  padding: 14px 20px;
-  background: var(--s3); border: 1px solid var(--border2);
-  border-radius: var(--r);
-  margin-bottom: 20px;
-  cursor: pointer;
-  transition: background .15s;
-}
-.advanced-toggle-bar:hover { background: var(--bg2); }
-.advanced-toggle-title {
-  font-size: 12px; font-weight: 700; color: var(--t2);
-  flex: 1;
-}
-.advanced-toggle-sub {
-  font-size: 11px; color: var(--t3);
-}
-.advanced-toggle-arrow {
-  font-size: 14px; color: var(--gold);
-  transition: transform .25s;
-}
-.advanced-toggle-arrow.open { transform: rotate(180deg); }
-.advanced-tools-section { display: none; }
-.advanced-tools-section.open { display: block; }
+.rate-offer{border:1.5px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:border-color .15s,transform .1s;}
+.rate-offer:hover{border-color:var(--gold2);transform:translateX(2px);}
+.rate-offer.best-offer{border-color:var(--green);background:rgba(45,122,58,0.04);}
+.rate-offer-bank{font-weight:600;font-size:13px;color:var(--text);}
+.rate-offer-sub{font-size:11px;color:var(--t3);margin-top:2px;}
+.rate-offer-rate{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--blue);text-align:right;white-space:nowrap;}
+.rate-offer-emi{font-size:11px;color:var(--t2);text-align:right;margin-top:2px;}
+.rate-offer-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap;}
+.rob-best{background:rgba(45,122,58,0.12);color:var(--green);border:1px solid rgba(45,122,58,0.2);}
+.rob-pop{background:rgba(42,95,160,0.1);color:var(--blue);border:1px solid rgba(42,95,160,0.2);}
+.rob-fast{background:rgba(184,114,10,0.1);color:var(--gold);border:1px solid rgba(184,114,10,0.2);}
 
-/* ── MOBILE ── */
+.cibil-score-display{text-align:center;padding:16px 12px;background:var(--s2);border-radius:10px;margin-bottom:16px;}
+.cibil-score-num{font-family:'Playfair Display',serif;font-size:40px;font-weight:900;line-height:1;}
+.cibil-score-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:4px;}
+.cibil-score-desc{font-size:11px;color:var(--t3);margin-top:6px;line-height:1.5;}
+
+.eligibility-bar{margin-bottom:8px;}
+.elig-label-row{display:flex;justify-content:space-between;font-size:11px;color:var(--t2);margin-bottom:4px;}
+.elig-bar-bg{height:8px;background:var(--border);border-radius:4px;overflow:hidden;}
+.elig-bar-fill{height:100%;border-radius:4px;transition:width .5s;}
+
+.rate-comparison-table{width:100%;border-collapse:collapse;}
+.rate-comparison-table th{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:1.2px;padding:8px 12px;text-align:left;border-bottom:2px solid var(--border);font-weight:700;}
+.rate-comparison-table td{padding:10px 12px;font-size:12px;border-bottom:1px solid var(--border);}
+.rate-comparison-table tr:last-child td{border-bottom:none;}
+.rate-comparison-table tr:hover td{background:var(--s2);}
+.rate-comparison-table tr.highlight-row td{background:rgba(45,122,58,0.06);}
+
+.tip-box{background:var(--gold3);border:1px solid rgba(184,114,10,0.2);border-left:4px solid var(--gold2);border-radius:0 8px 8px 0;padding:12px 16px;margin-top:12px;font-size:12px;color:var(--t2);line-height:1.7;}
+.tip-box strong{color:var(--gold);}
+
+.rate-range-display{display:inline-flex;align-items:center;gap:6px;}
+.rate-lo{color:var(--green);font-weight:700;}
+.rate-hi{color:var(--orange);font-weight:700;}
+
+/* ── LOAN SECTION ── */
+.loan-hero{background:linear-gradient(135deg,#f0ebe0 0%,#e8e0cc 100%);border:1px solid var(--border2);border-radius:var(--r);padding:36px;margin-bottom:24px;position:relative;overflow:hidden;}
+.loan-hero::before{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(184,114,10,0.1) 0%,transparent 70%);pointer-events:none;}
+.loan-hero-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--text);margin-bottom:6px;line-height:1.2;}
+.loan-hero-title span{color:var(--gold);}
+.loan-hero-sub{font-size:13px;color:var(--t2);line-height:1.7;max-width:540px;margin-bottom:20px;}
+.trust-row{display:flex;gap:20px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--t2);font-weight:500;}
+.trust-icon{width:32px;height:32px;border-radius:50%;background:var(--gold4);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.services-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px;}
+.service-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s;}
+.service-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);}
+.service-icon{font-size:28px;margin-bottom:10px;}
+.service-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.service-desc{font-size:12px;color:var(--t3);line-height:1.6;}
+.service-rate{font-size:11px;font-weight:700;color:var(--green);margin-top:8px;}
+.lenders-strip{background:var(--s2);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px;margin-bottom:24px;}
+.lenders-title{font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+.lenders-row{display:flex;gap:10px;flex-wrap:wrap;}
+.lender-pill{padding:6px 14px;background:var(--surface);border:1px solid var(--border2);border-radius:20px;font-size:11px;font-weight:600;color:var(--t2);}
+.profile-card{background:linear-gradient(135deg,#1a1208,#2d1f08);border-radius:var(--r);padding:32px;color:#f0e8d0;display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;}
+.profile-avatar{width:72px;height:72px;border-radius:50%;background:rgba(212,137,26,0.2);border:2px solid rgba(212,137,26,0.3);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;}
+.profile-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#f0e8d0;margin-bottom:3px;}
+.profile-cred{font-size:11px;color:var(--gold2);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+.profile-bio{font-size:12px;color:rgba(240,232,208,0.65);line-height:1.8;max-width:560px;margin-bottom:14px;}
+.profile-links{display:flex;gap:10px;flex-wrap:wrap;}
+.profile-link{padding:8px 18px;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:.5px;text-decoration:none;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;transition:opacity .15s;display:inline-block;}
+.profile-link:hover{opacity:0.85;}
+.pl-gold{background:var(--gold2);color:#080600;}
+.pl-ghost{background:transparent;color:rgba(240,232,208,0.6);border:1px solid rgba(240,232,208,0.2);}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-full{grid-column:1/-1;}
+.form-label{display:block;font-size:10px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;}
+.form-input{width:100%;padding:12px 16px;background:#fff;border:1.5px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;font-family:'Plus Jakarta Sans',sans-serif;outline:none;transition:border .15s,box-shadow .15s;}
+.form-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,114,10,0.1);}
+select.form-input{cursor:pointer;}
+.submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;letter-spacing:0.5px;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:opacity .2s,transform .1s;margin-top:4px;}
+.submit-btn:hover{opacity:0.9;transform:translateY(-1px);}
+.submit-btn:active{transform:translateY(0);}
+.form-note{font-size:11px;color:var(--t3);text-align:center;margin-top:8px;line-height:1.5;}
+.success-msg{display:none;background:var(--green-bg);border:1.5px solid rgba(45,122,58,0.25);border-radius:10px;padding:24px;text-align:center;}
+.success-msg h3{color:var(--green);font-size:18px;margin-bottom:8px;font-family:'Playfair Display',serif;}
+.success-msg p{color:var(--t2);font-size:13px;line-height:1.6;}
+
+/* ── WA FLOAT ── */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);text-decoration:none;font-size:26px;transition:transform .2s;}
+.wa-float:hover{transform:scale(1.1);}
+.wa-float::after{content:'Get Loan Help';position:absolute;right:64px;background:#1a1208;color:#f0e8d0;font-size:11px;font-weight:700;letter-spacing:.5px;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity .2s;font-family:'Plus Jakarta Sans',sans-serif;}
+.wa-float:hover::after{opacity:1;}
+
 @media(max-width:768px){
-  .two,.two-eq,.three,.four,.form-grid,.services-grid,.simple-tools-grid{grid-template-columns:1fr;}
+  .two,.two-eq,.three,.four,.form-grid,.services-grid,.simple-tools-grid,.rate-profile-grid{grid-template-columns:1fr;}
   .form-full{grid-column:1;}
-  .hero-inner{flex-direction:column;}
+  .hero-inner,.simple-hero,.rate-hero{flex-direction:column;}
   .hero-cta-group{align-items:flex-start;}
   .profile-card{flex-direction:column;}
   .loan-hero{padding:24px 18px;}
   .loan-hero-title{font-size:22px;}
-  .simple-hero{flex-direction:column;}
-  .simple-hero-text h2{font-size:20px;}
 }
 ::-webkit-scrollbar{width:4px;height:4px;}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
@@ -586,18 +269,15 @@ select.stc-input { cursor: pointer; }
 </head>
 <body>
 
-<!-- WHATSAPP FLOAT -->
 <a class="wa-float" href="https://wa.me/918130521740?text=Hi%20Prashant%2C%20I%20need%20help%20with%20a%20home%20loan%2FLAP%20in%20Delhi%20NCR" target="_blank" title="WhatsApp for Loan Help">💬</a>
 
-<!-- ══════════════════════════════════════
-     HERO BANNER
-══════════════════════════════════════ -->
+<!-- HERO -->
 <div class="hero-banner">
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-logo">निवेश<em>भूमि</em></div>
       <div class="hero-url">niveshbhoomi.in</div>
-      <div class="hero-tagline">Home loan eligibility, EMI & lender comparison — instant answers, free advisory in Delhi NCR</div>
+      <div class="hero-tagline">Home loan eligibility, EMI & personalised rate comparison — instant answers, free advisory in Delhi NCR</div>
       <div class="hero-badges">
         <span class="badge">FREE · No Login</span>
         <span class="badge badge-green">✓ 15+ Lenders Compared</span>
@@ -605,25 +285,21 @@ select.stc-input { cursor: pointer; }
       </div>
     </div>
     <div class="hero-cta-group">
-      <button class="hero-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[9])">Get Free Loan Consultation →</button>
-      <a class="hero-cta hero-cta-ghost" href="#tools">Check Eligibility ↓</a>
+      <button class="hero-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[11])">Get Free Loan Consultation →</button>
+      <button class="hero-cta hero-cta-ghost" onclick="showTab('rate',document.querySelectorAll('.tab')[1])">Check My Rate — 60 sec ↓</button>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     STICKY TABS
-══════════════════════════════════════ -->
+<!-- STICKY TABS -->
 <div class="hdr" id="tools">
   <div class="hdr-in">
     <div class="tabs">
-      <!-- Simple tools -->
       <button class="tab active" onclick="showTab('simple',this)">🏠 Eligibility & EMI</button>
+      <button class="tab tab-rate" onclick="showTab('rate',this)">🎯 My Personal Rate</button>
       <button class="tab tab-loan" onclick="showTab('loan',this)">📋 Get a Loan</button>
-      <!-- Divider -->
       <span class="tab-divider">|</span>
       <span class="tab-group-label">Advanced</span>
-      <!-- Advanced tools -->
       <button class="tab" onclick="showTab('irr',this)">IRR / NPV</button>
       <button class="tab" onclick="showTab('xirr',this)">XIRR</button>
       <button class="tab" onclick="showTab('construction',this)">Construction</button>
@@ -636,263 +312,276 @@ select.stc-input { cursor: pointer; }
 
 <div class="main">
 
-<!-- ════════════════════════════════════════════════════════
-     TAB 0: SIMPLE TOOLS (NEW — DEFAULT LANDING)
-════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     TAB: SIMPLE TOOLS
+══════════════════════════════════════ -->
 <div id="tab-simple" class="sec active">
-
-  <!-- Hero strip -->
   <div class="simple-hero">
     <div class="simple-hero-text">
       <h2>Find out in <span>60 seconds</span> —<br/>how much loan you can get</h2>
       <p>Three simple questions answered instantly. No jargon, no forms, no pressure. Just numbers.</p>
     </div>
-    <button class="simple-hero-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[1])">Talk to Us Free →</button>
+    <button class="simple-hero-cta" onclick="showTab('rate',document.querySelectorAll('.tab')[1])">Get My Personalised Rate →</button>
   </div>
-
-  <!-- Three tool cards -->
   <div class="simple-tools-grid">
-
-    <!-- CARD 1: Eligibility -->
+    <!-- Eligibility -->
     <div class="simple-tool-card">
       <div class="stc-header">
-        <div class="stc-header-row">
-          <div class="stc-icon">💰</div>
-          <div>
-            <div class="stc-title">How much loan can I get?</div>
-          </div>
-        </div>
+        <div class="stc-header-row"><div class="stc-icon">💰</div><div><div class="stc-title">How much loan can I get?</div></div></div>
         <div class="stc-subtitle">Enter your salary — get an instant loan estimate</div>
       </div>
       <div class="stc-body">
-        <div class="stc-input-wrap">
-          <label class="stc-label">Monthly Take-home Salary (₹)</label>
-          <input type="number" class="stc-input" id="s-income" value="60000" step="5000" oninput="calcEligibility()"/>
-        </div>
-        <div class="stc-input-wrap">
-          <label class="stc-label">Existing EMIs per month (₹)</label>
-          <input type="number" class="stc-input" id="s-existing-emi" value="0" step="1000" oninput="calcEligibility()"/>
-        </div>
-        <div class="stc-input-wrap">
-          <label class="stc-label">Loan Tenure</label>
+        <div class="stc-input-wrap"><label class="stc-label">Monthly Take-home Salary (₹)</label><input type="number" class="stc-input" id="s-income" value="60000" step="5000" oninput="calcEligibility()"/></div>
+        <div class="stc-input-wrap"><label class="stc-label">Existing EMIs per month (₹)</label><input type="number" class="stc-input" id="s-existing-emi" value="0" step="1000" oninput="calcEligibility()"/></div>
+        <div class="stc-input-wrap"><label class="stc-label">Loan Tenure</label>
           <select class="stc-input" id="s-tenure-elig" onchange="calcEligibility()">
-            <option value="20" selected>20 years</option>
-            <option value="25">25 years</option>
-            <option value="30">30 years</option>
-            <option value="15">15 years</option>
+            <option value="20" selected>20 years</option><option value="25">25 years</option><option value="30">30 years</option><option value="15">15 years</option>
           </select>
         </div>
-        <div class="stc-result" id="elig-result">
-          <div class="stc-result-val" id="elig-val">—</div>
-          <div class="stc-result-lbl">Maximum loan you may get</div>
-          <div class="stc-result-sub" id="elig-sub"></div>
-        </div>
-        <button class="stc-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[1])">Get this sanctioned — free →</button>
+        <div class="stc-result" id="elig-result"><div class="stc-result-val" id="elig-val">—</div><div class="stc-result-lbl">Maximum loan you may get</div><div class="stc-result-sub" id="elig-sub"></div></div>
+        <button class="stc-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[2])">Get this sanctioned — free →</button>
       </div>
     </div>
-
-    <!-- CARD 2: EMI -->
+    <!-- EMI -->
     <div class="simple-tool-card">
       <div class="stc-header">
-        <div class="stc-header-row">
-          <div class="stc-icon">📅</div>
-          <div>
-            <div class="stc-title">What will my EMI be?</div>
-          </div>
-        </div>
+        <div class="stc-header-row"><div class="stc-icon">📅</div><div><div class="stc-title">What will my EMI be?</div></div></div>
         <div class="stc-subtitle">Enter loan amount — see monthly payment instantly</div>
       </div>
       <div class="stc-body">
-        <div class="stc-input-wrap">
-          <label class="stc-label">Loan Amount (₹)</label>
-          <input type="number" class="stc-input" id="s-loan-amt" value="5000000" step="100000" oninput="calcSimpleEMI()"/>
-        </div>
-        <div class="stc-input-wrap">
-          <label class="stc-label">Interest Rate (% per year)</label>
+        <div class="stc-input-wrap"><label class="stc-label">Loan Amount (₹)</label><input type="number" class="stc-input" id="s-loan-amt" value="5000000" step="100000" oninput="calcSimpleEMI()"/></div>
+        <div class="stc-input-wrap"><label class="stc-label">Interest Rate (% per year)</label>
           <select class="stc-input" id="s-rate-sel" onchange="calcSimpleEMI()">
-            <option value="8.35">8.35% — Lowest available</option>
-            <option value="8.5">8.50% — SBI / Union Bank</option>
-            <option value="8.75" selected>8.75% — HDFC / ICICI</option>
-            <option value="9.0">9.00% — Bajaj / Axis</option>
-            <option value="9.5">9.50% — NBFCs</option>
+            <option value="8.35">8.35% — Lowest available</option><option value="8.5">8.50% — SBI / Union Bank</option>
+            <option value="8.75" selected>8.75% — HDFC / ICICI</option><option value="9.0">9.00% — Bajaj / Axis</option><option value="9.5">9.50% — NBFCs</option>
           </select>
         </div>
-        <div class="stc-input-wrap">
-          <label class="stc-label">Loan Tenure</label>
+        <div class="stc-input-wrap"><label class="stc-label">Loan Tenure</label>
           <select class="stc-input" id="s-tenure-emi" onchange="calcSimpleEMI()">
-            <option value="20" selected>20 years</option>
-            <option value="25">25 years</option>
-            <option value="30">30 years</option>
-            <option value="15">15 years</option>
-            <option value="10">10 years</option>
+            <option value="20" selected>20 years</option><option value="25">25 years</option><option value="30">30 years</option><option value="15">15 years</option><option value="10">10 years</option>
           </select>
         </div>
-        <div class="stc-result" id="emi-simple-result">
-          <div class="stc-result-val" id="emi-simple-val">—</div>
-          <div class="stc-result-lbl">Monthly EMI</div>
-          <div class="stc-result-sub" id="emi-simple-sub"></div>
-        </div>
-        <button class="stc-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[1])">Get the best rate for you →</button>
+        <div class="stc-result" id="emi-simple-result"><div class="stc-result-val" id="emi-simple-val">—</div><div class="stc-result-lbl">Monthly EMI</div><div class="stc-result-sub" id="emi-simple-sub"></div></div>
+        <button class="stc-cta" onclick="showTab('rate',document.querySelectorAll('.tab')[1])">Get the best rate for you →</button>
       </div>
     </div>
-
-    <!-- CARD 3: Lender Compare -->
+    <!-- Lender Compare -->
     <div class="simple-tool-card">
       <div class="stc-header">
-        <div class="stc-header-row">
-          <div class="stc-icon">🏦</div>
-          <div>
-            <div class="stc-title">Which bank is best for me?</div>
-          </div>
-        </div>
+        <div class="stc-header-row"><div class="stc-icon">🏦</div><div><div class="stc-title">Which bank is best for me?</div></div></div>
         <div class="stc-subtitle">Compare rates across 8 major lenders instantly</div>
       </div>
       <div class="stc-body">
-        <div class="stc-input-wrap">
-          <label class="stc-label">Loan Amount (₹)</label>
-          <input type="number" class="stc-input" id="s-cmp-loan" value="5000000" step="100000" oninput="calcLenderCompare()"/>
-        </div>
-        <div class="stc-input-wrap">
-          <label class="stc-label">Your Profile</label>
+        <div class="stc-input-wrap"><label class="stc-label">Loan Amount (₹)</label><input type="number" class="stc-input" id="s-cmp-loan" value="5000000" step="100000" oninput="calcLenderCompare()"/></div>
+        <div class="stc-input-wrap"><label class="stc-label">Your Profile</label>
           <select class="stc-input" id="s-cmp-profile" onchange="calcLenderCompare()">
-            <option value="sal_govt">Salaried — Govt / PSU</option>
-            <option value="sal_pvt" selected>Salaried — Private</option>
-            <option value="self">Self Employed</option>
+            <option value="sal_govt">Salaried — Govt / PSU</option><option value="sal_pvt" selected>Salaried — Private</option><option value="self">Self Employed</option>
           </select>
         </div>
-        <div class="stc-input-wrap">
-          <label class="stc-label">Loan Tenure</label>
+        <div class="stc-input-wrap"><label class="stc-label">Loan Tenure</label>
           <select class="stc-input" id="s-cmp-tenure" onchange="calcLenderCompare()">
-            <option value="20" selected>20 years</option>
-            <option value="25">25 years</option>
-            <option value="30">30 years</option>
-            <option value="15">15 years</option>
+            <option value="20" selected>20 years</option><option value="25">25 years</option><option value="30">30 years</option><option value="15">15 years</option>
           </select>
         </div>
         <div id="lender-compare-result" style="margin-top:14px;overflow-x:auto"></div>
-        <button class="stc-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[1])">Apply through Us — free →</button>
+        <button class="stc-cta" onclick="showTab('loan',document.querySelectorAll('.tab')[2])">Apply through Us — free →</button>
       </div>
     </div>
-
-  </div><!-- /simple-tools-grid -->
-
-  <!-- Quick explainer strip -->
+  </div>
   <div class="card" style="padding:20px 28px;">
     <div style="display:flex;align-items:flex-start;gap:32px;flex-wrap:wrap;">
-      <div style="flex:1;min-width:180px;">
-        <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">How eligibility works</div>
-        <div style="font-size:12px;color:var(--t2);line-height:1.8;">
-          Most banks allow EMI up to <strong>50% of your net salary</strong>. So if you earn ₹60,000/month, your max EMI is ₹30,000 — which means a loan of roughly ₹30–35 lakh at current rates.
-        </div>
-      </div>
-      <div style="flex:1;min-width:180px;">
-        <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">What affects your rate</div>
-        <div style="font-size:12px;color:var(--t2);line-height:1.8;">
-          CIBIL score above 750 gets the best rates. Govt employees get lower rates than private sector. Existing loans reduce your eligible amount.
-        </div>
-      </div>
-      <div style="flex:1;min-width:180px;">
-        <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Need a more detailed analysis?</div>
-        <div style="font-size:12px;color:var(--t2);line-height:1.8;">
-          Use the <strong>Advanced Tools</strong> above — IRR, ROE, LTV — for deep investment analysis. Or <a href="#" onclick="showTab('loan',document.querySelectorAll('.tab')[1]);return false;" style="color:var(--gold);font-weight:600;">talk to Us free</a> for a personalised assessment.
-        </div>
-      </div>
+      <div style="flex:1;min-width:180px;"><div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">How eligibility works</div><div style="font-size:12px;color:var(--t2);line-height:1.8;">Most banks allow EMI up to <strong>50% of your net salary</strong>. So if you earn ₹60,000/month, your max EMI is ₹30,000 — which means a loan of roughly ₹30–35 lakh at current rates.</div></div>
+      <div style="flex:1;min-width:180px;"><div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">What affects your rate</div><div style="font-size:12px;color:var(--t2);line-height:1.8;">CIBIL score above 750 gets the best rates. Govt employees get lower rates than private sector. Existing loans reduce your eligible amount.</div></div>
+      <div style="flex:1;min-width:180px;"><div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Want your exact personalised rate?</div><div style="font-size:12px;color:var(--t2);line-height:1.8;">Use <a href="#" onclick="showTab('rate',document.querySelectorAll('.tab')[1]);return false;" style="color:var(--blue);font-weight:700;">🎯 My Personal Rate</a> — enter your CIBIL score, income & profile to get bank-by-bank rates tailored to you.</div></div>
     </div>
   </div>
-
 </div>
 
-<!-- ════════════════════════════════════════════════════════
-     TAB: IRR / NPV
-════════════════════════════════════════════════════════ -->
-<div id="tab-irr" class="sec">
-  <div class="section-intro">
-    <strong>IRR (Internal Rate of Return)</strong> is the annualized return on your total investment including purchase, rental income, and sale proceeds. <strong>NPV (Net Present Value)</strong> tells you how much value the deal creates above your minimum required return. If NPV &gt; 0, the deal beats your benchmark.
+<!-- ══════════════════════════════════════
+     TAB: PERSONALISED RATE ENGINE (NEW)
+══════════════════════════════════════ -->
+<div id="tab-rate" class="sec">
+  <div class="rate-hero">
+    <div>
+      <h2>Your <span>Personalised</span> Loan Rate</h2>
+      <p>Different profiles get different rates. Enter your actual details — CIBIL score, employment type, income — and see the exact rate range each bank will offer you today.</p>
+      <div class="rate-hero-badge">
+        <span class="rate-badge">CIBIL-based pricing</span>
+        <span class="rate-badge">15+ lenders</span>
+        <span class="rate-badge">Home Loan + LAP</span>
+        <span class="rate-badge">Updated monthly</span>
+      </div>
+    </div>
+    <button onclick="showTab('loan',document.querySelectorAll('.tab')[2])" style="padding:12px 24px;background:#7db8f7;color:#0a1f3a;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;font-family:'Plus Jakarta Sans',sans-serif;">Apply with This Rate →</button>
   </div>
+
+  <div class="rate-profile-grid">
+    <!-- LEFT: Inputs -->
+    <div>
+      <div class="rate-inputs-card">
+        <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;">Your Profile</div>
+
+        <!-- CIBIL Score slider -->
+        <div class="stc-input-wrap">
+          <label class="stc-label">CIBIL Score</label>
+          <div class="cibil-score-display">
+            <div class="cibil-score-num" id="cibil-display" style="color:#2d7a3a">750</div>
+            <div class="cibil-score-label" id="cibil-category" style="color:#2d7a3a">Excellent</div>
+            <div class="cibil-score-desc" id="cibil-desc">Eligible for best rates at all banks</div>
+          </div>
+          <div class="cibil-meter">
+            <input type="range" min="300" max="900" step="10" value="750" id="cibil-slider" oninput="updateCIBIL(this.value);calcPersonalRate()" style="width:100%;accent-color:var(--blue);margin-bottom:6px;"/>
+            <div class="cibil-labels"><span>300</span><span>550</span><span>650</span><span>750</span><span>900</span></div>
+          </div>
+        </div>
+
+        <div class="stc-input-wrap">
+          <label class="stc-label">Loan Type</label>
+          <select class="stc-input" id="pr-loan-type" onchange="calcPersonalRate()">
+            <option value="home">Home Loan</option>
+            <option value="lap">Loan Against Property (LAP)</option>
+            <option value="bt">Balance Transfer</option>
+          </select>
+        </div>
+        <div class="stc-input-wrap">
+          <label class="stc-label">Employment Type</label>
+          <select class="stc-input" id="pr-emp-type" onchange="calcPersonalRate()">
+            <option value="sal_govt">Salaried — Govt / PSU</option>
+            <option value="sal_pvt" selected>Salaried — Private (MNC/Large company)</option>
+            <option value="sal_sme">Salaried — Private (SME/Startup)</option>
+            <option value="self_prof">Self Employed — Professional (CA/Doctor)</option>
+            <option value="self_biz">Self Employed — Business</option>
+          </select>
+        </div>
+        <div class="stc-input-wrap">
+          <label class="stc-label">Monthly Income (₹)</label>
+          <select class="stc-input" id="pr-income" onchange="calcPersonalRate()">
+            <option value="25000">₹25,000 – ₹40,000</option>
+            <option value="50000">₹40,000 – ₹75,000</option>
+            <option value="100000" selected>₹75,000 – ₹1.5 Lakh</option>
+            <option value="200000">₹1.5 – ₹3 Lakh</option>
+            <option value="400000">Above ₹3 Lakh</option>
+          </select>
+        </div>
+        <div class="stc-input-wrap">
+          <label class="stc-label">Loan Amount Required (₹)</label>
+          <input type="number" class="stc-input" id="pr-loan-amt" value="5000000" step="100000" oninput="calcPersonalRate()"/>
+        </div>
+        <div class="stc-input-wrap">
+          <label class="stc-label">Loan Tenure (Years)</label>
+          <select class="stc-input" id="pr-tenure" onchange="calcPersonalRate()">
+            <option value="10">10 years</option><option value="15">15 years</option>
+            <option value="20" selected>20 years</option><option value="25">25 years</option><option value="30">30 years</option>
+          </select>
+        </div>
+        <div class="stc-input-wrap">
+          <label class="stc-label">Existing Loan Obligations / month (₹)</label>
+          <input type="number" class="stc-input" id="pr-existing-emi" value="0" step="5000" oninput="calcPersonalRate()"/>
+        </div>
+        <div class="stc-input-wrap">
+          <label class="stc-label">Property Location</label>
+          <select class="stc-input" id="pr-location" onchange="calcPersonalRate()">
+            <option value="metro">Metro — Delhi / Mumbai / Bangalore / Chennai</option>
+            <option value="tier1">Tier 1 — Noida / Gurugram / Pune / Hyderabad</option>
+            <option value="tier2">Tier 2 city</option>
+          </select>
+        </div>
+        <button onclick="showTab('loan',document.querySelectorAll('.tab')[2])" style="width:100%;padding:12px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;margin-top:4px;">Get This Rate Locked — Free →</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="rate-results-area">
+
+      <!-- Score summary -->
+      <div class="rate-card">
+        <div class="rate-card-title">📊 Your Rate Summary</div>
+        <div id="rate-summary-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px;"></div>
+        <div id="rate-eligibility-bars"></div>
+      </div>
+
+      <!-- Best offers -->
+      <div class="rate-card">
+        <div class="rate-card-title">🏦 Your Personalised Bank Offers</div>
+        <div style="font-size:11px;color:var(--t3);margin-bottom:12px;">Based on your CIBIL score, employment type, and income — rates shown are what you are likely to actually receive.</div>
+        <div id="rate-offers-list"></div>
+      </div>
+
+      <!-- Full comparison table -->
+      <div class="rate-card">
+        <div class="rate-card-title">📋 Full Rate Comparison Table</div>
+        <div style="overflow-x:auto"><table class="rate-comparison-table" id="rate-full-table">
+          <thead><tr><th>Bank / NBFC</th><th>Your Rate</th><th>Your EMI/mo</th><th>Processing Fee</th><th>Max Tenure</th><th>Prepayment</th><th>Eligibility</th></tr></thead>
+          <tbody id="rate-full-body"></tbody>
+        </table></div>
+      </div>
+
+      <!-- Tips card -->
+      <div class="rate-card">
+        <div class="rate-card-title">💡 How to Get a Lower Rate</div>
+        <div id="rate-tips"></div>
+      </div>
+
+    </div>
+  </div><!-- /rate-profile-grid -->
+
+  <div style="background:var(--s2);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px;margin-top:4px;">
+    <div style="font-size:11px;color:var(--t3);line-height:1.7;text-align:center;">
+      <strong style="color:var(--t2);">Disclaimer:</strong> Rates shown are indicative ranges based on published bank rate sheets and DSA experience. Actual rates depend on final bank assessment. Updated as of <span id="rate-update-date"></span>. Contact Prashant for a confirmed rate offer.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     TAB: IRR / NPV
+══════════════════════════════════════ -->
+<div id="tab-irr" class="sec">
+  <div class="section-intro"><strong>IRR (Internal Rate of Return)</strong> is the annualized return on your total investment including purchase, rental income, and sale proceeds. <strong>NPV (Net Present Value)</strong> tells you how much value the deal creates above your minimum required return. If NPV &gt; 0, the deal beats your benchmark.</div>
   <div class="two">
     <div>
       <div class="card">
         <div class="ctitle">Property & Purchase</div>
         <label class="lbl">City (for stamp duty auto-fill)</label>
         <select class="inp" id="i-city" onchange="calcIRR()">
-          <option value="6">Delhi NCR — 6%</option>
-          <option value="6">Mumbai MMR — 6%</option>
-          <option value="5.6" selected>Bangalore — 5.6%</option>
-          <option value="6">Hyderabad — 6%</option>
-          <option value="6">Pune — 6%</option>
-          <option value="7">Chennai — 7%</option>
-          <option value="6">Jaipur — 6%</option>
-          <option value="4.9">Ahmedabad — 4.9%</option>
-          <option value="7">Kolkata — 7%</option>
-          <option value="custom">Custom stamp duty</option>
+          <option value="6">Delhi NCR — 6%</option><option value="6">Mumbai MMR — 6%</option>
+          <option value="5.6" selected>Bangalore — 5.6%</option><option value="6">Hyderabad — 6%</option>
+          <option value="6">Pune — 6%</option><option value="7">Chennai — 7%</option>
+          <option value="6">Jaipur — 6%</option><option value="4.9">Ahmedabad — 4.9%</option>
+          <option value="7">Kolkata — 7%</option><option value="custom">Custom stamp duty</option>
         </select>
-        <div id="custom-stamp-wrap" style="display:none">
-          <label class="lbl">Custom Stamp Duty (%)</label>
-          <input type="number" class="inp" id="i-stamp-custom" value="6" min="1" max="12" step="0.1" oninput="calcIRR()"/>
-        </div>
-        <label class="lbl">Property Purchase Price (₹)</label>
-        <input type="number" class="inp" id="i-price" value="12000000" step="100000" oninput="calcIRR()"/>
-        <label class="lbl">Loan Amount (₹) <span style="color:var(--t3);font-size:10px">— 0 for all-cash</span></label>
-        <input type="number" class="inp" id="i-loan" value="8400000" step="100000" oninput="calcIRR()"/>
-        <label class="lbl">Loan Interest Rate (% p.a.)</label>
-        <input type="number" class="inp" id="i-rate" value="8.75" step="0.25" min="1" max="20" oninput="calcIRR()"/>
-        <label class="lbl">Loan Tenure (Years)</label>
-        <input type="number" class="inp" id="i-tenure" value="20" step="1" min="1" max="30" oninput="calcIRR()"/>
+        <div id="custom-stamp-wrap" style="display:none"><label class="lbl">Custom Stamp Duty (%)</label><input type="number" class="inp" id="i-stamp-custom" value="6" min="1" max="12" step="0.1" oninput="calcIRR()"/></div>
+        <label class="lbl">Property Purchase Price (₹)</label><input type="number" class="inp" id="i-price" value="12000000" step="100000" oninput="calcIRR()"/>
+        <label class="lbl">Loan Amount (₹)</label><input type="number" class="inp" id="i-loan" value="8400000" step="100000" oninput="calcIRR()"/>
+        <label class="lbl">Loan Interest Rate (% p.a.)</label><input type="number" class="inp" id="i-rate" value="8.75" step="0.25" min="1" max="20" oninput="calcIRR()"/>
+        <label class="lbl">Loan Tenure (Years)</label><input type="number" class="inp" id="i-tenure" value="20" step="1" min="1" max="30" oninput="calcIRR()"/>
       </div>
       <div class="card" style="margin-top:16px">
         <div class="ctitle">Income & Exit Assumptions</div>
-        <label class="lbl">Monthly Rent at Purchase (₹)</label>
-        <input type="number" class="inp" id="i-rent" value="35000" step="1000" oninput="calcIRR()"/>
-        <label class="lbl">Annual Rent Growth (%)</label>
-        <input type="number" class="inp" id="i-rentg" value="5" step="0.5" min="0" max="20" oninput="calcIRR()"/>
-        <label class="lbl">Vacancy + Maintenance (% of gross rent)</label>
-        <input type="number" class="inp" id="i-vac" value="15" step="1" min="0" max="40" oninput="calcIRR()"/>
-        <label class="lbl">Hold Period (Years)</label>
-        <input type="number" class="inp" id="i-hold" value="7" step="1" min="1" max="25" oninput="calcIRR()"/>
-        <label class="lbl">Expected Annual Price Appreciation (%)</label>
-        <input type="number" class="inp" id="i-ap" value="9" step="0.5" min="0" max="25" oninput="calcIRR()"/>
-        <label class="lbl">Exit Transaction Cost (% of sale price)</label>
-        <input type="number" class="inp" id="i-exit-cost" value="2" step="0.5" min="0" max="5" oninput="calcIRR()"/>
-        <label class="lbl">Hurdle / Discount Rate (% p.a.)</label>
-        <input type="number" class="inp" id="i-hurdle" value="12" step="0.5" min="1" max="25" oninput="calcIRR()"/>
+        <label class="lbl">Monthly Rent at Purchase (₹)</label><input type="number" class="inp" id="i-rent" value="35000" step="1000" oninput="calcIRR()"/>
+        <label class="lbl">Annual Rent Growth (%)</label><input type="number" class="inp" id="i-rentg" value="5" step="0.5" min="0" max="20" oninput="calcIRR()"/>
+        <label class="lbl">Vacancy + Maintenance (% of gross rent)</label><input type="number" class="inp" id="i-vac" value="15" step="1" min="0" max="40" oninput="calcIRR()"/>
+        <label class="lbl">Hold Period (Years)</label><input type="number" class="inp" id="i-hold" value="7" step="1" min="1" max="25" oninput="calcIRR()"/>
+        <label class="lbl">Expected Annual Price Appreciation (%)</label><input type="number" class="inp" id="i-ap" value="9" step="0.5" min="0" max="25" oninput="calcIRR()"/>
+        <label class="lbl">Exit Transaction Cost (% of sale price)</label><input type="number" class="inp" id="i-exit-cost" value="2" step="0.5" min="0" max="5" oninput="calcIRR()"/>
+        <label class="lbl">Hurdle / Discount Rate (% p.a.)</label><input type="number" class="inp" id="i-hurdle" value="12" step="0.5" min="1" max="25" oninput="calcIRR()"/>
       </div>
     </div>
     <div>
-      <div class="card" style="margin-bottom:16px">
-        <div class="ctitle">Return Metrics</div>
-        <div class="four" style="margin-bottom:16px" id="irr-top"></div>
-        <div class="four" id="irr-bottom"></div>
-      </div>
+      <div class="card" style="margin-bottom:16px"><div class="ctitle">Return Metrics</div><div class="four" style="margin-bottom:16px" id="irr-top"></div><div class="four" id="irr-bottom"></div></div>
       <div class="two-eq" style="margin-bottom:16px">
-        <div class="card">
-          <div class="ctitle">Capital Structure</div>
-          <div id="irr-capital"></div>
-        </div>
-        <div class="card">
-          <div class="ctitle">Exit Analysis</div>
-          <div id="irr-exit"></div>
-        </div>
+        <div class="card"><div class="ctitle">Capital Structure</div><div id="irr-capital"></div></div>
+        <div class="card"><div class="ctitle">Exit Analysis</div><div id="irr-exit"></div></div>
       </div>
-      <div class="card">
-        <div class="ctitle">Year-by-Year Cash Flow</div>
-        <div style="overflow-x:auto">
-          <table>
-            <thead><tr><th>Yr</th><th>Gross Rent</th><th>Net Rent</th><th>EMI</th><th>Net CF</th><th>Property Value</th><th>Loan Bal.</th><th>Equity</th></tr></thead>
-            <tbody id="irr-cf"></tbody>
-          </table>
-        </div>
-      </div>
+      <div class="card"><div class="ctitle">Year-by-Year Cash Flow</div><div style="overflow-x:auto"><table><thead><tr><th>Yr</th><th>Gross Rent</th><th>Net Rent</th><th>EMI</th><th>Net CF</th><th>Property Value</th><th>Loan Bal.</th><th>Equity</th></tr></thead><tbody id="irr-cf"></tbody></table></div></div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════
      TAB: XIRR
-════════════════════════════════════════════════════════ -->
+══════════════════════════════════════ -->
 <div id="tab-xirr" class="sec">
-  <div class="section-intro">
-    <strong>XIRR</strong> calculates IRR for <strong>irregular, real-world cash flows</strong> — construction-linked payment plans, tranche disbursements, rental top-ups, or any investment where payments happen on specific dates. Enter your actual dates and amounts.
-  </div>
+  <div class="section-intro"><strong>XIRR</strong> calculates IRR for <strong>irregular, real-world cash flows</strong> — construction-linked payment plans, tranche disbursements, rental top-ups, or any investment where payments happen on specific dates.</div>
   <div class="two-eq">
     <div class="card">
       <div class="ctitle">Cash Flow Entries</div>
@@ -905,248 +594,152 @@ select.stc-input { cursor: pointer; }
       </div>
     </div>
     <div>
-      <div class="card" style="margin-bottom:16px">
-        <div class="ctitle">XIRR Result</div>
-        <div id="xirr-result"><div style="color:var(--t3);font-size:13px;padding:20px 0">Enter at least 2 cash flows to calculate.</div></div>
-      </div>
-      <div class="card">
-        <div class="ctitle">How to Use XIRR</div>
-        <div style="font-size:12px;color:var(--t2);line-height:1.8">
-          <div style="margin-bottom:8px"><strong style="color:var(--gold)">Booking advance:</strong> Enter as negative on booking date</div>
-          <div style="margin-bottom:8px"><strong style="color:var(--gold)">Construction payments:</strong> Each tranche as negative on payment date</div>
-          <div style="margin-bottom:8px"><strong style="color:var(--gold)">Rental income:</strong> Monthly/annual inflows as positive</div>
-          <div style="margin-bottom:8px"><strong style="color:var(--gold)">Sale proceeds:</strong> Final positive on exit date (after loan repayment)</div>
-          <div style="margin-bottom:8px"><strong style="color:var(--gold)">Good XIRR:</strong> &gt;15% for residential, &gt;18% for commercial</div>
-          <div><strong style="color:var(--gold)">XIRR vs IRR:</strong> XIRR is more accurate — accounts for exact timing</div>
-        </div>
-      </div>
+      <div class="card" style="margin-bottom:16px"><div class="ctitle">XIRR Result</div><div id="xirr-result"><div style="color:var(--t3);font-size:13px;padding:20px 0">Enter at least 2 cash flows to calculate.</div></div></div>
+      <div class="card"><div class="ctitle">How to Use XIRR</div><div style="font-size:12px;color:var(--t2);line-height:1.8"><div style="margin-bottom:8px"><strong style="color:var(--gold)">Booking advance:</strong> Enter as negative on booking date</div><div style="margin-bottom:8px"><strong style="color:var(--gold)">Construction payments:</strong> Each tranche as negative on payment date</div><div style="margin-bottom:8px"><strong style="color:var(--gold)">Rental income:</strong> Monthly/annual inflows as positive</div><div style="margin-bottom:8px"><strong style="color:var(--gold)">Sale proceeds:</strong> Final positive on exit date</div><div style="margin-bottom:8px"><strong style="color:var(--gold)">Good XIRR:</strong> &gt;15% for residential, &gt;18% for commercial</div></div></div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════
-     TAB: CONSTRUCTION FINANCE
-════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     TAB: CONSTRUCTION
+══════════════════════════════════════ -->
 <div id="tab-construction" class="sec">
-  <div class="section-intro">
-    <strong>Construction Finance Calculator</strong> — for developers raising debt and investors evaluating a developer's financial structure. Models the complete construction loan: drawdown schedule, IDC, total project cost, and profitability. This is what NBFCs and PE funds analyze before lending.
-  </div>
+  <div class="section-intro"><strong>Construction Finance Calculator</strong> — for developers raising debt and investors evaluating a developer's financial structure. Models the complete construction loan: drawdown schedule, IDC, total project cost, and profitability.</div>
   <div class="two">
     <div>
       <div class="card">
         <div class="ctitle">Project Parameters</div>
-        <label class="lbl">Total Saleable Area (sq.ft)</label>
-        <input type="number" class="inp" id="c-area" value="100000" step="5000" oninput="calcConstruction()"/>
-        <label class="lbl">Average Selling Price (₹/sqft)</label>
-        <input type="number" class="inp" id="c-sp" value="8500" step="100" oninput="calcConstruction()"/>
-        <label class="lbl">Land Cost (₹)</label>
-        <input type="number" class="inp" id="c-land" value="30000000" step="1000000" oninput="calcConstruction()"/>
-        <label class="lbl">Construction Cost (₹/sqft)</label>
-        <input type="number" class="inp" id="c-cc" value="2800" step="100" oninput="calcConstruction()"/>
-        <label class="lbl">Other Costs (approvals, marketing) (₹)</label>
-        <input type="number" class="inp" id="c-other" value="5000000" step="500000" oninput="calcConstruction()"/>
-        <label class="lbl">Construction Timeline (Months)</label>
-        <input type="number" class="inp" id="c-months" value="36" step="6" min="6" max="120" oninput="calcConstruction()"/>
+        <label class="lbl">Total Saleable Area (sq.ft)</label><input type="number" class="inp" id="c-area" value="100000" step="5000" oninput="calcConstruction()"/>
+        <label class="lbl">Average Selling Price (₹/sqft)</label><input type="number" class="inp" id="c-sp" value="8500" step="100" oninput="calcConstruction()"/>
+        <label class="lbl">Land Cost (₹)</label><input type="number" class="inp" id="c-land" value="30000000" step="1000000" oninput="calcConstruction()"/>
+        <label class="lbl">Construction Cost (₹/sqft)</label><input type="number" class="inp" id="c-cc" value="2800" step="100" oninput="calcConstruction()"/>
+        <label class="lbl">Other Costs (approvals, marketing) (₹)</label><input type="number" class="inp" id="c-other" value="5000000" step="500000" oninput="calcConstruction()"/>
+        <label class="lbl">Construction Timeline (Months)</label><input type="number" class="inp" id="c-months" value="36" step="6" min="6" max="120" oninput="calcConstruction()"/>
       </div>
       <div class="card" style="margin-top:16px">
         <div class="ctitle">Debt Structure</div>
-        <label class="lbl">Construction Loan Amount (₹)</label>
-        <input type="number" class="inp" id="c-loan" value="40000000" step="1000000" oninput="calcConstruction()"/>
-        <label class="lbl">Construction Finance Rate (% p.a.)</label>
-        <input type="number" class="inp" id="c-rate" value="14" step="0.25" min="8" max="22" oninput="calcConstruction()"/>
-        <label class="lbl">% of Revenue from Pre-sales</label>
-        <input type="number" class="inp" id="c-presale" value="60" step="5" min="0" max="100" oninput="calcConstruction()"/>
-        <label class="lbl">Developer Equity Contribution (₹)</label>
-        <input type="number" class="inp" id="c-equity" value="20000000" step="1000000" oninput="calcConstruction()"/>
+        <label class="lbl">Construction Loan Amount (₹)</label><input type="number" class="inp" id="c-loan" value="40000000" step="1000000" oninput="calcConstruction()"/>
+        <label class="lbl">Construction Finance Rate (% p.a.)</label><input type="number" class="inp" id="c-rate" value="14" step="0.25" min="8" max="22" oninput="calcConstruction()"/>
+        <label class="lbl">% of Revenue from Pre-sales</label><input type="number" class="inp" id="c-presale" value="60" step="5" min="0" max="100" oninput="calcConstruction()"/>
+        <label class="lbl">Developer Equity Contribution (₹)</label><input type="number" class="inp" id="c-equity" value="20000000" step="1000000" oninput="calcConstruction()"/>
       </div>
     </div>
     <div>
-      <div class="card" style="margin-bottom:16px">
-        <div class="ctitle">Project Economics</div>
-        <div class="four" style="margin-bottom:16px" id="c-top"></div>
-        <div class="four" id="c-bottom"></div>
-      </div>
+      <div class="card" style="margin-bottom:16px"><div class="ctitle">Project Economics</div><div class="four" style="margin-bottom:16px" id="c-top"></div><div class="four" id="c-bottom"></div></div>
       <div class="two-eq" style="margin-bottom:16px">
         <div class="card"><div class="ctitle">Cost Breakdown</div><div id="c-costs"></div></div>
         <div class="card"><div class="ctitle">Lender Metrics</div><div id="c-lender"></div></div>
       </div>
-      <div class="card">
-        <div class="ctitle">Construction Drawdown Schedule</div>
-        <div style="overflow-x:auto"><table>
-          <thead><tr><th>Phase</th><th>% Drawn</th><th>Amount</th><th>Cumulative IDC</th><th>Pre-sale Collections</th></tr></thead>
-          <tbody id="c-schedule"></tbody>
-        </table></div>
-      </div>
+      <div class="card"><div class="ctitle">Construction Drawdown Schedule</div><div style="overflow-x:auto"><table><thead><tr><th>Phase</th><th>% Drawn</th><th>Amount</th><th>Cumulative IDC</th><th>Pre-sale Collections</th></tr></thead><tbody id="c-schedule"></tbody></table></div></div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════
      TAB: ROE
-════════════════════════════════════════════════════════ -->
+══════════════════════════════════════ -->
 <div id="tab-roe" class="sec">
-  <div class="section-intro">
-    <strong>Return on Equity (ROE)</strong> measures what you actually earn on the cash you put in. Because of leverage, ROE is almost always higher than the property's appreciation rate. Also shows <strong>Cash-on-Cash Return</strong> and <strong>Equity Build-up</strong> from loan repayment.
-  </div>
+  <div class="section-intro"><strong>Return on Equity (ROE)</strong> measures what you actually earn on the cash you put in. Because of leverage, ROE is almost always higher than the property's appreciation rate.</div>
   <div class="two">
     <div>
       <div class="card">
         <div class="ctitle">Investment Inputs</div>
-        <label class="lbl">Property Purchase Price (₹)</label>
-        <input type="number" class="inp" id="r-price" value="10000000" step="100000" oninput="calcROE()"/>
-        <label class="lbl">Stamp Duty + Registration (₹)</label>
-        <input type="number" class="inp" id="r-sd" value="700000" step="10000" oninput="calcROE()"/>
-        <label class="lbl">Interior / Furnishing Cost (₹)</label>
-        <input type="number" class="inp" id="r-interior" value="500000" step="50000" oninput="calcROE()"/>
-        <label class="lbl">Loan Amount (₹)</label>
-        <input type="number" class="inp" id="r-loan" value="7000000" step="100000" oninput="calcROE()"/>
-        <label class="lbl">Loan Interest Rate (% p.a.)</label>
-        <input type="number" class="inp" id="r-rate" value="8.75" step="0.25" oninput="calcROE()"/>
-        <label class="lbl">Loan Tenure (Years)</label>
-        <input type="number" class="inp" id="r-tenure" value="20" step="1" oninput="calcROE()"/>
+        <label class="lbl">Property Purchase Price (₹)</label><input type="number" class="inp" id="r-price" value="10000000" step="100000" oninput="calcROE()"/>
+        <label class="lbl">Stamp Duty + Registration (₹)</label><input type="number" class="inp" id="r-sd" value="700000" step="10000" oninput="calcROE()"/>
+        <label class="lbl">Interior / Furnishing Cost (₹)</label><input type="number" class="inp" id="r-interior" value="500000" step="50000" oninput="calcROE()"/>
+        <label class="lbl">Loan Amount (₹)</label><input type="number" class="inp" id="r-loan" value="7000000" step="100000" oninput="calcROE()"/>
+        <label class="lbl">Loan Interest Rate (% p.a.)</label><input type="number" class="inp" id="r-rate" value="8.75" step="0.25" oninput="calcROE()"/>
+        <label class="lbl">Loan Tenure (Years)</label><input type="number" class="inp" id="r-tenure" value="20" step="1" oninput="calcROE()"/>
       </div>
       <div class="card" style="margin-top:16px">
         <div class="ctitle">Income & Growth</div>
-        <label class="lbl">Monthly Rent (₹)</label>
-        <input type="number" class="inp" id="r-rent" value="28000" step="500" oninput="calcROE()"/>
-        <label class="lbl">Annual Rent Growth (% p.a.)</label>
-        <input type="number" class="inp" id="r-rentg" value="5" step="0.5" oninput="calcROE()"/>
-        <label class="lbl">Vacancy + Expenses (% of gross rent)</label>
-        <input type="number" class="inp" id="r-vac" value="15" step="1" oninput="calcROE()"/>
-        <label class="lbl">Annual Property Appreciation (% p.a.)</label>
-        <input type="number" class="inp" id="r-ap" value="9" step="0.5" oninput="calcROE()"/>
-        <label class="lbl">Analysis Period (Years)</label>
-        <input type="number" class="inp" id="r-years" value="5" step="1" min="1" max="20" oninput="calcROE()"/>
+        <label class="lbl">Monthly Rent (₹)</label><input type="number" class="inp" id="r-rent" value="28000" step="500" oninput="calcROE()"/>
+        <label class="lbl">Annual Rent Growth (% p.a.)</label><input type="number" class="inp" id="r-rentg" value="5" step="0.5" oninput="calcROE()"/>
+        <label class="lbl">Vacancy + Expenses (% of gross rent)</label><input type="number" class="inp" id="r-vac" value="15" step="1" oninput="calcROE()"/>
+        <label class="lbl">Annual Property Appreciation (% p.a.)</label><input type="number" class="inp" id="r-ap" value="9" step="0.5" oninput="calcROE()"/>
+        <label class="lbl">Analysis Period (Years)</label><input type="number" class="inp" id="r-years" value="5" step="1" min="1" max="20" oninput="calcROE()"/>
       </div>
     </div>
     <div>
-      <div class="card" style="margin-bottom:16px">
-        <div class="ctitle">Return on Equity Summary</div>
-        <div class="four" id="roe-top" style="margin-bottom:16px"></div>
-        <div class="three" id="roe-bottom"></div>
-      </div>
-      <div class="card" style="margin-bottom:16px">
-        <div class="ctitle">Equity Build-up Over Time</div>
-        <div style="overflow-x:auto"><table>
-          <thead><tr><th>Year</th><th>Property Value</th><th>Loan Balance</th><th>Your Equity</th><th>CoC Return</th><th>Equity ROE</th></tr></thead>
-          <tbody id="roe-table"></tbody>
-        </table></div>
-      </div>
+      <div class="card" style="margin-bottom:16px"><div class="ctitle">Return on Equity Summary</div><div class="four" id="roe-top" style="margin-bottom:16px"></div><div class="three" id="roe-bottom"></div></div>
+      <div class="card" style="margin-bottom:16px"><div class="ctitle">Equity Build-up Over Time</div><div style="overflow-x:auto"><table><thead><tr><th>Year</th><th>Property Value</th><th>Loan Balance</th><th>Your Equity</th><th>CoC Return</th><th>Equity ROE</th></tr></thead><tbody id="roe-table"></tbody></table></div></div>
       <div class="card"><div class="ctitle">Leverage Effect</div><div id="roe-leverage"></div></div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════
      TAB: LTV & DEBT YIELD
-════════════════════════════════════════════════════════ -->
+══════════════════════════════════════ -->
 <div id="tab-ltv" class="sec">
-  <div class="section-intro">
-    <strong>Loan-to-Value (LTV)</strong>, <strong>Debt Yield</strong>, and <strong>DSCR</strong> are the three metrics every bank and NBFC calculates before approving your loan. Use this to check your eligibility before approaching a lender.
-  </div>
+  <div class="section-intro"><strong>Loan-to-Value (LTV)</strong>, <strong>Debt Yield</strong>, and <strong>DSCR</strong> are the three metrics every bank and NBFC calculates before approving your loan. Use this to check your eligibility before approaching a lender.</div>
   <div class="two">
     <div>
       <div class="card">
         <div class="ctitle">Property & Income</div>
-        <label class="lbl">Property Market Value (₹)</label>
-        <input type="number" class="inp" id="l-value" value="15000000" step="500000" oninput="calcLTV()"/>
-        <label class="lbl">Gross Annual Rent / NOI (₹ p.a.)</label>
-        <input type="number" class="inp" id="l-noi-gross" value="540000" step="12000" oninput="calcLTV()"/>
-        <label class="lbl">Operating Expenses (% of gross rent)</label>
-        <input type="number" class="inp" id="l-opex" value="20" step="1" min="0" max="50" oninput="calcLTV()"/>
+        <label class="lbl">Property Market Value (₹)</label><input type="number" class="inp" id="l-value" value="15000000" step="500000" oninput="calcLTV()"/>
+        <label class="lbl">Gross Annual Rent / NOI (₹ p.a.)</label><input type="number" class="inp" id="l-noi-gross" value="540000" step="12000" oninput="calcLTV()"/>
+        <label class="lbl">Operating Expenses (% of gross rent)</label><input type="number" class="inp" id="l-opex" value="20" step="1" min="0" max="50" oninput="calcLTV()"/>
       </div>
       <div class="card" style="margin-top:16px">
         <div class="ctitle">Loan Details</div>
-        <label class="lbl">Loan Amount Requested (₹)</label>
-        <input type="number" class="inp" id="l-loan" value="10000000" step="500000" oninput="calcLTV()"/>
-        <label class="lbl">Loan Interest Rate (% p.a.)</label>
-        <input type="number" class="inp" id="l-rate" value="9.5" step="0.25" oninput="calcLTV()"/>
-        <label class="lbl">Loan Tenure (Years)</label>
-        <input type="number" class="inp" id="l-tenure" value="15" step="1" oninput="calcLTV()"/>
+        <label class="lbl">Loan Amount Requested (₹)</label><input type="number" class="inp" id="l-loan" value="10000000" step="500000" oninput="calcLTV()"/>
+        <label class="lbl">Loan Interest Rate (% p.a.)</label><input type="number" class="inp" id="l-rate" value="9.5" step="0.25" oninput="calcLTV()"/>
+        <label class="lbl">Loan Tenure (Years)</label><input type="number" class="inp" id="l-tenure" value="15" step="1" oninput="calcLTV()"/>
         <label class="lbl">Property Type</label>
         <select class="inp" id="l-type" onchange="calcLTV()">
-          <option value="res">Residential</option>
-          <option value="com">Commercial</option>
-          <option value="ind">Industrial / Warehouse</option>
-          <option value="plot">Plot / Land</option>
+          <option value="res">Residential</option><option value="com">Commercial</option><option value="ind">Industrial / Warehouse</option><option value="plot">Plot / Land</option>
         </select>
       </div>
       <div class="card" style="margin-top:16px"><div class="ctitle">Lender Benchmarks</div><div id="ltv-benchmarks"></div></div>
     </div>
     <div>
-      <div class="card" style="margin-bottom:16px">
-        <div class="ctitle">Key Lending Metrics</div>
-        <div class="four" style="margin-bottom:16px" id="ltv-top"></div>
-        <div class="three" id="ltv-bottom"></div>
-      </div>
+      <div class="card" style="margin-bottom:16px"><div class="ctitle">Key Lending Metrics</div><div class="four" style="margin-bottom:16px" id="ltv-top"></div><div class="three" id="ltv-bottom"></div></div>
       <div class="card" style="margin-bottom:16px"><div class="ctitle">Loan Eligibility vs Constraints</div><div id="ltv-eligibility"></div></div>
       <div class="card"><div class="ctitle">What Lenders Actually Look For</div><div id="ltv-guide" style="font-size:12px;color:var(--t2);line-height:1.8"></div></div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════
      TAB: EMI DETAIL
-════════════════════════════════════════════════════════ -->
+══════════════════════════════════════ -->
 <div id="tab-emi" class="sec">
-  <div class="section-intro">
-    <strong>EMI Calculator</strong> — complete home loan analysis including total interest cost, amortization, prepayment impact, and true cost of borrowing including processing fees. Also compares rates across lenders.
-  </div>
+  <div class="section-intro"><strong>EMI Calculator</strong> — complete home loan analysis including total interest cost, amortization, prepayment impact, and true cost of borrowing including processing fees.</div>
   <div class="two">
     <div>
       <div class="card">
         <div class="ctitle">Loan Details</div>
-        <label class="lbl">Loan Amount (₹)</label>
-        <input type="number" class="inp" id="e-loan" value="8000000" step="100000" oninput="calcEMI()"/>
-        <label class="lbl">Annual Interest Rate (%)</label>
-        <input type="number" class="inp" id="e-rate" value="8.75" step="0.25" min="1" max="20" oninput="calcEMI()"/>
-        <label class="lbl">Tenure (Years)</label>
-        <input type="number" class="inp" id="e-tenure" value="20" step="1" min="1" max="30" oninput="calcEMI()"/>
-        <label class="lbl">Processing Fee (₹)</label>
-        <input type="number" class="inp" id="e-proc" value="10000" step="1000" oninput="calcEMI()"/>
-        <label class="lbl">Loan Insurance / PMAY subsidy (₹)</label>
-        <input type="number" class="inp" id="e-ins" value="0" step="1000" oninput="calcEMI()"/>
+        <label class="lbl">Loan Amount (₹)</label><input type="number" class="inp" id="e-loan" value="8000000" step="100000" oninput="calcEMI()"/>
+        <label class="lbl">Annual Interest Rate (%)</label><input type="number" class="inp" id="e-rate" value="8.75" step="0.25" min="1" max="20" oninput="calcEMI()"/>
+        <label class="lbl">Tenure (Years)</label><input type="number" class="inp" id="e-tenure" value="20" step="1" min="1" max="30" oninput="calcEMI()"/>
+        <label class="lbl">Processing Fee (₹)</label><input type="number" class="inp" id="e-proc" value="10000" step="1000" oninput="calcEMI()"/>
+        <label class="lbl">Loan Insurance / PMAY subsidy (₹)</label><input type="number" class="inp" id="e-ins" value="0" step="1000" oninput="calcEMI()"/>
       </div>
       <div class="card" style="margin-top:16px">
         <div class="ctitle">Prepayment Analysis</div>
-        <label class="lbl">One-time Prepayment Amount (₹)</label>
-        <input type="number" class="inp" id="e-prepay" value="0" step="100000" oninput="calcEMI()"/>
-        <label class="lbl">Prepayment at End of Year</label>
-        <input type="number" class="inp" id="e-prepay-yr" value="5" step="1" min="1" max="29" oninput="calcEMI()"/>
+        <label class="lbl">One-time Prepayment Amount (₹)</label><input type="number" class="inp" id="e-prepay" value="0" step="100000" oninput="calcEMI()"/>
+        <label class="lbl">Prepayment at End of Year</label><input type="number" class="inp" id="e-prepay-yr" value="5" step="1" min="1" max="29" oninput="calcEMI()"/>
         <label class="lbl">After Prepayment: Reduce</label>
         <select class="inp" id="e-prepay-opt" onchange="calcEMI()">
-          <option value="tenure">Tenure (keep EMI same)</option>
-          <option value="emi">EMI (keep tenure same)</option>
+          <option value="tenure">Tenure (keep EMI same)</option><option value="emi">EMI (keep tenure same)</option>
         </select>
         <div class="divider"></div>
-        <label class="lbl">Compare With: Alternative Rate (%)</label>
-        <input type="number" class="inp" id="e-compare" value="8.25" step="0.25" min="1" max="20" oninput="calcEMI()"/>
+        <label class="lbl">Compare With: Alternative Rate (%)</label><input type="number" class="inp" id="e-compare" value="8.25" step="0.25" min="1" max="20" oninput="calcEMI()"/>
       </div>
     </div>
     <div>
-      <div class="card" style="margin-bottom:16px">
-        <div class="ctitle">EMI Breakdown</div>
-        <div class="four" style="margin-bottom:16px" id="emi-top"></div>
-        <div class="three" id="emi-bottom"></div>
-      </div>
+      <div class="card" style="margin-bottom:16px"><div class="ctitle">EMI Breakdown</div><div class="four" style="margin-bottom:16px" id="emi-top"></div><div class="three" id="emi-bottom"></div></div>
       <div class="card" style="margin-bottom:16px"><div class="ctitle">Prepayment Impact</div><div id="emi-prepay"></div></div>
-      <div class="card">
-        <div class="ctitle">Amortization (First 10 Years)</div>
-        <div style="overflow-x:auto"><table>
-          <thead><tr><th>Year</th><th>Opening Balance</th><th>Principal Paid</th><th>Interest Paid</th><th>Closing Balance</th><th>% Paid Off</th></tr></thead>
-          <tbody id="emi-amort"></tbody>
-        </table></div>
-      </div>
+      <div class="card"><div class="ctitle">Amortization (First 10 Years)</div><div style="overflow-x:auto"><table><thead><tr><th>Year</th><th>Opening Balance</th><th>Principal Paid</th><th>Interest Paid</th><th>Closing Balance</th><th>% Paid Off</th></tr></thead><tbody id="emi-amort"></tbody></table></div></div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════
-     TAB: GET A LOAN (Lead Capture) — UNCHANGED
-════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     TAB: GET A LOAN
+══════════════════════════════════════ -->
 <div id="tab-loan" class="sec">
-
-  <!-- Hero -->
   <div class="loan-hero">
     <div class="loan-hero-title">Get the Best Home Loan &amp;<br/><span>Loan Against Property</span> in Delhi NCR</div>
     <div class="loan-hero-sub">Free loan advisory — I compare rates from 15+ banks and NBFCs and find the best deal for your profile. No hidden charges. No pressure. Response within 2 hours.</div>
@@ -1157,120 +750,54 @@ select.stc-input { cursor: pointer; }
       <div class="trust-item"><div class="trust-icon">📊</div><span>CFA-grade analysis</span></div>
     </div>
   </div>
-
-  <!-- Services -->
   <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">🏠</div>
-      <div class="service-title">Home Loans</div>
-      <div class="service-desc">Purchase, construction, or balance transfer. Get the lowest rate for your CIBIL and income profile from HDFC, SBI, ICICI, Bajaj Finserv, and more.</div>
-      <div class="service-rate">Rates from 8.35% p.a.</div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🏢</div>
-      <div class="service-title">Loan Against Property</div>
-      <div class="service-desc">Residential or commercial property. Unlock up to 75% of your property value for business, personal, or investment needs. Fast processing.</div>
-      <div class="service-rate">Rates from 9.0% p.a.</div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🔄</div>
-      <div class="service-title">Balance Transfer</div>
-      <div class="service-desc">Already have a home loan at a high rate? Transfer to a better lender and save lakhs in interest. I'll calculate your exact savings before you decide.</div>
-      <div class="service-rate">Save ₹2–8 L typically</div>
-    </div>
+    <div class="service-card"><div class="service-icon">🏠</div><div class="service-title">Home Loans</div><div class="service-desc">Purchase, construction, or balance transfer. Get the lowest rate for your CIBIL and income profile from HDFC, SBI, ICICI, Bajaj Finserv, and more.</div><div class="service-rate">Rates from 8.35% p.a.</div></div>
+    <div class="service-card"><div class="service-icon">🏢</div><div class="service-title">Loan Against Property</div><div class="service-desc">Residential or commercial property. Unlock up to 75% of your property value for business, personal, or investment needs. Fast processing.</div><div class="service-rate">Rates from 9.0% p.a.</div></div>
+    <div class="service-card"><div class="service-icon">🔄</div><div class="service-title">Balance Transfer</div><div class="service-desc">Already have a home loan at a high rate? Transfer to a better lender and save lakhs in interest. I'll calculate your exact savings before you decide.</div><div class="service-rate">Save ₹2–8 L typically</div></div>
   </div>
-
-  <!-- Lenders -->
   <div class="lenders-strip">
     <div class="lenders-title">Lenders I work with</div>
     <div class="lenders-row">
-      <span class="lender-pill">HDFC Bank</span>
-      <span class="lender-pill">SBI</span>
-      <span class="lender-pill">ICICI Bank</span>
-      <span class="lender-pill">Bajaj Finserv</span>
-      <span class="lender-pill">Axis Bank</span>
-      <span class="lender-pill">Kotak Mahindra</span>
-      <span class="lender-pill">PNB Housing</span>
-      <span class="lender-pill">Piramal Finance</span>
-      <span class="lender-pill">Aadhar Housing</span>
-      <span class="lender-pill">Tata Capital</span>
-      <span class="lender-pill">LIC HFL</span>
-      <span class="lender-pill">+ more</span>
+      <span class="lender-pill">HDFC Bank</span><span class="lender-pill">SBI</span><span class="lender-pill">ICICI Bank</span><span class="lender-pill">Bajaj Finserv</span><span class="lender-pill">Axis Bank</span><span class="lender-pill">Kotak Mahindra</span><span class="lender-pill">PNB Housing</span><span class="lender-pill">Piramal Finance</span><span class="lender-pill">Aadhar Housing</span><span class="lender-pill">Tata Capital</span><span class="lender-pill">LIC HFL</span><span class="lender-pill">+ more</span>
     </div>
   </div>
-
-  <!-- Form + Profile side by side -->
   <div class="two-eq" style="gap:24px;align-items:start">
-
-    <!-- LEAD FORM — completely unchanged -->
     <div class="card" style="padding:28px">
       <div class="ctitle" style="font-size:18px;margin-bottom:4px">Request Free Consultation</div>
       <p style="font-size:12px;color:var(--t3);margin-bottom:22px;line-height:1.6">Fill in your details — I'll reach out within 2 hours on WhatsApp or call.</p>
-
       <div id="lead-form">
         <form action="https://formsubmit.co/kumarprashant32742@gmail.com" method="POST" onsubmit="handleSubmit(event)">
-
-          <!-- FormSubmit config -->
           <input type="hidden" name="_subject" value="🏠 New Loan Enquiry — NiveshBhoomi"/>
           <input type="hidden" name="_captcha" value="false"/>
           <input type="hidden" name="_template" value="table"/>
           <input type="hidden" name="_next" value=""/>
-
           <div class="form-grid">
-            <div>
-              <label class="form-label">Full Name *</label>
-              <input type="text" name="Full Name" class="form-input" id="f-name" placeholder="Your name" required/>
-            </div>
-            <div>
-              <label class="form-label">Mobile Number *</label>
-              <input type="tel" name="Mobile Number" class="form-input" id="f-phone" placeholder="10-digit mobile" required pattern="[0-9]{10}"/>
-            </div>
-            <div>
-              <label class="form-label">Loan Type *</label>
+            <div><label class="form-label">Full Name *</label><input type="text" name="Full Name" class="form-input" id="f-name" placeholder="Your name" required/></div>
+            <div><label class="form-label">Mobile Number *</label><input type="tel" name="Mobile Number" class="form-input" id="f-phone" placeholder="10-digit mobile" required pattern="[0-9]{10}"/></div>
+            <div><label class="form-label">Loan Type *</label>
               <select name="Loan Type" class="form-input" id="f-type" required>
                 <option value="">Select loan type</option>
-                <option>Home Loan — New Purchase</option>
-                <option>Home Loan — Under Construction</option>
-                <option>Loan Against Property</option>
-                <option>Home Loan Balance Transfer</option>
-                <option>Plot + Construction Loan</option>
+                <option>Home Loan — New Purchase</option><option>Home Loan — Under Construction</option>
+                <option>Loan Against Property</option><option>Home Loan Balance Transfer</option><option>Plot + Construction Loan</option>
               </select>
             </div>
-            <div>
-              <label class="form-label">Loan Amount Required</label>
+            <div><label class="form-label">Loan Amount Required</label>
               <select name="Loan Amount" class="form-input" id="f-amount">
-                <option value="">Select range</option>
-                <option>₹20 L – ₹50 L</option>
-                <option>₹50 L – ₹1 Cr</option>
-                <option>₹1 Cr – ₹2 Cr</option>
-                <option>₹2 Cr – ₹5 Cr</option>
-                <option>₹5 Cr+</option>
+                <option value="">Select range</option><option>₹20 L – ₹50 L</option><option>₹50 L – ₹1 Cr</option><option>₹1 Cr – ₹2 Cr</option><option>₹2 Cr – ₹5 Cr</option><option>₹5 Cr+</option>
               </select>
             </div>
-            <div>
-              <label class="form-label">Employment Type</label>
+            <div><label class="form-label">Employment Type</label>
               <select name="Employment Type" class="form-input" id="f-emp">
-                <option value="">Select</option>
-                <option>Salaried — Private</option>
-                <option>Salaried — Govt / PSU</option>
-                <option>Self Employed — Business</option>
-                <option>Self Employed — Professional</option>
+                <option value="">Select</option><option>Salaried — Private</option><option>Salaried — Govt / PSU</option><option>Self Employed — Business</option><option>Self Employed — Professional</option>
               </select>
             </div>
-            <div>
-              <label class="form-label">City / Area</label>
-              <input type="text" name="City" class="form-input" id="f-city" placeholder="e.g. Noida, Gurugram, Delhi"/>
-            </div>
-            <div class="form-full">
-              <label class="form-label">Anything specific you'd like help with?</label>
-              <textarea name="Message" class="form-input" id="f-msg" rows="3" placeholder="e.g. I have an existing loan at 9.5%, want to transfer. Or: buying a flat in Noida for ₹80L, need ₹60L loan..." style="resize:vertical"></textarea>
-            </div>
+            <div><label class="form-label">City / Area</label><input type="text" name="City" class="form-input" id="f-city" placeholder="e.g. Noida, Gurugram, Delhi"/></div>
+            <div class="form-full"><label class="form-label">Anything specific you'd like help with?</label><textarea name="Message" class="form-input" id="f-msg" rows="3" placeholder="e.g. I have an existing loan at 9.5%, want to transfer. Or: buying a flat in Noida for ₹80L, need ₹60L loan..." style="resize:vertical"></textarea></div>
           </div>
           <button type="submit" class="submit-btn">Get Free Consultation →</button>
           <p class="form-note">🔒 Your details are private and will only be used to contact you about your loan. No spam, ever.</p>
         </form>
       </div>
-
       <div class="success-msg" id="success-msg">
         <div style="font-size:40px;margin-bottom:12px">✅</div>
         <h3>Request Received!</h3>
@@ -1278,126 +805,62 @@ select.stc-input { cursor: pointer; }
         <p style="margin-top:12px">Or connect directly: <a href="https://www.linkedin.com/in/prashant-kumar-3104401b5/" target="_blank" style="color:var(--gold);font-weight:600">LinkedIn</a></p>
       </div>
     </div>
-
-    <!-- PROFILE -->
     <div>
       <div class="profile-card" style="margin-bottom:16px">
         <div class="profile-avatar">👤</div>
         <div>
           <div class="profile-name">Prashant Kumar</div>
           <div class="profile-cred">CFA Level II · Home Loan &amp; LAP DSA · Delhi NCR</div>
-          <div class="profile-bio">
-            I help homebuyers and property investors in Delhi NCR get the best loan deals — right lender, right rate, minimum documentation hassle. Built NiveshBhoomi to bring professional-grade real estate finance tools to Indian investors. The same metrics NBFCs and PE funds use, now free for everyone.
-          </div>
+          <div class="profile-bio">I help homebuyers and property investors in Delhi NCR get the best loan deals — right lender, right rate, minimum documentation hassle. Built NiveshBhoomi to bring professional-grade real estate finance tools to Indian investors.</div>
           <div class="profile-links">
             <a href="https://www.linkedin.com/in/prashant-kumar-3104401b5/" target="_blank" class="profile-link pl-gold">LinkedIn →</a>
             <a href="https://wa.me/918130521740" target="_blank" class="profile-link pl-ghost">WhatsApp</a>
           </div>
         </div>
       </div>
-
-      <!-- Why choose -->
       <div class="card">
         <div class="ctitle">Why Work With Me?</div>
         <div style="margin-top:12px">
-          <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px">
-            <span style="font-size:20px;flex-shrink:0">📐</span>
-            <div>
-              <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Financial analysis, not just paperwork</div>
-              <div style="font-size:12px;color:var(--t3);line-height:1.6">I calculate your exact EMI, total interest, and savings across lenders before you decide. No guesswork.</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px">
-            <span style="font-size:20px;flex-shrink:0">🏦</span>
-            <div>
-              <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Access to 15+ lenders</div>
-              <div style="font-size:12px;color:var(--t3);line-height:1.6">From PSU banks to NBFCs — I find the lender that fits your income profile and property type.</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px">
-            <span style="font-size:20px;flex-shrink:0">💰</span>
-            <div>
-              <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Free for borrowers</div>
-              <div style="font-size:12px;color:var(--t3);line-height:1.6">My service costs you nothing. I earn a referral fee from the lender only if and when your loan disburses.</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;align-items:flex-start">
-            <span style="font-size:20px;flex-shrink:0">📍</span>
-            <div>
-              <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Delhi NCR focused</div>
-              <div style="font-size:12px;color:var(--t3);line-height:1.6">Deep knowledge of Delhi, Noida, Gurugram, Faridabad, Ghaziabad property markets and local lender preferences.</div>
-            </div>
-          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px"><span style="font-size:20px;flex-shrink:0">📐</span><div><div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Financial analysis, not just paperwork</div><div style="font-size:12px;color:var(--t3);line-height:1.6">I calculate your exact EMI, total interest, and savings across lenders before you decide. No guesswork.</div></div></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px"><span style="font-size:20px;flex-shrink:0">🏦</span><div><div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Access to 15+ lenders</div><div style="font-size:12px;color:var(--t3);line-height:1.6">From PSU banks to NBFCs — I find the lender that fits your income profile and property type.</div></div></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px"><span style="font-size:20px;flex-shrink:0">💰</span><div><div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Free for borrowers</div><div style="font-size:12px;color:var(--t3);line-height:1.6">My service costs you nothing. I earn a referral fee from the lender only if and when your loan disburses.</div></div></div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="font-size:20px;flex-shrink:0">📍</span><div><div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Delhi NCR focused</div><div style="font-size:12px;color:var(--t3);line-height:1.6">Deep knowledge of Delhi, Noida, Gurugram, Faridabad, Ghaziabad property markets and local lender preferences.</div></div></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-</div><!-- end .main -->
+</div><!-- /main -->
 
-<!-- ══════════════════════════════════════
-     FOOTER
-══════════════════════════════════════ -->
 <div style="background:var(--s3);border-top:1px solid var(--border);margin-top:48px">
   <div style="max-width:1100px;margin:0 auto;padding:28px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
     <div>
       <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--gold);margin-bottom:4px">निवेशभूमि · Nivesh Bhoomi</div>
-      <div style="font-size:11px;color:var(--t3);line-height:1.6">Real estate finance calculators · Home Loan &amp; LAP advisory · Delhi NCR<br/>
-      All calculations are for educational purposes. Consult a SEBI-registered advisor and CA before investing.</div>
+      <div style="font-size:11px;color:var(--t3);line-height:1.6">Real estate finance calculators · Home Loan &amp; LAP advisory · Delhi NCR<br/>All calculations are for educational purposes. Consult a SEBI-registered advisor and CA before investing.</div>
     </div>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <button onclick="showTab('loan',document.querySelectorAll('.tab')[1])" style="padding:10px 20px;background:var(--gold);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;">Get Loan Help →</button>
+      <button onclick="showTab('loan',document.querySelectorAll('.tab')[2])" style="padding:10px 20px;background:var(--gold);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;">Get Loan Help →</button>
       <a href="https://www.linkedin.com/in/prashant-kumar-3104401b5/" target="_blank" style="padding:10px 20px;background:transparent;color:var(--t2);border:1.5px solid var(--border2);border-radius:8px;font-size:12px;font-weight:600;text-decoration:none">LinkedIn</a>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     JAVASCRIPT
-══════════════════════════════════════ -->
 <script>
+/* ══════════════════════════════════════
+   HELPERS
+══════════════════════════════════════ */
 const fi=id=>parseFloat(document.getElementById(id)?.value)||0;
 const gi=id=>document.getElementById(id)?.value;
-
 function fI(n){return new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(n);}
 function fC(n){const a=Math.abs(n),s=n<0?"-":"";if(a>=10000000)return s+"₹"+(a/10000000).toFixed(2)+" Cr";if(a>=100000)return s+"₹"+(a/100000).toFixed(2)+" L";return fI(n);}
 function pct(n,d=2){return(isFinite(n)?n:0).toFixed(d)+"%";}
 function num(n){return(isFinite(n)?n:0).toLocaleString("en-IN");}
-
-function emiCalc(p,r,n){
-  if(p<=0||r<=0||n<=0)return 0;
-  const mr=r/1200;
-  return p*mr*Math.pow(1+mr,n)/(Math.pow(1+mr,n)-1);
-}
-function calcIRRfn(cfs){
-  if(!cfs||cfs.length<2)return NaN;
-  let r=0.1;
-  for(let i=0;i<3000;i++){
-    let npv=cfs.reduce((s,c,t)=>s+c/Math.pow(1+r,t),0);
-    let dnpv=cfs.reduce((s,c,t)=>s-t*c/Math.pow(1+r,t+1),0);
-    if(Math.abs(dnpv)<1e-12)break;
-    const nr=r-npv/dnpv;
-    if(Math.abs(nr-r)<1e-9){r=nr;break;}
-    r=Math.max(-0.9999,Math.min(10,nr));
-  }
-  return r*100;
-}
+function emiCalc(p,r,n){if(p<=0||r<=0||n<=0)return 0;const mr=r/1200;return p*mr*Math.pow(1+mr,n)/(Math.pow(1+mr,n)-1);}
+function calcIRRfn(cfs){if(!cfs||cfs.length<2)return NaN;let r=0.1;for(let i=0;i<3000;i++){let npv=cfs.reduce((s,c,t)=>s+c/Math.pow(1+r,t),0);let dnpv=cfs.reduce((s,c,t)=>s-t*c/Math.pow(1+r,t+1),0);if(Math.abs(dnpv)<1e-12)break;const nr=r-npv/dnpv;if(Math.abs(nr-r)<1e-9){r=nr;break;}r=Math.max(-0.9999,Math.min(10,nr));}return r*100;}
 function calcNPV(cfs,dr){return cfs.reduce((s,c,t)=>s+c/Math.pow(1+dr/100,t),0);}
-
-function metric(val,lbl,note,cls,sig){
-  const colorMap={'m-green':'var(--green)','m-red':'var(--red)','m-blue':'var(--blue)','m-gold':'var(--gold)','m-orange':'var(--orange)'};
-  const c=colorMap[cls]||'var(--text)';
-  return `<div class="metric ${cls||''}">
-    <div class="m-val" style="color:${c}">${val}</div>
-    <div class="m-lbl">${lbl}</div>
-    ${note?`<div class="m-note">${note}</div>`:''}
-    ${sig?`<div class="m-sig" style="color:${c}">${sig}</div>`:''}
-  </div>`;
-}
-function kvRow(k,v,vc){
-  return `<div class="row-kv"><span class="kv-k">${k}</span><span class="kv-v" style="color:${vc||'var(--text)'}">${v}</span></div>`;
-}
+function metric(val,lbl,note,cls,sig){const colorMap={'m-green':'var(--green)','m-red':'var(--red)','m-blue':'var(--blue)','m-gold':'var(--gold)','m-orange':'var(--orange)'};const c=colorMap[cls]||'var(--text)';return `<div class="metric ${cls||''}"><div class="m-val" style="color:${c}">${val}</div><div class="m-lbl">${lbl}</div>${note?`<div class="m-note">${note}</div>`:''}${sig?`<div class="m-sig" style="color:${c}">${sig}</div>`:''}</div>`;}
+function kvRow(k,v,vc){return `<div class="row-kv"><span class="kv-k">${k}</span><span class="kv-v" style="color:${vc||'var(--text)'}">${v}</span></div>`;}
 
 /* ── TAB SWITCHER ── */
 function showTab(id,el){
@@ -1405,131 +868,278 @@ function showTab(id,el){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+id).classList.add('active');
   if(el)el.classList.add('active');
-  const fns={
-    simple:()=>{calcEligibility();calcSimpleEMI();calcLenderCompare();},
-    irr:calcIRR,xirr:calcXIRR,construction:calcConstruction,
-    roe:calcROE,ltv:calcLTV,emi:calcEMI
-  };
+  const fns={simple:()=>{calcEligibility();calcSimpleEMI();calcLenderCompare();},rate:calcPersonalRate,irr:calcIRR,xirr:calcXIRR,construction:calcConstruction,roe:calcROE,ltv:calcLTV,emi:calcEMI};
   if(fns[id])fns[id]();
 }
 
 /* ══════════════════════════════════════
-   NEW SIMPLE TOOLS LOGIC
+   SIMPLE TOOLS
 ══════════════════════════════════════ */
-
-/* Tool 1: Eligibility */
 function calcEligibility(){
-  const income = fi('s-income');
-  const existingEMI = fi('s-existing-emi');
-  const tenure = fi('s-tenure-elig') || 20;
-  const rate = 8.75; // benchmark rate
-
-  if(income <= 0){ document.getElementById('elig-val').textContent='—'; return; }
-
-  // Most banks: max EMI = 50% of net income
-  const maxEMI = income * 0.50 - existingEMI;
-  if(maxEMI <= 0){
-    document.getElementById('elig-val').textContent = '₹0';
-    document.getElementById('elig-sub').textContent = 'Your existing EMIs exceed the 50% income limit. Clearing some loans will improve eligibility.';
-    return;
-  }
-
-  // Back-calculate loan from EMI
-  const mr = rate / 1200;
-  const n = tenure * 12;
-  const maxLoan = maxEMI * (Math.pow(1+mr,n) - 1) / (mr * Math.pow(1+mr,n));
-
-  document.getElementById('elig-val').textContent = fC(maxLoan);
-  document.getElementById('elig-sub').innerHTML =
-    `Your eligible EMI: <strong>${fI(maxEMI)}/mo</strong> &nbsp;|&nbsp; ` +
-    `At ${rate}% for ${tenure} yrs &nbsp;|&nbsp; ` +
-    `Down payment needed: ~<strong>${fC(maxLoan * 0.2)}</strong>`;
+  const income=fi('s-income'),existingEMI=fi('s-existing-emi'),tenure=fi('s-tenure-elig')||20,rate=8.75;
+  if(income<=0){document.getElementById('elig-val').textContent='—';return;}
+  const maxEMI=income*0.50-existingEMI;
+  if(maxEMI<=0){document.getElementById('elig-val').textContent='₹0';document.getElementById('elig-sub').textContent='Your existing EMIs exceed the 50% income limit.';return;}
+  const mr=rate/1200,n=tenure*12;
+  const maxLoan=maxEMI*(Math.pow(1+mr,n)-1)/(mr*Math.pow(1+mr,n));
+  document.getElementById('elig-val').textContent=fC(maxLoan);
+  document.getElementById('elig-sub').innerHTML=`Your eligible EMI: <strong>${fI(maxEMI)}/mo</strong> &nbsp;|&nbsp; At ${rate}% for ${tenure} yrs &nbsp;|&nbsp; Down payment needed: ~<strong>${fC(maxLoan*0.2)}</strong>`;
 }
-
-/* Tool 2: Simple EMI */
 function calcSimpleEMI(){
-  const loan = fi('s-loan-amt');
-  const rate = fi('s-rate-sel') || 8.75;
-  const tenure = fi('s-tenure-emi') || 20;
-
-  if(loan <= 0){ document.getElementById('emi-simple-val').textContent='—'; return; }
-
-  const emi = emiCalc(loan, rate, tenure * 12);
-  const totalPay = emi * tenure * 12;
-  const totalInterest = totalPay - loan;
-
-  document.getElementById('emi-simple-val').textContent = fI(emi);
-  document.getElementById('emi-simple-sub').innerHTML =
-    `Total interest over ${tenure} yrs: <strong style="color:var(--red)">${fC(totalInterest)}</strong><br/>` +
-    `Total amount paid: <strong>${fC(totalPay)}</strong> &nbsp;|&nbsp; ` +
-    `Interest = <strong>${pct(totalInterest/totalPay*100,0)}</strong> of total`;
+  const loan=fi('s-loan-amt'),rate=fi('s-rate-sel')||8.75,tenure=fi('s-tenure-emi')||20;
+  if(loan<=0){document.getElementById('emi-simple-val').textContent='—';return;}
+  const emi=emiCalc(loan,rate,tenure*12);
+  const totalPay=emi*tenure*12,totalInterest=totalPay-loan;
+  document.getElementById('emi-simple-val').textContent=fI(emi);
+  document.getElementById('emi-simple-sub').innerHTML=`Total interest over ${tenure} yrs: <strong style="color:var(--red)">${fC(totalInterest)}</strong><br/>Total amount paid: <strong>${fC(totalPay)}</strong> &nbsp;|&nbsp; Interest = <strong>${pct(totalInterest/totalPay*100,0)}</strong> of total`;
 }
-
-/* Tool 3: Lender Compare */
 function calcLenderCompare(){
-  const loan = fi('s-cmp-loan') || 5000000;
-  const profile = gi('s-cmp-profile') || 'sal_pvt';
-  const tenure = fi('s-cmp-tenure') || 20;
-
-  // Rate table: [lender, sal_govt, sal_pvt, self, processing]
-  const lenders = [
-    ['SBI',           8.50, 8.60, 8.85, '₹10,000'],
-    ['Union Bank',    8.35, 8.50, 8.75, '₹15,000'],
-    ['HDFC Bank',     8.60, 8.75, 9.00, '0.5%'],
-    ['ICICI Bank',    8.65, 8.75, 9.10, '0.5%'],
-    ['Kotak Mahindra',8.70, 8.85, 9.25, '0.5%'],
-    ['Axis Bank',     8.75, 9.00, 9.40, '1%'],
-    ['Bajaj Finserv', 8.85, 9.00, 9.50, '₹7,999'],
-    ['PNB Housing',   9.00, 9.20, 9.75, '1%'],
-  ];
-
-  const pIdx = profile === 'sal_govt' ? 1 : profile === 'sal_pvt' ? 2 : 3;
-  const rows = lenders.map(l => ({
-    name: l[0], rate: l[pIdx], proc: l[4],
-    emi: emiCalc(loan, l[pIdx], tenure * 12)
-  }));
-  rows.sort((a,b) => a.emi - b.emi);
-  const minEMI = rows[0].emi;
-
-  let html = `<table class="lender-compare-table">
-    <thead><tr><th>Lender</th><th>Rate</th><th>EMI/mo</th><th>vs Best</th></tr></thead>
-    <tbody>`;
-  rows.forEach((r,i) => {
-    const diff = r.emi - minEMI;
-    const diffStr = i===0 ? '<span class="lender-best-badge">BEST</span>' : `+${fI(diff).replace('₹','₹')}`;
-    html += `<tr>
-      <td style="font-weight:${i===0?'700':'400'};color:${i===0?'var(--green)':'inherit'}">${r.name}</td>
-      <td>${r.rate.toFixed(2)}%</td>
-      <td style="font-weight:600">${fI(r.emi)}</td>
-      <td style="font-size:11px;color:${i===0?'var(--green)':'var(--t3)'}">${diffStr}</td>
-    </tr>`;
-  });
-  html += `</tbody></table>
-    <div style="font-size:10px;color:var(--t3);margin-top:8px;line-height:1.5;">
-      Indicative rates. Actual rates depend on CIBIL score, income, and lender policy. Rates as of early 2025.
-    </div>`;
-  document.getElementById('lender-compare-result').innerHTML = html;
+  const loan=fi('s-cmp-loan')||5000000,profile=gi('s-cmp-profile')||'sal_pvt',tenure=fi('s-cmp-tenure')||20;
+  const lenders=[['SBI',8.50,8.60,8.85,'₹10,000'],['Union Bank',8.35,8.50,8.75,'₹15,000'],['HDFC Bank',8.60,8.75,9.00,'0.5%'],['ICICI Bank',8.65,8.75,9.10,'0.5%'],['Kotak Mahindra',8.70,8.85,9.25,'0.5%'],['Axis Bank',8.75,9.00,9.40,'1%'],['Bajaj Finserv',8.85,9.00,9.50,'₹7,999'],['PNB Housing',9.00,9.20,9.75,'1%']];
+  const pIdx=profile==='sal_govt'?1:profile==='sal_pvt'?2:3;
+  const rows=lenders.map(l=>({name:l[0],rate:l[pIdx],proc:l[4],emi:emiCalc(loan,l[pIdx],tenure*12)}));
+  rows.sort((a,b)=>a.emi-b.emi);
+  const minEMI=rows[0].emi;
+  let html=`<table class="lender-compare-table"><thead><tr><th>Lender</th><th>Rate</th><th>EMI/mo</th><th>vs Best</th></tr></thead><tbody>`;
+  rows.forEach((r,i)=>{const diff=r.emi-minEMI;const diffStr=i===0?'<span class="lender-best-badge">BEST</span>':`+${fI(diff)}`;html+=`<tr><td style="font-weight:${i===0?'700':'400'};color:${i===0?'var(--green)':'inherit'}">${r.name}</td><td>${r.rate.toFixed(2)}%</td><td style="font-weight:600">${fI(r.emi)}</td><td style="font-size:11px;color:${i===0?'var(--green)':'var(--t3)'}">${diffStr}</td></tr>`;});
+  html+=`</tbody></table><div style="font-size:10px;color:var(--t3);margin-top:8px;line-height:1.5;">Indicative rates. Actual rates depend on CIBIL score and lender policy.</div>`;
+  document.getElementById('lender-compare-result').innerHTML=html;
 }
 
 /* ══════════════════════════════════════
-   EXISTING ADVANCED TOOLS — UNCHANGED
+   PERSONALISED RATE ENGINE
 ══════════════════════════════════════ */
 
-/* ── IRR ── */
+// Rate matrix: for each lender, base rates by loan type and a CIBIL/profile adjustment function
+const RATE_MATRIX = [
+  {
+    name:'SBI',type:'PSU Bank',proc:'₹10,000 flat',maxTenure:{home:30,lap:15,bt:30},prepay:'Nil (floating)',
+    baseRates:{home:{sal_govt:8.40,sal_pvt:8.50,sal_sme:8.65,self_prof:8.70,self_biz:8.80},lap:{sal_govt:9.15,sal_pvt:9.30,sal_sme:9.50,self_prof:9.50,self_biz:9.70},bt:{sal_govt:8.35,sal_pvt:8.45,sal_sme:8.60,self_prof:8.65,self_biz:8.75}},
+    badge:'rob-best',badgeText:'Lowest Rate',note:'Best for Govt employees & high CIBIL',highlight:true
+  },
+  {
+    name:'Union Bank of India',type:'PSU Bank',proc:'0.25%, min ₹7,500',maxTenure:{home:30,lap:15,bt:30},prepay:'Nil (floating)',
+    baseRates:{home:{sal_govt:8.35,sal_pvt:8.45,sal_sme:8.60,self_prof:8.65,self_biz:8.75},lap:{sal_govt:9.00,sal_pvt:9.20,sal_sme:9.40,self_prof:9.40,self_biz:9.60},bt:{sal_govt:8.30,sal_pvt:8.40,sal_sme:8.55,self_prof:8.60,self_biz:8.70}},
+    badge:'rob-best',badgeText:'Lowest Rate',note:'PSU bank, lowest processing fee',highlight:false
+  },
+  {
+    name:'HDFC Bank',type:'Private Bank',proc:'0.5% + GST',maxTenure:{home:30,lap:15,bt:30},prepay:'Nil (floating)',
+    baseRates:{home:{sal_govt:8.55,sal_pvt:8.65,sal_sme:8.80,self_prof:8.85,self_biz:9.00},lap:{sal_govt:9.25,sal_pvt:9.45,sal_sme:9.65,self_prof:9.65,self_biz:9.85},bt:{sal_govt:8.50,sal_pvt:8.60,sal_sme:8.75,self_prof:8.80,self_biz:8.95}},
+    badge:'rob-pop',badgeText:'Most Popular',note:'Fast processing, wide branch network',highlight:false
+  },
+  {
+    name:'ICICI Bank',type:'Private Bank',proc:'0.5% + GST',maxTenure:{home:30,lap:15,bt:30},prepay:'Nil (floating)',
+    baseRates:{home:{sal_govt:8.60,sal_pvt:8.70,sal_sme:8.85,self_prof:8.90,self_biz:9.05},lap:{sal_govt:9.30,sal_pvt:9.50,sal_sme:9.70,self_prof:9.70,self_biz:9.90},bt:{sal_govt:8.55,sal_pvt:8.65,sal_sme:8.80,self_prof:8.85,self_biz:9.00}},
+    badge:'rob-pop',badgeText:'Digital Process',note:'Best in-app tracking, fast disbursement',highlight:false
+  },
+  {
+    name:'Kotak Mahindra Bank',type:'Private Bank',proc:'0.5% + GST',maxTenure:{home:20,lap:12,bt:20},prepay:'Nil (floating)',
+    baseRates:{home:{sal_govt:8.65,sal_pvt:8.75,sal_sme:8.95,self_prof:9.00,self_biz:9.20},lap:{sal_govt:9.40,sal_pvt:9.60,sal_sme:9.85,self_prof:9.85,self_biz:10.10},bt:{sal_govt:8.60,sal_pvt:8.70,sal_sme:8.90,self_prof:8.95,self_biz:9.15}},
+    badge:'',badgeText:'',note:'Shorter tenure, competitive for metro properties',highlight:false
+  },
+  {
+    name:'Axis Bank',type:'Private Bank',proc:'1% + GST',maxTenure:{home:30,lap:15,bt:30},prepay:'Nil (floating)',
+    baseRates:{home:{sal_govt:8.70,sal_pvt:8.85,sal_sme:9.05,self_prof:9.10,self_biz:9.30},lap:{sal_govt:9.50,sal_pvt:9.70,sal_sme:9.95,self_prof:9.95,self_biz:10.20},bt:{sal_govt:8.65,sal_pvt:8.80,sal_sme:9.00,self_prof:9.05,self_biz:9.25}},
+    badge:'',badgeText:'',note:'Good for balance transfer cases',highlight:false
+  },
+  {
+    name:'Bajaj Finserv',type:'NBFC',proc:'₹7,999 fixed',maxTenure:{home:30,lap:15,bt:30},prepay:'Nil (floating)',
+    baseRates:{home:{sal_govt:8.80,sal_pvt:8.90,sal_sme:9.10,self_prof:9.15,self_biz:9.40},lap:{sal_govt:9.60,sal_pvt:9.80,sal_sme:10.10,self_prof:10.10,self_biz:10.40},bt:{sal_govt:8.75,sal_pvt:8.85,sal_sme:9.05,self_prof:9.10,self_biz:9.35}},
+    badge:'rob-fast',badgeText:'Fast Disbursal',note:'Best for self-employed, minimal docs',highlight:false
+  },
+  {
+    name:'PNB Housing Finance',type:'NBFC',proc:'0.5% + GST',maxTenure:{home:30,lap:15,bt:30},prepay:'Nil (floating)',
+    baseRates:{home:{sal_govt:8.75,sal_pvt:8.90,sal_sme:9.10,self_prof:9.15,self_biz:9.35},lap:{sal_govt:9.55,sal_pvt:9.75,sal_sme:10.00,self_prof:10.00,self_biz:10.25},bt:{sal_govt:8.70,sal_pvt:8.85,sal_sme:9.05,self_prof:9.10,self_biz:9.30}},
+    badge:'',badgeText:'',note:'Good for semi-urban / Tier 2 properties',highlight:false
+  },
+  {
+    name:'Tata Capital',type:'NBFC',proc:'0.5% + GST',maxTenure:{home:30,lap:15,bt:30},prepay:'Nil (floating)',
+    baseRates:{home:{sal_govt:8.85,sal_pvt:9.00,sal_sme:9.25,self_prof:9.25,self_biz:9.50},lap:{sal_govt:9.65,sal_pvt:9.85,sal_sme:10.15,self_prof:10.15,self_biz:10.45},bt:{sal_govt:8.80,sal_pvt:8.95,sal_sme:9.20,self_prof:9.20,self_biz:9.45}},
+    badge:'',badgeText:'',note:'Wide eligibility criteria',highlight:false
+  },
+  {
+    name:'LIC Housing Finance',type:'NBFC',proc:'0.25% min ₹10,000',maxTenure:{home:30,lap:15,bt:30},prepay:'Nil (floating)',
+    baseRates:{home:{sal_govt:8.50,sal_pvt:8.65,sal_sme:8.85,self_prof:8.90,self_biz:9.05},lap:{sal_govt:9.20,sal_pvt:9.40,sal_sme:9.65,self_prof:9.65,self_biz:9.85},bt:{sal_govt:8.45,sal_pvt:8.60,sal_sme:8.80,self_prof:8.85,self_biz:9.00}},
+    badge:'rob-pop',badgeText:'Trusted Brand',note:'Low processing fee, trusted by LIC customers',highlight:false
+  }
+];
+
+// CIBIL adjustment: how much to add/subtract from base rate based on score
+function getCIBILAdjustment(score) {
+  if (score >= 800) return -0.15;
+  if (score >= 775) return -0.10;
+  if (score >= 750) return  0.00;
+  if (score >= 725) return  0.15;
+  if (score >= 700) return  0.30;
+  if (score >= 675) return  0.55;
+  if (score >= 650) return  0.90;
+  if (score >= 625) return  1.30;
+  if (score >= 600) return  1.80;
+  return null; // below 600 — likely rejected
+}
+
+// Income-based adjustment
+function getIncomeAdjustment(income, empType) {
+  if (empType === 'sal_govt') return 0; // Govt employees always get best slab
+  if (income >= 200000) return -0.10;
+  if (income >= 100000) return 0;
+  if (income >= 50000)  return 0.10;
+  return 0.20; // lower income = slight premium
+}
+
+function updateCIBIL(val){
+  const v=parseInt(val);
+  const score=document.getElementById('cibil-display');
+  const cat=document.getElementById('cibil-category');
+  const desc=document.getElementById('cibil-desc');
+  score.textContent=v;
+  let color,category,description;
+  if(v>=800){color='#1a5c2a';category='Exceptional';description='You get the very best rates — banks compete for your business';}
+  else if(v>=750){color='#2d7a3a';category='Excellent';description='Eligible for best rates at all banks — strong negotiating position';}
+  else if(v>=725){color='#5a8a30';category='Very Good';description='Qualify for most banks, slight premium over best rate';}
+  else if(v>=700){color='#8a8a20';category='Good';description='Most banks will approve, rate is 0.25–0.50% above best';}
+  else if(v>=675){color='#a06020';category='Fair';description='Eligible at select banks & NBFCs, slightly higher rate';}
+  else if(v>=650){color='#b04020';category='Below Average';description='Limited lender options, higher rates — consider improving first';}
+  else if(v>=600){color='#b03030';category='Poor';description='Very few lenders; NBFC route only with higher rates';}
+  else{color='#8b0000';category='Very Poor';description='Likely to be rejected. Focus on improving CIBIL before applying';}
+  score.style.color=color;cat.style.color=color;cat.textContent=category;desc.textContent=description;
+}
+
+function calcPersonalRate(){
+  const cibil=parseInt(document.getElementById('cibil-slider')?.value)||750;
+  const loanType=gi('pr-loan-type')||'home';
+  const empType=gi('pr-emp-type')||'sal_pvt';
+  const income=fi('pr-income')||100000;
+  const loanAmt=fi('pr-loan-amt')||5000000;
+  const tenure=fi('pr-tenure')||20;
+  const existingEMI=fi('pr-existing-emi')||0;
+  const location=gi('pr-location')||'metro';
+
+  const ciAdj=getCIBILAdjustment(cibil);
+  const incAdj=getIncomeAdjustment(income,empType);
+  const locAdj=location==='metro'?-0.05:location==='tier1'?0:0.15;
+
+  // Eligibility check
+  const maxEMI=income*0.50-existingEMI;
+  const minRate=8.35;
+  const maxTenureStd=Math.min(tenure,30);
+  const maxLoan=maxEMI>0?maxEMI*(Math.pow(1+minRate/1200,maxTenureStd*12)-1)/((minRate/1200)*Math.pow(1+minRate/1200,maxTenureStd*12)):0;
+  const eligibilityPct=Math.min(100,Math.max(0,(maxLoan/loanAmt)*100));
+  const eligible=eligibilityPct>=80;
+
+  // Build results per lender
+  const results=[];
+  RATE_MATRIX.forEach(lender=>{
+    const baseRate=lender.baseRates[loanType]?.[empType];
+    if(!baseRate)return;
+    const maxT=lender.maxTenure[loanType]||20;
+    const effectiveTenure=Math.min(tenure,maxT);
+
+    let finalRate;
+    if(ciAdj===null){
+      finalRate=null; // rejected
+    } else {
+      finalRate=Math.round((baseRate+ciAdj+incAdj+locAdj)*20)/20;
+      finalRate=Math.max(baseRate-0.5,finalRate);
+    }
+
+    const emi=finalRate?emiCalc(loanAmt,finalRate,effectiveTenure*12):null;
+    results.push({...lender,finalRate,emi,effectiveTenure,maxT,eligible:finalRate!==null&&eligible});
+  });
+
+  results.sort((a,b)=>{
+    if(a.finalRate===null&&b.finalRate===null)return 0;
+    if(a.finalRate===null)return 1;
+    if(b.finalRate===null)return -1;
+    return a.finalRate-b.finalRate;
+  });
+
+  // SUMMARY CARDS
+  const bestRate=results.find(r=>r.finalRate!==null)?.finalRate;
+  const bestEMI=bestRate?emiCalc(loanAmt,bestRate,Math.min(tenure,30)*12):0;
+  const totalSavingVsWorst=results.filter(r=>r.finalRate).reduce((mx,r)=>Math.max(mx,r.finalRate),0);
+  const worstEMI=emiCalc(loanAmt,totalSavingVsWorst,Math.min(tenure,30)*12);
+  const emiSaving=(worstEMI-bestEMI)*Math.min(tenure,30)*12;
+
+  document.getElementById('rate-summary-grid').innerHTML=
+    `<div class="metric m-blue"><div class="m-val" style="color:var(--blue)">${bestRate?bestRate.toFixed(2)+'%':'N/A'}</div><div class="m-lbl">Best rate for you</div><div class="m-note">at ${cibil} CIBIL</div></div>`+
+    `<div class="metric m-green"><div class="m-val" style="color:var(--green)">${bestEMI?fI(bestEMI):'—'}</div><div class="m-lbl">Best EMI/month</div><div class="m-note">${tenure}-yr tenure</div></div>`+
+    `<div class="metric m-gold"><div class="m-val" style="color:var(--gold)">${fC(Math.abs(emiSaving))}</div><div class="m-lbl">EMI saving vs highest</div><div class="m-note">over full tenure</div></div>`;
+
+  // ELIGIBILITY BARS
+  let eligHTML=`<div style="margin-top:4px">`;
+  eligHTML+=`<div class="eligibility-bar"><div class="elig-label-row"><span>Income eligibility</span><span style="color:${eligibilityPct>=80?'var(--green)':eligibilityPct>=50?'var(--orange)':'var(--red)'}">${Math.min(100,Math.round(eligibilityPct))}%</span></div><div class="elig-bar-bg"><div class="elig-bar-fill" style="width:${Math.min(100,eligibilityPct)}%;background:${eligibilityPct>=80?'var(--green)':eligibilityPct>=50?'var(--gold)':'var(--red)'}"></div></div></div>`;
+  const ciPct=cibil>=750?100:cibil>=700?75:cibil>=650?50:cibil>=600?25:10;
+  eligHTML+=`<div class="eligibility-bar" style="margin-top:10px"><div class="elig-label-row"><span>CIBIL score strength</span><span style="color:${ciPct>=75?'var(--green)':ciPct>=50?'var(--orange)':'var(--red)'}">${cibil}</span></div><div class="elig-bar-bg"><div class="elig-bar-fill" style="width:${ciPct}%;background:${ciPct>=75?'var(--green)':ciPct>=50?'var(--gold)':'var(--red)'}"></div></div></div>`;
+  eligHTML+=`</div>`;
+  if(!eligible&&maxLoan>0){eligHTML+=`<div class="alert a-warn" style="margin-top:10px">⚠ Your income supports a max loan of ~${fC(maxLoan)}. You're requesting ${fC(loanAmt)}. Consider reducing loan amount or adding a co-applicant.</div>`;}
+  if(ciAdj===null){eligHTML+=`<div class="alert a-danger" style="margin-top:10px">✗ CIBIL score below 600 — most banks will decline. Work on improving your score before applying. Prashant can guide you on a 6-month improvement plan.</div>`;}
+  document.getElementById('rate-eligibility-bars').innerHTML=eligHTML;
+
+  // TOP OFFERS
+  let offersHTML='';
+  const topOffers=results.filter(r=>r.finalRate!==null).slice(0,5);
+  topOffers.forEach((r,i)=>{
+    const isFirst=i===0;
+    offersHTML+=`<div class="rate-offer ${isFirst?'best-offer':''}">
+      <div>
+        <div class="rate-offer-bank">${r.name} ${r.badge?`<span class="rate-offer-badge ${r.badge}">${r.badgeText}</span>`:''}</div>
+        <div class="rate-offer-sub">${r.type} · ${r.note}</div>
+        <div class="rate-offer-sub" style="margin-top:3px">Processing: ${r.proc} · Tenure: up to ${r.maxT} yrs · Prepay: ${r.prepay}</div>
+      </div>
+      <div>
+        <div class="rate-offer-rate">${r.finalRate.toFixed(2)}%</div>
+        <div class="rate-offer-emi">${fI(r.emi)}/mo</div>
+        ${isFirst?'<div style="text-align:right;margin-top:4px"><span style="font-size:10px;background:rgba(45,122,58,0.12);color:var(--green);padding:2px 8px;border-radius:10px;font-weight:700">BEST FOR YOU</span></div>':''}
+      </div>
+    </div>`;
+  });
+  if(ciAdj===null){offersHTML=`<div class="alert a-danger">Your CIBIL score is too low for standard home loan products. Please consult Prashant for a credit improvement plan before applying.</div>`;}
+  document.getElementById('rate-offers-list').innerHTML=offersHTML||'<div style="color:var(--t3);font-size:13px;padding:8px 0;">No eligible lenders found for this profile.</div>';
+
+  // FULL TABLE
+  let tableRows='';
+  results.forEach((r,i)=>{
+    const rejected=r.finalRate===null;
+    tableRows+=`<tr class="${i===0&&!rejected?'highlight-row':''}">
+      <td><strong>${r.name}</strong><br/><span style="font-size:11px;color:var(--t3)">${r.type}</span></td>
+      <td style="font-weight:700;color:${rejected?'var(--red)':i===0?'var(--green)':'var(--blue)'}">${rejected?'Likely Rejected':r.finalRate.toFixed(2)+'%'}</td>
+      <td style="font-weight:600">${rejected?'—':fI(r.emi)}</td>
+      <td style="font-size:11px">${r.proc}</td>
+      <td>${r.maxT} yrs</td>
+      <td style="font-size:11px">${r.prepay}</td>
+      <td><span style="font-size:10px;padding:3px 8px;border-radius:10px;background:${!rejected&&r.eligible?'rgba(45,122,58,0.1)':'rgba(176,48,48,0.1)'};color:${!rejected&&r.eligible?'var(--green)':'var(--red)'};font-weight:700">${rejected?'Rejected':r.eligible?'Eligible':'Check Income'}</span></td>
+    </tr>`;
+  });
+  document.getElementById('rate-full-body').innerHTML=tableRows;
+
+  // TIPS
+  let tips='';
+  if(cibil<750){tips+=`<div class="tip-box" style="margin-bottom:10px"><strong>Improve your CIBIL score first</strong><br/>A score above 750 can reduce your rate by 0.25–0.50%, saving you ${fC(emiCalc(loanAmt,Math.max(8.35,bestRate||9-0.4),tenure*12)*tenure*12-emiCalc(loanAmt,Math.max(8.35,(bestRate||9)-0.4),tenure*12)*tenure*12)} over the loan tenure. Pay all EMIs on time for 6 months, reduce credit card utilisation below 30%.</div>`;}
+  if(empType==='self_biz'||empType==='sal_sme'){tips+=`<div class="tip-box" style="margin-bottom:10px"><strong>Add a salaried co-applicant</strong><br/>Adding a salaried co-applicant (spouse, parent) can bring your rate down by 0.20–0.40% and also increase your eligible loan amount.</div>`;}
+  if(loanAmt>maxLoan&&maxLoan>0){tips+=`<div class="tip-box" style="margin-bottom:10px"><strong>Bridge the income gap</strong><br/>You need to show additional income — rental income, variable pay letters, or include a co-borrower's income to justify the requested loan amount of ${fC(loanAmt)}.</div>`;}
+  tips+=`<div class="tip-box"><strong>Compare floating vs fixed rates</strong><br/>All rates shown are floating (linked to REPO/MCLR). If RBI cuts rates, your EMI reduces. Fixed rate loans (usually 0.5% higher) protect against rate hikes but don't benefit from cuts. For a 20+ year loan, floating is almost always better in India.</div>`;
+  document.getElementById('rate-tips').innerHTML=tips;
+
+  // Update date
+  const now=new Date();
+  document.getElementById('rate-update-date').textContent=now.toLocaleString('en-IN',{month:'long',year:'numeric'});
+}
+
+/* ══════════════════════════════════════
+   IRR
+══════════════════════════════════════ */
 function getStampDuty(){
-  const sel=document.getElementById('i-city');
-  if(!sel)return 6;
-  const v=sel.value;
+  const sel=document.getElementById('i-city');if(!sel)return 6;const v=sel.value;
   if(v==='custom'){document.getElementById('custom-stamp-wrap').style.display='block';return fi('i-stamp-custom');}
-  document.getElementById('custom-stamp-wrap').style.display='none';
-  return parseFloat(v)||6;
+  document.getElementById('custom-stamp-wrap').style.display='none';return parseFloat(v)||6;
 }
 function calcIRR(){
   const price=fi('i-price'),loan=fi('i-loan'),rate=fi('i-rate'),tenure=fi('i-tenure'),
         rent=fi('i-rent'),rentg=fi('i-rentg'),vac=fi('i-vac'),hold=fi('i-hold'),
         ap=fi('i-ap'),exitCost=fi('i-exit-cost'),hurdle=fi('i-hurdle');
   const sd=price*(getStampDuty()/100),reg=price*0.01,totalCost=price+sd+reg,equity=totalCost-loan;
-  if(equity<=0){document.getElementById('irr-top').innerHTML=`<div class="alert a-danger" style="grid-column:1/-1">Loan exceeds property cost. Reduce loan amount.</div>`;return;}
+  if(equity<=0){document.getElementById('irr-top').innerHTML=`<div class="alert a-danger" style="grid-column:1/-1">Loan exceeds property cost.</div>`;return;}
   const emi=emiCalc(loan,rate,tenure*12);
   const cfs=[-equity];let bal=loan,curRent=rent*12;const rows=[];
   for(let y=1;y<=hold;y++){
@@ -1537,8 +1147,7 @@ function calcIRR(){
     const interest=bal*(rate/100),principal=Math.min(yrEMI-interest,bal);
     bal=Math.max(0,bal-principal);const net=nr-yrEMI;
     rows.push({y,propVal,curRent,nr,yrEMI,net,bal,equity:propVal-bal});
-    if(y<hold)curRent*=(1+rentg/100);
-    if(y<hold)cfs.push(net);
+    if(y<hold)curRent*=(1+rentg/100);if(y<hold)cfs.push(net);
   }
   const exitVal=price*Math.pow(1+ap/100,hold),exitProceeds=exitVal*(1-exitCost/100)-bal;
   const lastNet=rows[rows.length-1]?.nr-emi*12;cfs.push(lastNet+exitProceeds);
@@ -1547,102 +1156,28 @@ function calcIRR(){
   const coc=(rent*12*(1-vac/100)-emi*12)/equity*100,dscr=emi>0?(rent*12*(1-vac/100))/(emi*12):99;
   const em=(equity+cfs.slice(1).reduce((a,b)=>a+b,0))/equity,capRate=rent*12*(1-vac/100)/price*100;
   const ic=irr>hurdle?'m-green':'m-red',nc=npv>0?'m-green':'m-red';
-  document.getElementById('irr-top').innerHTML=
-    metric(pct(irr),'IRR',`Hurdle: ${hurdle}%`,ic,irr>hurdle?'▲ Exceeds hurdle':'▼ Below hurdle')+
-    metric(fC(npv),'Net Present Value',`At ${hurdle}% discount`,nc,npv>0?'▲ Value creating':'▼ Value destroying')+
-    metric(em.toFixed(2)+'x','Equity Multiple (MOIC)',null,em>2?'m-green':em>1.5?'m-orange':'m-red')+
-    metric(pct(coc),'Cash-on-Cash Yr 1',null,coc>0?'m-green':'m-red');
+  document.getElementById('irr-top').innerHTML=metric(pct(irr),'IRR',`Hurdle: ${hurdle}%`,ic,irr>hurdle?'▲ Exceeds hurdle':'▼ Below hurdle')+metric(fC(npv),'Net Present Value',`At ${hurdle}% discount`,nc,npv>0?'▲ Value creating':'▼ Value destroying')+metric(em.toFixed(2)+'x','Equity Multiple (MOIC)',null,em>2?'m-green':em>1.5?'m-orange':'m-red')+metric(pct(coc),'Cash-on-Cash Yr 1',null,coc>0?'m-green':'m-red');
   const dc=dscr>1.25?'m-green':dscr>1?'m-orange':'m-red';
-  document.getElementById('irr-bottom').innerHTML=
-    metric(pct(grossY),'Gross Rental Yield',null,'m-blue')+
-    metric(pct(netY),'Net Rental Yield',`After ${vac}% vacancy`,'m-blue')+
-    metric(dscr.toFixed(2),'DSCR',null,dc)+
-    metric(pct(capRate),'Cap Rate',null,'m-gold');
-  document.getElementById('irr-capital').innerHTML=
-    kvRow('Purchase Price',fC(price))+kvRow('Stamp Duty',fC(sd),'var(--orange)')+
-    kvRow('Registration',fC(reg),'var(--orange)')+kvRow('Total Acquisition',fC(totalCost))+
-    kvRow('Loan',fC(loan))+kvRow('Equity Required',fC(equity),'var(--gold)')+
-    kvRow('Monthly EMI',fI(emi),'var(--orange)')+kvRow('Total Interest',fC(emi*tenure*12-loan),'var(--red)');
-  document.getElementById('irr-exit').innerHTML=
-    kvRow('Hold Period',hold+' years')+kvRow('Exit Value',fC(exitVal),'var(--green)')+
-    kvRow('Loan Balance at Exit',fC(bal),'var(--red)')+kvRow('Exit Transaction Cost',fC(exitVal*exitCost/100),'var(--orange)')+
-    kvRow('Net Exit Proceeds',fC(exitProceeds),'var(--green)')+
-    `<div class="alert ${irr>hurdle?'a-good':irr>hurdle*0.7?'a-warn':'a-danger'}" style="margin-top:12px">
-      ${irr>hurdle?'✓ Strong deal — IRR beats hurdle by '+pct(irr-hurdle,1):irr>0?'⚠ Positive but below hurdle':'✗ Negative IRR — deal destroys value'}
-    </div>`;
-  let cfHTML='';
-  rows.forEach(r=>{
-    cfHTML+=`<tr>
-      <td style="color:var(--gold);font-weight:600">${r.y}</td>
-      <td>${fC(r.curRent)}</td><td>${fC(r.nr)}</td>
-      <td style="color:var(--orange)">${fC(r.yrEMI)}</td>
-      <td style="color:${r.net>0?'var(--green)':'var(--red)'};font-weight:600">${fC(r.net)}</td>
-      <td>${fC(r.propVal)}</td><td style="color:var(--red)">${fC(r.bal)}</td>
-      <td style="color:var(--green);font-weight:600">${fC(r.equity)}</td>
-    </tr>`;
-  });
+  document.getElementById('irr-bottom').innerHTML=metric(pct(grossY),'Gross Rental Yield',null,'m-blue')+metric(pct(netY),'Net Rental Yield',`After ${vac}% vacancy`,'m-blue')+metric(dscr.toFixed(2),'DSCR',null,dc)+metric(pct(capRate),'Cap Rate',null,'m-gold');
+  document.getElementById('irr-capital').innerHTML=kvRow('Purchase Price',fC(price))+kvRow('Stamp Duty',fC(sd),'var(--orange)')+kvRow('Registration',fC(reg),'var(--orange)')+kvRow('Total Acquisition',fC(totalCost))+kvRow('Loan',fC(loan))+kvRow('Equity Required',fC(equity),'var(--gold)')+kvRow('Monthly EMI',fI(emi),'var(--orange)')+kvRow('Total Interest',fC(emi*tenure*12-loan),'var(--red)');
+  document.getElementById('irr-exit').innerHTML=kvRow('Hold Period',hold+' years')+kvRow('Exit Value',fC(exitVal),'var(--green)')+kvRow('Loan Balance at Exit',fC(bal),'var(--red)')+kvRow('Exit Transaction Cost',fC(exitVal*exitCost/100),'var(--orange)')+kvRow('Net Exit Proceeds',fC(exitProceeds),'var(--green)')+`<div class="alert ${irr>hurdle?'a-good':irr>hurdle*0.7?'a-warn':'a-danger'}" style="margin-top:12px">${irr>hurdle?'✓ Strong deal — IRR beats hurdle by '+pct(irr-hurdle,1):irr>0?'⚠ Positive but below hurdle':'✗ Negative IRR — deal destroys value'}</div>`;
+  let cfHTML='';rows.forEach(r=>{cfHTML+=`<tr><td style="color:var(--gold);font-weight:600">${r.y}</td><td>${fC(r.curRent)}</td><td>${fC(r.nr)}</td><td style="color:var(--orange)">${fC(r.yrEMI)}</td><td style="color:${r.net>0?'var(--green)':'var(--red)'};font-weight:600">${fC(r.net)}</td><td>${fC(r.propVal)}</td><td style="color:var(--red)">${fC(r.bal)}</td><td style="color:var(--green);font-weight:600">${fC(r.equity)}</td></tr>`;});
   document.getElementById('irr-cf').innerHTML=cfHTML;
 }
 
-/* ── XIRR ── */
-let xirrRows=[
-  {date:'2024-01-15',amount:-3000000},{date:'2024-07-15',amount:-2000000},
-  {date:'2025-01-15',amount:-1500000},{date:'2025-07-15',amount:300000},
-  {date:'2026-01-15',amount:300000},{date:'2026-07-15',amount:300000},
-  {date:'2027-01-15',amount:8500000},
-];
-function renderXIRRRows(){
-  document.getElementById('xirr-rows').innerHTML=xirrRows.map((r,i)=>`
-    <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:8px;align-items:center">
-      <div>${i===0?'<label class="lbl">Date</label>':''}
-        <input type="date" class="inp xirr-row" style="margin-bottom:0" value="${r.date}" onchange="xirrRows[${i}].date=this.value;calcXIRR()"/>
-      </div>
-      <div>${i===0?'<label class="lbl">Amount (₹) — negative=outflow</label>':''}
-        <input type="number" class="inp xirr-row" style="margin-bottom:0" value="${r.amount}" step="10000" onchange="xirrRows[${i}].amount=parseFloat(this.value)||0;calcXIRR()"/>
-      </div>
-      <div style="${i===0?'margin-top:18px':''}">
-        <button onclick="xirrRows.splice(${i},1);renderXIRRRows();calcXIRR();" style="padding:8px 12px;background:var(--red-bg);color:var(--red);border:1px solid rgba(176,48,48,.2);border-radius:6px;cursor:pointer;font-size:12px">✕</button>
-      </div>
-    </div>
-  `).join('');
-}
-function addXIRRRow(){
-  const lastDate=xirrRows[xirrRows.length-1]?.date||'2024-01-01';
-  const d=new Date(lastDate);d.setMonth(d.getMonth()+6);
-  xirrRows.push({date:d.toISOString().split('T')[0],amount:300000});
-  renderXIRRRows();calcXIRR();
-}
+/* ══════════════════════════════════════
+   XIRR
+══════════════════════════════════════ */
+let xirrRows=[{date:'2024-01-15',amount:-3000000},{date:'2024-07-15',amount:-2000000},{date:'2025-01-15',amount:-1500000},{date:'2025-07-15',amount:300000},{date:'2026-01-15',amount:300000},{date:'2026-07-15',amount:300000},{date:'2027-01-15',amount:8500000}];
+function renderXIRRRows(){document.getElementById('xirr-rows').innerHTML=xirrRows.map((r,i)=>`<div style="display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:8px;align-items:center"><div>${i===0?'<label class="lbl">Date</label>':''}<input type="date" class="inp xirr-row" style="margin-bottom:0" value="${r.date}" onchange="xirrRows[${i}].date=this.value;calcXIRR()"/></div><div>${i===0?'<label class="lbl">Amount (₹) — negative=outflow</label>':''}<input type="number" class="inp xirr-row" style="margin-bottom:0" value="${r.amount}" step="10000" onchange="xirrRows[${i}].amount=parseFloat(this.value)||0;calcXIRR()"/></div><div style="${i===0?'margin-top:18px':''}"><button onclick="xirrRows.splice(${i},1);renderXIRRRows();calcXIRR();" style="padding:8px 12px;background:var(--red-bg);color:var(--red);border:1px solid rgba(176,48,48,.2);border-radius:6px;cursor:pointer;font-size:12px">✕</button></div></div>`).join('');}
+function addXIRRRow(){const lastDate=xirrRows[xirrRows.length-1]?.date||'2024-01-01';const d=new Date(lastDate);d.setMonth(d.getMonth()+6);xirrRows.push({date:d.toISOString().split('T')[0],amount:300000});renderXIRRRows();calcXIRR();}
 function resetXIRR(){xirrRows=[{date:'2024-01-01',amount:-5000000},{date:'2026-01-01',amount:8000000}];renderXIRRRows();calcXIRR();}
-function loadXIRRExample(){
-  xirrRows=[
-    {date:'2023-03-01',amount:-2500000},{date:'2023-09-01',amount:-2500000},
-    {date:'2024-03-01',amount:-2000000},{date:'2024-09-01',amount:350000},
-    {date:'2025-03-01',amount:370000},{date:'2025-09-01',amount:390000},
-    {date:'2026-03-01',amount:9500000},
-  ];
-  renderXIRRRows();calcXIRR();
-}
-function calcXIRRfn(dates,amounts){
-  if(!dates||dates.length<2)return NaN;
-  const d0=new Date(dates[0]);
-  const t=dates.map(d=>(new Date(d)-d0)/(365.25*24*3600*1000));
-  let r=0.1;
-  for(let i=0;i<2000;i++){
-    let npv=amounts.reduce((s,a,j)=>s+a/Math.pow(1+r,t[j]),0);
-    let dnpv=amounts.reduce((s,a,j)=>s-t[j]*a/Math.pow(1+r,t[j]+1),0);
-    if(Math.abs(dnpv)<1e-12)break;
-    const nr=r-npv/dnpv;
-    if(Math.abs(nr-r)<1e-9){r=nr;break;}
-    r=Math.max(-0.9999,Math.min(10,nr));
-  }
-  return r*100;
-}
+function loadXIRRExample(){xirrRows=[{date:'2023-03-01',amount:-2500000},{date:'2023-09-01',amount:-2500000},{date:'2024-03-01',amount:-2000000},{date:'2024-09-01',amount:350000},{date:'2025-03-01',amount:370000},{date:'2025-09-01',amount:390000},{date:'2026-03-01',amount:9500000}];renderXIRRRows();calcXIRR();}
+function calcXIRRfn(dates,amounts){if(!dates||dates.length<2)return NaN;const d0=new Date(dates[0]);const t=dates.map(d=>(new Date(d)-d0)/(365.25*24*3600*1000));let r=0.1;for(let i=0;i<2000;i++){let npv=amounts.reduce((s,a,j)=>s+a/Math.pow(1+r,t[j]),0);let dnpv=amounts.reduce((s,a,j)=>s-t[j]*a/Math.pow(1+r,t[j]+1),0);if(Math.abs(dnpv)<1e-12)break;const nr=r-npv/dnpv;if(Math.abs(nr-r)<1e-9){r=nr;break;}r=Math.max(-0.9999,Math.min(10,nr));}return r*100;}
 function calcXIRR(){
   const dates=xirrRows.map(r=>r.date),amounts=xirrRows.map(r=>r.amount);
   const hasNeg=amounts.some(a=>a<0),hasPos=amounts.some(a=>a>0);
-  if(!hasNeg||!hasPos||xirrRows.length<2){
-    document.getElementById('xirr-result').innerHTML='<div style="color:var(--t3);padding:16px 0;font-size:13px">Need at least one negative and one positive entry.</div>';return;
-  }
+  if(!hasNeg||!hasPos||xirrRows.length<2){document.getElementById('xirr-result').innerHTML='<div style="color:var(--t3);padding:16px 0;font-size:13px">Need at least one negative and one positive entry.</div>';return;}
   const xirr=calcXIRRfn(dates,amounts);
   const totalIn=amounts.filter(a=>a>0).reduce((s,a)=>s+a,0);
   const totalOut=Math.abs(amounts.filter(a=>a<0).reduce((s,a)=>s+a,0));
@@ -1650,70 +1185,35 @@ function calcXIRR(){
   const d0=new Date(dates[0]),dN=new Date(dates[dates.length-1]);
   const years=(dN-d0)/(365.25*24*3600*1000);
   const c=xirr>15?'m-green':xirr>10?'m-orange':'m-red';
-  document.getElementById('xirr-result').innerHTML=`
-    <div class="four" style="margin-bottom:16px">
-      ${metric(pct(xirr),'XIRR','Annualized on actual dates',c,xirr>15?'▲ Strong':xirr>0?'◎ Positive':'▼ Negative')}
-      ${metric(moic.toFixed(2)+'x','Money-on-Money',null,moic>2?'m-green':moic>1.5?'m-orange':'m-red')}
-      ${metric(fC(totalOut),'Total Invested',null,'m-red')}
-      ${metric(fC(totalIn),'Total Returned',null,'m-green')}
-    </div>
-    ${kvRow('Investment Period',years.toFixed(1)+' years')}
-    ${kvRow('Total Invested',fC(totalOut),'var(--red)')}
-    ${kvRow('Total Returned',fC(totalIn),'var(--green)')}
-    ${kvRow('Net Profit/Loss',fC(totalIn-totalOut),totalIn>totalOut?'var(--green)':'var(--red)')}
-    ${kvRow('XIRR',pct(xirr),xirr>15?'var(--green)':xirr>0?'var(--gold)':'var(--red)')}
-    <div class="alert ${xirr>15?'a-good':xirr>10?'a-warn':xirr>0?'a-info':'a-danger'}" style="margin-top:12px">
-      ${xirr>20?'Exceptional returns. Verify assumptions are realistic.':xirr>15?'Strong return. Beats most alternatives.':xirr>12?'Good return. Slightly above equity market benchmark.':xirr>8?'Moderate. Similar to diversified equity funds.':xirr>0?'Below-average. FD or liquid funds may do better.':'Negative XIRR. Deal loses money.'}
-    </div>`;
+  document.getElementById('xirr-result').innerHTML=`<div class="four" style="margin-bottom:16px">${metric(pct(xirr),'XIRR','Annualized on actual dates',c,xirr>15?'▲ Strong':xirr>0?'◎ Positive':'▼ Negative')}${metric(moic.toFixed(2)+'x','Money-on-Money',null,moic>2?'m-green':moic>1.5?'m-orange':'m-red')}${metric(fC(totalOut),'Total Invested',null,'m-red')}${metric(fC(totalIn),'Total Returned',null,'m-green')}</div>${kvRow('Investment Period',years.toFixed(1)+' years')}${kvRow('Total Invested',fC(totalOut),'var(--red)')}${kvRow('Total Returned',fC(totalIn),'var(--green)')}${kvRow('Net Profit/Loss',fC(totalIn-totalOut),totalIn>totalOut?'var(--green)':'var(--red)')}${kvRow('XIRR',pct(xirr),xirr>15?'var(--green)':xirr>0?'var(--gold)':'var(--red)')}<div class="alert ${xirr>15?'a-good':xirr>10?'a-warn':xirr>0?'a-info':'a-danger'}" style="margin-top:12px">${xirr>20?'Exceptional returns. Verify assumptions are realistic.':xirr>15?'Strong return. Beats most alternatives.':xirr>12?'Good return. Slightly above equity market benchmark.':xirr>8?'Moderate. Similar to diversified equity funds.':xirr>0?'Below-average. FD or liquid funds may do better.':'Negative XIRR. Deal loses money.'}</div>`;
 }
 
-/* ── CONSTRUCTION ── */
+/* ══════════════════════════════════════
+   CONSTRUCTION
+══════════════════════════════════════ */
 function calcConstruction(){
-  const area=fi('c-area'),sp=fi('c-sp'),land=fi('c-land'),cc=fi('c-cc'),
-        other=fi('c-other'),months=fi('c-months'),loan=fi('c-loan'),
-        rate=fi('c-rate'),presalePct=fi('c-presale'),devEquity=fi('c-equity');
+  const area=fi('c-area'),sp=fi('c-sp'),land=fi('c-land'),cc=fi('c-cc'),other=fi('c-other'),months=fi('c-months'),loan=fi('c-loan'),rate=fi('c-rate'),presalePct=fi('c-presale'),devEquity=fi('c-equity');
   const salesRevenue=area*sp,constructionCost=area*cc,totalProjectCost=land+constructionCost+other;
   const totalFinancing=loan+devEquity,financingGap=totalProjectCost-totalFinancing;
   const avgDraw=loan*0.6,idc=avgDraw*(rate/100)*(months/12);
   const totalCostWithIDC=totalProjectCost+idc,grossMargin=salesRevenue-totalCostWithIDC;
   const grossMarginPct=grossMargin/salesRevenue*100,devReturn=grossMargin/devEquity*100;
   const costPsf=totalCostWithIDC/area,loanToGDV=loan/salesRevenue*100,ltc=loan/totalProjectCost*100;
-  document.getElementById('c-top').innerHTML=
-    metric(fC(salesRevenue),'Total Sales Revenue',null,'m-green')+
-    metric(fC(totalCostWithIDC),'Total Project Cost incl. IDC',null,'m-red')+
-    metric(fC(grossMargin),'Gross Development Profit',null,grossMargin>0?'m-green':'m-red',grossMargin>0?'▲ Profitable':'▼ Loss')+
-    metric(pct(grossMarginPct),'Gross Margin %',null,grossMarginPct>20?'m-green':grossMarginPct>10?'m-orange':'m-red');
-  document.getElementById('c-bottom').innerHTML=
-    metric(pct(devReturn),'Developer ROE',null,devReturn>30?'m-green':devReturn>20?'m-orange':'m-red')+
-    metric(pct(loanToGDV),'Loan-to-GDV',null,loanToGDV<65?'m-green':loanToGDV<75?'m-orange':'m-red')+
-    metric(pct(ltc),'Loan-to-Cost',null,ltc<70?'m-green':ltc<80?'m-orange':'m-red')+
-    metric('₹'+num(Math.round(costPsf)),'All-in Cost/sqft',null,'m-gold');
-  document.getElementById('c-costs').innerHTML=
-    kvRow('Land Cost',fC(land))+kvRow('Construction Cost',fC(constructionCost),'var(--orange)')+
-    kvRow('Other Costs',fC(other))+kvRow('IDC',fC(idc),'var(--red)')+
-    kvRow('Total Project Cost',fC(totalCostWithIDC))+
-    kvRow('Financing Gap',fC(financingGap),financingGap>0?'var(--red)':'var(--green)')+
-    `<div class="alert ${financingGap>0?'a-danger':'a-good'}" style="margin-top:10px">${financingGap>0?'⚠ Gap of '+fC(financingGap)+'. Additional funding needed.':'✓ Project fully funded.'}</div>`;
-  document.getElementById('c-lender').innerHTML=
-    kvRow('Finance Rate',rate+'% p.a.')+kvRow('IDC',fC(idc),'var(--red)')+
-    kvRow('Loan-to-GDV',pct(loanToGDV))+kvRow('Loan-to-Cost',pct(ltc))+
-    kvRow('Pre-sales Collection',fC(salesRevenue*presalePct/100))+
-    `<div class="divider"></div><div style="font-size:11px;color:var(--t3);line-height:1.7"><strong style="color:var(--gold)">NBFC comfort zone:</strong><br/>LTC &lt; 70% · LTV/GDV &lt; 65%<br/>Developer equity &gt; 20% · Pre-sales before disbursement</div>`;
+  document.getElementById('c-top').innerHTML=metric(fC(salesRevenue),'Total Sales Revenue',null,'m-green')+metric(fC(totalCostWithIDC),'Total Project Cost incl. IDC',null,'m-red')+metric(fC(grossMargin),'Gross Development Profit',null,grossMargin>0?'m-green':'m-red',grossMargin>0?'▲ Profitable':'▼ Loss')+metric(pct(grossMarginPct),'Gross Margin %',null,grossMarginPct>20?'m-green':grossMarginPct>10?'m-orange':'m-red');
+  document.getElementById('c-bottom').innerHTML=metric(pct(devReturn),'Developer ROE',null,devReturn>30?'m-green':devReturn>20?'m-orange':'m-red')+metric(pct(loanToGDV),'Loan-to-GDV',null,loanToGDV<65?'m-green':loanToGDV<75?'m-orange':'m-red')+metric(pct(ltc),'Loan-to-Cost',null,ltc<70?'m-green':ltc<80?'m-orange':'m-red')+metric('₹'+num(Math.round(costPsf)),'All-in Cost/sqft',null,'m-gold');
+  document.getElementById('c-costs').innerHTML=kvRow('Land Cost',fC(land))+kvRow('Construction Cost',fC(constructionCost),'var(--orange)')+kvRow('Other Costs',fC(other))+kvRow('IDC',fC(idc),'var(--red)')+kvRow('Total Project Cost',fC(totalCostWithIDC))+kvRow('Financing Gap',fC(financingGap),financingGap>0?'var(--red)':'var(--green)')+`<div class="alert ${financingGap>0?'a-danger':'a-good'}" style="margin-top:10px">${financingGap>0?'⚠ Gap of '+fC(financingGap)+'. Additional funding needed.':'✓ Project fully funded.'}</div>`;
+  document.getElementById('c-lender').innerHTML=kvRow('Finance Rate',rate+'% p.a.')+kvRow('IDC',fC(idc),'var(--red)')+kvRow('Loan-to-GDV',pct(loanToGDV))+kvRow('Loan-to-Cost',pct(ltc))+kvRow('Pre-sales Collection',fC(salesRevenue*presalePct/100))+`<div class="divider"></div><div style="font-size:11px;color:var(--t3);line-height:1.7"><strong style="color:var(--gold)">NBFC comfort zone:</strong><br/>LTC < 70% · LTV/GDV < 65%<br/>Developer equity > 20%</div>`;
   const phases=[{ph:'Foundation',pct:20},{ph:'Plinth',pct:15},{ph:'Structure 50%',pct:25},{ph:'Structure 100%',pct:15},{ph:'Finishing',pct:15},{ph:'Completion',pct:10}];
   let cum=0,cumIdc=0,schedHTML='';
-  phases.forEach(p=>{
-    const drawn=loan*(p.pct/100);cum+=p.pct;cumIdc+=drawn*(rate/100)*(months/12/6);
-    const collection=salesRevenue*(presalePct/100)*(p.pct/100);
-    schedHTML+=`<tr><td>${p.ph}</td><td>${p.pct}% (cum. ${cum}%)</td><td>${fC(drawn)}</td><td style="color:var(--red)">${fC(cumIdc)}</td><td style="color:var(--green)">${fC(collection)}</td></tr>`;
-  });
+  phases.forEach(p=>{const drawn=loan*(p.pct/100);cum+=p.pct;cumIdc+=drawn*(rate/100)*(months/12/6);const collection=salesRevenue*(presalePct/100)*(p.pct/100);schedHTML+=`<tr><td>${p.ph}</td><td>${p.pct}% (cum. ${cum}%)</td><td>${fC(drawn)}</td><td style="color:var(--red)">${fC(cumIdc)}</td><td style="color:var(--green)">${fC(collection)}</td></tr>`;});
   document.getElementById('c-schedule').innerHTML=schedHTML;
 }
 
-/* ── ROE ── */
+/* ══════════════════════════════════════
+   ROE
+══════════════════════════════════════ */
 function calcROE(){
-  const price=fi('r-price'),sd=fi('r-sd'),interior=fi('r-interior'),
-        loan=fi('r-loan'),rate=fi('r-rate'),tenure=fi('r-tenure'),
-        rent=fi('r-rent'),rentg=fi('r-rentg'),vac=fi('r-vac'),ap=fi('r-ap'),years=fi('r-years');
+  const price=fi('r-price'),sd=fi('r-sd'),interior=fi('r-interior'),loan=fi('r-loan'),rate=fi('r-rate'),tenure=fi('r-tenure'),rent=fi('r-rent'),rentg=fi('r-rentg'),vac=fi('r-vac'),ap=fi('r-ap'),years=fi('r-years');
   const totalInvested=price+sd+interior,equity=totalInvested-loan;
   const emi=emiCalc(loan,rate,tenure*12),netRentY1=rent*12*(1-vac/100);
   const coc=(netRentY1-emi*12)/equity*100,grossYield=rent*12/price*100;
@@ -1727,29 +1227,18 @@ function calcROE(){
     curRent*=(1+rentg/100);
   }
   const finalPropVal=price*Math.pow(1+ap/100,years),finalEquity=finalPropVal-bal,totalROE=(finalEquity-equity+totalCF)/equity*100;
-  document.getElementById('roe-top').innerHTML=
-    metric(fC(equity),'Equity Deployed',null,'m-gold')+
-    metric(pct(coc),'Cash-on-Cash Yr 1',null,coc>0?'m-green':'m-red',coc>0?'Positive cashflow':'Negative')+
-    metric(pct(grossYield),'Gross Rental Yield',null,'m-blue')+
-    metric(pct(totalROE),'Total ROE ('+years+'Y)',null,totalROE>50?'m-green':'m-orange');
-  document.getElementById('roe-bottom').innerHTML=
-    metric(fI(emi),'Monthly EMI',null,'m-orange')+
-    metric(fC(finalEquity),'Equity in Yr '+years,null,'m-green')+
-    metric(fC(finalEquity-equity),'Equity Created',null,'m-green');
+  document.getElementById('roe-top').innerHTML=metric(fC(equity),'Equity Deployed',null,'m-gold')+metric(pct(coc),'Cash-on-Cash Yr 1',null,coc>0?'m-green':'m-red',coc>0?'Positive cashflow':'Negative')+metric(pct(grossYield),'Gross Rental Yield',null,'m-blue')+metric(pct(totalROE),'Total ROE ('+years+'Y)',null,totalROE>50?'m-green':'m-orange');
+  document.getElementById('roe-bottom').innerHTML=metric(fI(emi),'Monthly EMI',null,'m-orange')+metric(fC(finalEquity),'Equity in Yr '+years,null,'m-green')+metric(fC(finalEquity-equity),'Equity Created',null,'m-green');
   document.getElementById('roe-table').innerHTML=tableHTML;
   const levReturn=totalROE/years,unlevROEAnn=ap+(netRentY1/price*100);
-  document.getElementById('roe-leverage').innerHTML=
-    kvRow('Unlevered Return (no loan)',pct(unlevROEAnn)+' p.a.','var(--blue)')+
-    kvRow('Levered Return',pct(levReturn)+' p.a. on equity','var(--green)')+
-    kvRow('Leverage Boost','+'+pct(levReturn-unlevROEAnn)+' p.a.','var(--gold)')+
-    kvRow('EMI / Rent Coverage',pct(emi*12/(rent*12)*100)+' of gross rent',emi*12/(rent*12)<0.8?'var(--green)':'var(--orange)')+
-    `<div class="alert a-info" style="margin-top:12px">Every 1% property appreciation = <strong>${pct(price/equity)}</strong> return on your equity. Leverage multiplies your returns.</div>`;
+  document.getElementById('roe-leverage').innerHTML=kvRow('Unlevered Return (no loan)',pct(unlevROEAnn)+' p.a.','var(--blue)')+kvRow('Levered Return',pct(levReturn)+' p.a. on equity','var(--green)')+kvRow('Leverage Boost','+'+pct(levReturn-unlevROEAnn)+' p.a.','var(--gold)')+kvRow('EMI / Rent Coverage',pct(emi*12/(rent*12)*100)+' of gross rent',emi*12/(rent*12)<0.8?'var(--green)':'var(--orange)')+`<div class="alert a-info" style="margin-top:12px">Every 1% property appreciation = <strong>${pct(price/equity)}</strong> return on your equity.</div>`;
 }
 
-/* ── LTV ── */
+/* ══════════════════════════════════════
+   LTV
+══════════════════════════════════════ */
 function calcLTV(){
-  const value=fi('l-value'),noiGross=fi('l-noi-gross'),opex=fi('l-opex'),
-        loan=fi('l-loan'),rate=fi('l-rate'),tenure=fi('l-tenure');
+  const value=fi('l-value'),noiGross=fi('l-noi-gross'),opex=fi('l-opex'),loan=fi('l-loan'),rate=fi('l-rate'),tenure=fi('l-tenure');
   const type=gi('l-type'),noi=noiGross*(1-opex/100),ltv=loan/value*100;
   const emi=emiCalc(loan,rate,tenure*12),dscr=emi>0?noi/(emi*12):99;
   const debtYield=noi/loan*100,capRate=noi/value*100,breakeven=emi>0?emi*12/noiGross*100:0;
@@ -1759,46 +1248,19 @@ function calcLTV(){
   const ltvC=ltv<maxLTVpct?'m-green':ltv<maxLTVpct+10?'m-orange':'m-red';
   const dc=dscr>1.25?'m-green':dscr>1?'m-orange':'m-red';
   const dyC=debtYield>9?'m-green':debtYield>7?'m-orange':'m-red';
-  document.getElementById('ltv-top').innerHTML=
-    metric(pct(ltv),'Loan-to-Value',`Max: ${maxLTVpct}%`,ltvC,ltv<=maxLTVpct?'✓ Within limit':'✗ Exceeds limit')+
-    metric(pct(debtYield),'Debt Yield','NOI ÷ loan',dyC,debtYield>9?'✓ OK':'⚠ Below 9% min')+
-    metric(dscr.toFixed(2),'DSCR','NOI ÷ debt service',dc,dscr>1.25?'✓ Strong':dscr>1?'⚠ Thin':'✗ Insufficient')+
-    metric(pct(capRate),'Cap Rate',null,'m-blue');
-  document.getElementById('ltv-bottom').innerHTML=
-    metric(fC(noi),'Net Operating Income',null,'m-gold')+
-    metric(fI(emi),'Monthly Debt Service',null,'m-orange')+
-    metric(pct(breakeven),'Break-even Occupancy',null,breakeven<75?'m-green':'m-orange');
-  document.getElementById('ltv-eligibility').innerHTML=`
-    <div style="margin-bottom:12px">
-      <div style="font-size:11px;color:var(--t3);margin-bottom:6px">Loan Request: ${fC(loan)}</div>
-      <div style="font-size:11px;color:var(--t3);margin-bottom:4px">Max Eligible: ${fC(maxLoan)}</div>
-      <div class="pb-bg"><div class="pb-fill" style="width:${Math.min(100,loan/maxLoan*100)}%;background:${loan<=maxLoan?'var(--green)':'var(--red)'}"></div></div>
-    </div>
-    ${kvRow('Max by LTV ('+maxLTVpct+'%)',fC(maxByLTV),maxByLTV>=loan?'var(--green)':'var(--red)')}
-    ${kvRow('Max by DSCR (1.25x)',fC(maxByDSCR),maxByDSCR>=loan?'var(--green)':'var(--red)')}
-    ${kvRow('Max by Debt Yield (9%)',fC(maxByDY),maxByDY>=loan?'var(--green)':'var(--red)')}
-    ${kvRow('Binding Constraint',maxLoan===maxByLTV?'LTV':maxLoan===maxByDSCR?'DSCR':'Debt Yield','var(--gold)')}
-    <div class="alert ${loan<=maxLoan?'a-good':'a-danger'}" style="margin-top:10px">
-      ${loan<=maxLoan?'✓ Loan within lender eligibility on all metrics.':'✗ Reduce loan by '+fC(loan-maxLoan)+' or improve NOI.'}
-    </div>`;
-  const benchmarks={
-    res:[{m:'Max LTV',v:'75%'},{m:'Min DSCR',v:'1.20x'},{m:'Min Debt Yield',v:'8%'},{m:'Max Tenure',v:'30 years'},{m:'Typical Rate',v:'8.5–9.5%'}],
-    com:[{m:'Max LTV',v:'65%'},{m:'Min DSCR',v:'1.30x'},{m:'Min Debt Yield',v:'9%'},{m:'Max Tenure',v:'15 years'},{m:'Typical Rate',v:'9.5–11%'}],
-    ind:[{m:'Max LTV',v:'60%'},{m:'Min DSCR',v:'1.35x'},{m:'Min Debt Yield',v:'10%'},{m:'Max Tenure',v:'12 years'},{m:'Typical Rate',v:'10–12%'}],
-    plot:[{m:'Max LTV',v:'55%'},{m:'Min DSCR',v:'N/A'},{m:'Min Debt Yield',v:'N/A'},{m:'Max Tenure',v:'10 years'},{m:'Typical Rate',v:'10–13%'}],
-  };
+  document.getElementById('ltv-top').innerHTML=metric(pct(ltv),'Loan-to-Value',`Max: ${maxLTVpct}%`,ltvC,ltv<=maxLTVpct?'✓ Within limit':'✗ Exceeds limit')+metric(pct(debtYield),'Debt Yield','NOI ÷ loan',dyC,debtYield>9?'✓ OK':'⚠ Below 9% min')+metric(dscr.toFixed(2),'DSCR','NOI ÷ debt service',dc,dscr>1.25?'✓ Strong':dscr>1?'⚠ Thin':'✗ Insufficient')+metric(pct(capRate),'Cap Rate',null,'m-blue');
+  document.getElementById('ltv-bottom').innerHTML=metric(fC(noi),'Net Operating Income',null,'m-gold')+metric(fI(emi),'Monthly Debt Service',null,'m-orange')+metric(pct(breakeven),'Break-even Occupancy',null,breakeven<75?'m-green':'m-orange');
+  document.getElementById('ltv-eligibility').innerHTML=`<div style="margin-bottom:12px"><div style="font-size:11px;color:var(--t3);margin-bottom:6px">Loan Request: ${fC(loan)}</div><div style="font-size:11px;color:var(--t3);margin-bottom:4px">Max Eligible: ${fC(maxLoan)}</div><div class="pb-bg"><div class="pb-fill" style="width:${Math.min(100,loan/maxLoan*100)}%;background:${loan<=maxLoan?'var(--green)':'var(--red)'}"></div></div></div>${kvRow('Max by LTV ('+maxLTVpct+'%)',fC(maxByLTV),maxByLTV>=loan?'var(--green)':'var(--red)')}${kvRow('Max by DSCR (1.25x)',fC(maxByDSCR),maxByDSCR>=loan?'var(--green)':'var(--red)')}${kvRow('Max by Debt Yield (9%)',fC(maxByDY),maxByDY>=loan?'var(--green)':'var(--red)')}${kvRow('Binding Constraint',maxLoan===maxByLTV?'LTV':maxLoan===maxByDSCR?'DSCR':'Debt Yield','var(--gold)')}<div class="alert ${loan<=maxLoan?'a-good':'a-danger'}" style="margin-top:10px">${loan<=maxLoan?'✓ Loan within lender eligibility on all metrics.':'✗ Reduce loan by '+fC(loan-maxLoan)+' or improve NOI.'}</div>`;
+  const benchmarks={res:[{m:'Max LTV',v:'75%'},{m:'Min DSCR',v:'1.20x'},{m:'Min Debt Yield',v:'8%'},{m:'Max Tenure',v:'30 years'},{m:'Typical Rate',v:'8.5–9.5%'}],com:[{m:'Max LTV',v:'65%'},{m:'Min DSCR',v:'1.30x'},{m:'Min Debt Yield',v:'9%'},{m:'Max Tenure',v:'15 years'},{m:'Typical Rate',v:'9.5–11%'}],ind:[{m:'Max LTV',v:'60%'},{m:'Min DSCR',v:'1.35x'},{m:'Min Debt Yield',v:'10%'},{m:'Max Tenure',v:'12 years'},{m:'Typical Rate',v:'10–12%'}],plot:[{m:'Max LTV',v:'55%'},{m:'Min DSCR',v:'N/A'},{m:'Min Debt Yield',v:'N/A'},{m:'Max Tenure',v:'10 years'},{m:'Typical Rate',v:'10–13%'}]};
   document.getElementById('ltv-benchmarks').innerHTML=(benchmarks[type]||benchmarks.res).map(b=>kvRow(b.m,b.v,'var(--gold)')).join('');
-  document.getElementById('ltv-guide').innerHTML=`
-    <strong style="color:var(--gold)">Debt Yield</strong> is the lender's primary safety metric — independent of interest rates. NBFCs typically require minimum 8–10%.<br/><br/>
-    <strong style="color:var(--gold)">DSCR of 1.25</strong> means your rental income is 25% above debt payments. This buffer protects you if occupancy falls or rates rise.<br/><br/>
-    <strong style="color:var(--gold)">LTV vs Loan-to-Cost:</strong> Lenders use both — whichever gives the lower loan is binding.`;
+  document.getElementById('ltv-guide').innerHTML=`<strong style="color:var(--gold)">Debt Yield</strong> is the lender's primary safety metric — independent of interest rates. NBFCs typically require minimum 8–10%.<br/><br/><strong style="color:var(--gold)">DSCR of 1.25</strong> means your rental income is 25% above debt payments.<br/><br/><strong style="color:var(--gold)">LTV vs Loan-to-Cost:</strong> Lenders use both — whichever gives the lower loan is binding.`;
 }
 
-/* ── EMI (Advanced) ── */
+/* ══════════════════════════════════════
+   EMI DETAIL
+══════════════════════════════════════ */
 function calcEMI(){
-  const loan=fi('e-loan'),rate=fi('e-rate'),tenure=fi('e-tenure'),
-        proc=fi('e-proc'),ins=fi('e-ins'),prepay=fi('e-prepay'),
-        prepayYr=fi('e-prepay-yr'),compareRate=fi('e-compare');
+  const loan=fi('e-loan'),rate=fi('e-rate'),tenure=fi('e-tenure'),proc=fi('e-proc'),ins=fi('e-ins'),prepay=fi('e-prepay'),prepayYr=fi('e-prepay-yr'),compareRate=fi('e-compare');
   const opt=gi('e-prepay-opt');
   const emi=emiCalc(loan,rate,tenure*12),totalPay=emi*tenure*12,totalInterest=totalPay-loan;
   const effectiveLoan=loan+proc-ins,apr=calcIRRfn([-effectiveLoan,...Array(tenure*12).fill(emi)])*12;
@@ -1808,40 +1270,23 @@ function calcEMI(){
     let bal=loan;
     for(let m=1;m<=prepayYr*12;m++){const interest=bal*(rate/1200),principal=emi-interest;bal=Math.max(0,bal-principal);}
     if(prepay>=bal){prepayHTML=`<div class="alert a-good">Full prepayment after ${prepayYr} years. Loan closed.</div>`;}
-    else{
-      bal-=prepay;
-      if(opt==='tenure'){
-        let newTenure=0,tempBal=bal;
-        while(tempBal>0&&newTenure<360){const i=tempBal*(rate/1200),p=emi-i;if(p<=0)break;tempBal-=p;newTenure++;}
-        const savedMonths=tenure*12-prepayYr*12-newTenure,savedInterest=savedMonths*emi;
-        prepayHTML=kvRow('Prepayment',fC(prepay),'var(--gold)')+kvRow('Remaining Tenure',Math.round(newTenure/12)+' yrs '+newTenure%12+' mo')+kvRow('Months Saved',savedMonths,'var(--green)')+kvRow('Interest Saved',fC(savedInterest),'var(--green)')+`<div class="alert a-good" style="margin-top:10px">Saves ${fC(savedInterest)} and closes ${Math.round(savedMonths/12*10)/10} years early.</div>`;
-      } else {
-        const newEMI=emiCalc(bal,rate,(tenure-prepayYr)*12),emiSaving=(emi-newEMI)*((tenure-prepayYr)*12);
-        prepayHTML=kvRow('New EMI',fI(newEMI),'var(--green)')+kvRow('EMI Reduction',fI(emi-newEMI),'var(--green)')+kvRow('Total Saved',fC(emiSaving),'var(--green)')+`<div class="alert a-good" style="margin-top:10px">Reduces EMI by ${fI(emi-newEMI)}/mo, saves ${fC(emiSaving)} total.</div>`;
-      }
+    else{bal-=prepay;
+      if(opt==='tenure'){let newTenure=0,tempBal=bal;while(tempBal>0&&newTenure<360){const i=tempBal*(rate/1200),p=emi-i;if(p<=0)break;tempBal-=p;newTenure++;}const savedMonths=tenure*12-prepayYr*12-newTenure,savedInterest=savedMonths*emi;prepayHTML=kvRow('Prepayment',fC(prepay),'var(--gold)')+kvRow('Remaining Tenure',Math.round(newTenure/12)+' yrs '+newTenure%12+' mo')+kvRow('Months Saved',savedMonths,'var(--green)')+kvRow('Interest Saved',fC(savedInterest),'var(--green)')+`<div class="alert a-good" style="margin-top:10px">Saves ${fC(savedInterest)} and closes ${Math.round(savedMonths/12*10)/10} years early.</div>`;}
+      else{const newEMI=emiCalc(bal,rate,(tenure-prepayYr)*12),emiSaving=(emi-newEMI)*((tenure-prepayYr)*12);prepayHTML=kvRow('New EMI',fI(newEMI),'var(--green)')+kvRow('EMI Reduction',fI(emi-newEMI),'var(--green)')+kvRow('Total Saved',fC(emiSaving),'var(--green)')+`<div class="alert a-good" style="margin-top:10px">Reduces EMI by ${fI(emi-newEMI)}/mo, saves ${fC(emiSaving)} total.</div>`;}
     }
-  } else {prepayHTML=`<div style="color:var(--t3);font-size:12px;padding:8px 0">Enter a prepayment amount above to see impact.</div>`;}
-  document.getElementById('emi-top').innerHTML=
-    metric(fI(emi),'Monthly EMI',null,'m-gold')+
-    metric(fC(totalInterest),'Total Interest','Over full tenure','m-red',pct(totalInterest/loan*100)+'% of principal')+
-    metric(fC(totalPay),'Total Amount Paid',null,'m-orange')+
-    metric(pct(apr*100,2),'Effective APR','incl. processing fee','m-blue');
-  document.getElementById('emi-bottom').innerHTML=
-    metric(fC(Math.abs(saving*tenure*12)),saving>0?'Saving vs '+compareRate+'%':'Extra vs '+compareRate+'%',null,saving>0?'m-green':'m-red')+
-    metric(pct(totalInterest/totalPay*100),'Interest as % of total',null,'m-orange')+
-    metric(fI(emi/2),'Fortnightly equiv.',null,null);
+  }else{prepayHTML=`<div style="color:var(--t3);font-size:12px;padding:8px 0">Enter a prepayment amount above to see impact.</div>`;}
+  document.getElementById('emi-top').innerHTML=metric(fI(emi),'Monthly EMI',null,'m-gold')+metric(fC(totalInterest),'Total Interest','Over full tenure','m-red',pct(totalInterest/loan*100)+'% of principal')+metric(fC(totalPay),'Total Amount Paid',null,'m-orange')+metric(pct(apr*100,2),'Effective APR','incl. processing fee','m-blue');
+  document.getElementById('emi-bottom').innerHTML=metric(fC(Math.abs(saving*tenure*12)),saving>0?'Saving vs '+compareRate+'%':'Extra vs '+compareRate+'%',null,saving>0?'m-green':'m-red')+metric(pct(totalInterest/totalPay*100),'Interest as % of total',null,'m-orange')+metric(fI(emi/2),'Fortnightly equiv.',null,null);
   document.getElementById('emi-prepay').innerHTML=prepayHTML;
   let bal=loan,amHTML='';const showYears=Math.min(10,tenure);
-  for(let y=1;y<=showYears;y++){
-    const opening=bal;let yearInt=0,yearPrin=0;
-    for(let m=0;m<12;m++){const interest=bal*(rate/1200),principal=Math.min(emi-interest,bal);yearInt+=interest;yearPrin+=principal;bal=Math.max(0,bal-principal);}
-    amHTML+=`<tr><td style="color:var(--gold);font-weight:600">${y}</td><td>${fC(opening)}</td><td style="color:var(--green)">${fC(yearPrin)}</td><td style="color:var(--red)">${fC(yearInt)}</td><td>${fC(bal)}</td><td style="color:var(--blue)">${pct((loan-bal)/loan*100)}</td></tr>`;
-  }
+  for(let y=1;y<=showYears;y++){const opening=bal;let yearInt=0,yearPrin=0;for(let m=0;m<12;m++){const interest=bal*(rate/1200),principal=Math.min(emi-interest,bal);yearInt+=interest;yearPrin+=principal;bal=Math.max(0,bal-principal);}amHTML+=`<tr><td style="color:var(--gold);font-weight:600">${y}</td><td>${fC(opening)}</td><td style="color:var(--green)">${fC(yearPrin)}</td><td style="color:var(--red)">${fC(yearInt)}</td><td>${fC(bal)}</td><td style="color:var(--blue)">${pct((loan-bal)/loan*100)}</td></tr>`;}
   if(tenure>10)amHTML+=`<tr><td colspan="6" style="color:var(--t3);text-align:center;font-style:italic">… ${tenure-10} more years</td></tr>`;
   document.getElementById('emi-amort').innerHTML=amHTML;
 }
 
-/* ── FORM SUBMIT — unchanged ── */
+/* ══════════════════════════════════════
+   FORM SUBMIT
+══════════════════════════════════════ */
 function handleSubmit(e){
   document.getElementById("lead-form").style.display="none";
   document.getElementById("success-msg").style.display="block";
@@ -1860,6 +1305,7 @@ renderXIRRRows();
 calcEligibility();
 calcSimpleEMI();
 calcLenderCompare();
+calcPersonalRate();
 </script>
 </body>
 </html>
