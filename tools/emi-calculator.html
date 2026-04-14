@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Home Loan EMI Calculator India 2025 — NiveshBhoomi</title>
+<meta name="description" content="Free home loan EMI calculator. Instantly calculate monthly EMI, total interest, and amortisation for any loan amount, rate, and tenure. No login required.">
+<meta name="keywords" content="home loan EMI calculator, EMI calculator India, home loan calculator 2025, mortgage calculator India">
+<link rel="canonical" href="https://niveshbhoomi.in/tools/emi-calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.tool-page{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:8rem 2rem 5rem}
+.tool-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.tool-header p{color:var(--muted);margin-top:.8rem;font-size:1rem}
+.calc-big{background:var(--bg2);border:1px solid var(--border);padding:2.5rem;margin-bottom:2rem}
+.calc-big .calc-title{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:2rem;padding-bottom:.8rem;border-bottom:1px solid var(--border)}
+.input-row{margin-bottom:1.8rem}
+.input-label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.75rem;color:var(--muted);margin-bottom:.6rem}
+.input-label span{color:var(--accent2);font-size:.85rem}
+.results-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.result-big{background:var(--bg3);border:1px solid var(--border);padding:1.5rem;text-align:center}
+.result-big-label{font-family:var(--mono);font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
+.result-big-val{font-family:var(--mono);font-size:2rem;color:var(--accent2)}
+.result-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:1.5rem}
+.rg4-item{background:var(--bg3);padding:1rem;text-align:center}
+.rg4-label{font-family:var(--mono);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:.3rem}
+.rg4-val{font-family:var(--mono);font-size:.95rem;color:var(--text)}
+.emi-bar-wrap{margin:1.5rem 0 .4rem;height:6px;background:var(--border2);border-radius:3px;overflow:hidden}
+.emi-bar-inner{height:100%;background:var(--accent);border-radius:3px;transition:width .4s ease}
+.emi-bar-label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.amort-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:1.5rem}
+.amort-table th{font-family:var(--mono);font-size:.63rem;color:var(--accent);letter-spacing:.07em;text-transform:uppercase;padding:.5rem .7rem;border-bottom:2px solid var(--border);text-align:right}
+.amort-table th:first-child{text-align:left}
+.amort-table td{padding:.5rem .7rem;border-bottom:1px solid var(--border);color:var(--muted);text-align:right;font-family:var(--mono)}
+.amort-table td:first-child{text-align:left;color:var(--text)}
+.amort-table tr:hover td{background:var(--bg3)}
+.show-more-btn{width:100%;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:var(--mono);font-size:.72rem;padding:.7rem;cursor:pointer;letter-spacing:.06em;text-transform:uppercase;margin-top:.5rem;transition:border-color .2s,color .2s}
+.show-more-btn:hover{border-color:var(--accent);color:var(--accent2)}
+.post-cta{background:var(--bg2);border:1px solid var(--border);padding:2rem;margin:3rem 0;text-align:center}
+.post-cta h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:.6rem}
+.post-cta p{color:var(--muted);font-size:.9rem;margin-bottom:1.2rem}
+@media(max-width:700px){.results-wrap{grid-template-columns:1fr}.result-grid4{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">Nivesh<span>Bhoomi</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/">Guides</a></li>
+    <li><a href="/#consult">Get Rate</a></li>
+  </ul>
+  <a href="/#consult" class="nav-cta">Free Consultation</a>
+</nav>
+
+<div class="tool-page">
+  <div class="tool-header fade-up">
+    <p class="section-label">Tool</p>
+    <h1>Home loan <em>EMI calculator</em></h1>
+    <p>Instant EMI, total interest, and year-by-year amortisation. Free, no login.</p>
+  </div>
+
+  <div class="calc-big fade-up">
+    <div class="calc-title">Adjust sliders to calculate</div>
+
+    <div class="input-row">
+      <div class="input-label">Loan Amount <span id="amt-display">₹50 L</span></div>
+      <input type="range" id="loan-amt" min="500000" max="30000000" step="100000" value="5000000" oninput="calcEMI(); buildTable()">
+    </div>
+    <div class="input-row">
+      <div class="input-label">Interest Rate (p.a.) <span id="rate-display">8.75%</span></div>
+      <input type="range" id="int-rate" min="6.5" max="16" step="0.05" value="8.75" oninput="calcEMI(); buildTable()">
+    </div>
+    <div class="input-row">
+      <div class="input-label">Loan Tenure <span id="tenure-display">20 years</span></div>
+      <input type="range" id="tenure" min="1" max="30" step="1" value="20" oninput="calcEMI(); buildTable()">
+    </div>
+
+    <div class="results-wrap">
+      <div class="result-big"><div class="result-big-label">Monthly EMI</div><div class="result-big-val" id="emi-result">—</div></div>
+      <div class="result-big"><div class="result-big-label">Total Interest</div><div class="result-big-val" id="total-int">—</div></div>
+    </div>
+
+    <div class="emi-bar-wrap"><div class="emi-bar-inner" id="emi-bar" style="width:50%"></div></div>
+    <div class="emi-bar-label"><span id="prin-pct">Principal 50%</span><span id="int-pct">Interest 50%</span></div>
+
+    <div class="result-grid4">
+      <div class="rg4-item"><span class="rg4-label">Total Payment</span><span class="rg4-val" id="total-pay">—</span></div>
+      <div class="rg4-item"><span class="rg4-label">Interest Ratio</span><span class="rg4-val" id="int-ratio">—</span></div>
+      <div class="rg4-item"><span class="rg4-label">Break-even Year</span><span class="rg4-val" id="break-yr">—</span></div>
+      <div class="rg4-item"><span class="rg4-label">Cost per Lakh</span><span class="rg4-val" id="cost-lakh">—</span></div>
+    </div>
+  </div>
+
+  <div class="fade-up">
+    <p class="section-label" style="margin-bottom:1rem">Year-by-year amortisation</p>
+    <table class="amort-table" id="amort-table">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Opening Balance</th>
+          <th>Principal Paid</th>
+          <th>Interest Paid</th>
+          <th>Closing Balance</th>
+          <th>% Paid off</th>
+        </tr>
+      </thead>
+      <tbody id="amort-body"></tbody>
+    </table>
+    <button class="show-more-btn" id="show-more-btn" onclick="toggleTable()">Show all years ↓</button>
+  </div>
+
+  <div class="post-cta fade-up">
+    <h3>Want a rate lower than what you're calculating?</h3>
+    <p>The calculator uses published rates. Your actual rate may be lower depending on your CIBIL, income, and property. I find the right lender for your profile — free.</p>
+    <a href="/#consult" class="btn-primary">Get my actual rate →</a>
+  </div>
+</div>
+
+<footer>
+  <div><a href="/" class="logo">Nivesh<span>Bhoomi</span></a><p class="footer-tagline">Real estate finance advisory · Delhi NCR</p></div>
+  <div class="footer-right">
+    <div class="footer-links"><a href="/">Home</a><a href="/blog/">Guides</a><a href="/#consult">Contact</a></div>
+    <div>© 2025 NiveshBhoomi · niveshbhoomi.in</div>
+  </div>
+</footer>
+
+<a class="wa-btn" href="https://wa.me/918130521740?text=Hi%20Prashant%2C%20I%20used%20the%20EMI%20calculator%20and%20need%20help%20with%20a%20home%20loan" target="_blank" rel="noopener"><div class="wa-dot"></div>WhatsApp now</a>
+
+<script src="../assets/js/main.js"></script>
+<script>
+let showAll = false;
+let tableData = [];
+
+function fmtIN(n){ return '₹' + Math.round(n).toLocaleString('en-IN'); }
+function fmtL(n){ if(n>=10000000) return '₹'+(n/10000000).toFixed(2)+' Cr'; if(n>=100000) return '₹'+(n/100000).toFixed(1)+' L'; return fmtIN(n); }
+
+function calcEMI() {
+  const P = parseFloat(document.getElementById('loan-amt').value);
+  const annualRate = parseFloat(document.getElementById('int-rate').value);
+  const years = parseInt(document.getElementById('tenure').value);
+  document.getElementById('amt-display').textContent    = fmtL(P);
+  document.getElementById('rate-display').textContent   = annualRate.toFixed(2)+'%';
+  document.getElementById('tenure-display').textContent = years+' year'+(years>1?'s':'');
+  const r = annualRate/12/100, n = years*12;
+  const emi = P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  const totalPay = emi*n, totalInt = totalPay-P;
+  const intPct = (totalInt/totalPay)*100, prinPct = 100-intPct;
+  document.getElementById('emi-result').textContent = fmtIN(emi);
+  document.getElementById('total-int').textContent  = fmtL(totalInt);
+  document.getElementById('total-pay').textContent  = fmtL(totalPay);
+  document.getElementById('int-ratio').textContent  = intPct.toFixed(1)+'%';
+  document.getElementById('emi-bar').style.width    = prinPct.toFixed(1)+'%';
+  document.getElementById('prin-pct').textContent   = 'Principal '+prinPct.toFixed(0)+'%';
+  document.getElementById('int-pct').textContent    = 'Interest '+intPct.toFixed(0)+'%';
+  document.getElementById('cost-lakh').textContent  = fmtIN(emi*n/P*100000/100000*100);
+  // break-even
+  let cumP=0,cumI=0,bal=P,beY=years;
+  for(let m=1;m<=n;m++){const ip=bal*r,pp=emi-ip;cumI+=ip;cumP+=pp;bal-=pp;if(cumP>=cumI&&beY===years){beY=Math.ceil(m/12);break;}}
+  document.getElementById('break-yr').textContent = 'Yr '+beY;
+  // cost per lakh
+  document.getElementById('cost-lakh').textContent = fmtIN(Math.round(emi*n/P*100000));
+}
+
+function buildTable() {
+  const P = parseFloat(document.getElementById('loan-amt').value);
+  const annualRate = parseFloat(document.getElementById('int-rate').value);
+  const years = parseInt(document.getElementById('tenure').value);
+  const r = annualRate/12/100, n = years*12;
+  const emi = P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  tableData = [];
+  let bal = P;
+  for(let yr=1;yr<=years;yr++){
+    let yrPrin=0,yrInt=0,open=bal;
+    for(let m=0;m<12&&(yr-1)*12+m<n;m++){
+      const ip=bal*r,pp=emi-ip;yrInt+=ip;yrPrin+=pp;bal-=pp;
+    }
+    tableData.push({yr,open,yrPrin,yrInt,close:Math.max(0,bal),pct:((P-Math.max(0,bal))/P*100)});
+  }
+  renderTable();
+}
+
+function renderTable() {
+  const rows = showAll ? tableData : tableData.slice(0,5);
+  document.getElementById('amort-body').innerHTML = rows.map(d =>
+    `<tr><td>${d.yr}</td><td>${fmtL(d.open)}</td><td>${fmtL(d.yrPrin)}</td><td>${fmtL(d.yrInt)}</td><td>${fmtL(d.close)}</td><td>${d.pct.toFixed(1)}%</td></tr>`
+  ).join('');
+  document.getElementById('show-more-btn').textContent = showAll ? 'Show less ↑' : 'Show all years ↓';
+  if(tableData.length<=5) document.getElementById('show-more-btn').style.display='none';
+}
+
+function toggleTable() { showAll=!showAll; renderTable(); }
+
+calcEMI(); buildTable();
+</script>
+</body>
+</html>
