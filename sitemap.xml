@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://niveshbhoomi.in/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://niveshbhoomi.in/blog/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://niveshbhoomi.in/tools/emi-calculator.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://niveshbhoomi.in/blog/home-loan-delhi-ncr-guide.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://niveshbhoomi.in/blog/lap-self-employed-guide.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://niveshbhoomi.in/blog/cibil-680-home-loan.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <!-- ADD NEW BLOG POSTS HERE — copy a <url> block and update the <loc> -->
+</urlset>
