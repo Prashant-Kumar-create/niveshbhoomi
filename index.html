@@ -1,295 +1,511 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NiveshBhoomi — Home Loan & Real Estate Advisory Delhi NCR</title>
-<meta name="description" content="Free home loan and LAP advisory in Delhi NCR. Compare rates from 15+ banks instantly. CFA-grade analysis, personal response in under 2 hours.">
-<meta name="keywords" content="home loan Delhi NCR, loan against property Noida, LAP Delhi, home loan advisor, EMI calculator India">
-<meta property="og:title" content="NiveshBhoomi — Home Loan Advisory Delhi NCR">
-<meta property="og:description" content="Compare 15+ lenders. Get your exact rate in 60 seconds. Free advisory.">
-<meta property="og:url" content="https://niveshbhoomi.in">
-<link rel="canonical" href="https://niveshbhoomi.in/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css">
-<style>
-.hero{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;padding:7rem 2rem 4rem;max-width:var(--max);margin:0 auto}
-.hero-tag{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.7rem;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.5rem}
-.hero-tag::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
-.hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.7;max-width:480px;margin:.8rem 0 2rem}
-.hero-stats{display:flex;gap:2.5rem;margin-bottom:2rem;flex-wrap:wrap}
-.stat{border-left:2px solid var(--accent-dim);padding-left:.8rem}
-.stat-num{font-family:var(--mono);font-size:1.4rem;color:var(--accent2);display:block;line-height:1;margin-bottom:.2rem}
-.stat-label{font-size:.72rem;color:var(--muted);letter-spacing:.04em}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.calc-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.calc-inner{max-width:var(--max);margin:0 auto;padding:5rem 2rem}
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:2.5rem}
-.calc-card{background:var(--bg3);border:1px solid var(--border);padding:2rem}
-.calc-title{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.5rem;padding-bottom:.8rem;border-bottom:1px solid var(--border)}
-.input-row{margin-bottom:1.4rem}
-.input-label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-bottom:.5rem}
-.input-label span{color:var(--accent2);font-size:.82rem}
-.calc-result{padding-top:1.5rem;border-top:1px solid var(--border);margin-top:.5rem}
-.result-label{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
-.result-val{font-family:var(--mono);font-size:1.8rem;color:var(--accent2);letter-spacing:-.02em}
-.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem}
-.result-item{background:var(--bg);border:1px solid var(--border);padding:.75rem}
-.r-label{font-family:var(--mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:.2rem}
-.r-val{font-family:var(--mono);font-size:.95rem;color:var(--text)}
-.emi-bar-wrap{margin:1.2rem 0 .4rem;height:4px;background:var(--border2);border-radius:2px;overflow:hidden}
-.emi-bar-inner{height:100%;background:var(--accent);border-radius:2px;transition:width .4s ease}
-.emi-bar-label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.65rem;color:var(--muted)}
-.cta-calc{background:var(--bg3);border:1px solid var(--border);padding:2rem;display:flex;flex-direction:column;gap:1.2rem}
-.trust-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
-.trust-list li{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
-.trust-list li::before{content:'✓';color:var(--teal);font-weight:bold}
-.lenders-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.5rem}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;border:1px solid var(--border)}
-.step{padding:2rem 1.5rem;border-right:1px solid var(--border)}
-.step:last-child{border-right:none}
-.step-num{font-family:var(--mono);font-size:.65rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;display:block}
-.step p{font-size:.85rem;color:var(--muted);line-height:1.6;margin-top:.4rem}
-.form-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.author-bar{display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--bg3);border:1px solid var(--border);margin-top:2rem}
-.author-avatar{width:44px;height:44px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.78rem;color:var(--accent2);flex-shrink:0}
-.author-name{font-size:.88rem;color:var(--text);font-weight:500;display:block}
-.author-cred{font-family:var(--mono);font-size:.68rem;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
-.contact-form{background:var(--bg3);border:1px solid var(--border);padding:2rem}
-.form-header{font-family:var(--mono);font-size:.7rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.5rem;padding-bottom:.8rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.form-badge{background:var(--teal-dim);color:var(--teal);font-size:.65rem;padding:.2rem .5rem;letter-spacing:.06em}
-.submit-btn{width:100%;background:var(--accent);color:var(--bg);border:none;font-family:var(--mono);font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:1rem;cursor:pointer;transition:background .2s,transform .15s;margin-top:.4rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
-.submit-btn:hover{background:var(--accent2);transform:translateY(-1px)}
-.form-note{font-family:var(--mono);font-size:.65rem;color:var(--muted);text-align:center;margin-top:.8rem;letter-spacing:.04em}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
-.blog-card{background:var(--bg2);padding:1.8rem;text-decoration:none;color:inherit;display:block;transition:background .2s}
-.blog-card:hover{background:var(--bg3)}
-.blog-tag{font-family:var(--mono);font-size:.65rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8rem;display:block}
-.blog-card h3{font-size:1rem;line-height:1.35;margin-bottom:.6rem}
-.blog-card p{font-size:.82rem;color:var(--muted);line-height:1.6;margin-bottom:1rem}
-.blog-meta{font-family:var(--mono);font-size:.65rem;color:var(--muted);display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:.8rem}
-.blog-meta span{color:var(--accent)}
-.form-success{display:none;text-align:center;padding:3rem 1rem}
-.form-success.show{display:block}
-.success-icon{width:48px;height:48px;border:1px solid var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;color:var(--teal);font-size:1.3rem}
-@media(max-width:900px){.calc-grid,.form-wrap{grid-template-columns:1fr;gap:2rem}.steps-grid{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--border)}.blog-grid{grid-template-columns:1fr}}
-@media(max-width:600px){.steps-grid{grid-template-columns:1fr}.result-grid{grid-template-columns:1fr}.hero-stats{gap:1.5rem}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="NiveshBhoomi — India's trusted real estate & home loan platform for Tier-2 cities. Discover RERA-approved projects in Lucknow, Jaipur, Delhi NCR and get instant loan assistance.">
+  <meta name="keywords"
+    content="real estate Lucknow, plots Jaipur, home loan Delhi NCR, RERA approved projects, PMAY eligibility, plot loan India">
+  <title>NiveshBhoomi — Real Estate & Home Loans</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<nav>
-  <a href="/" class="logo">Nivesh<span>Bhoomi</span></a>
-  <ul class="nav-links">
-    <li><a href="#calculator">EMI Calc</a></li>
-    <li><a href="#how">How it Works</a></li>
-    <li><a href="blog/">Guides</a></li>
-    <li><a href="tools/emi-calculator.html">Tools</a></li>
-  </ul>
-  <a href="#consult" class="nav-cta">Free Consultation</a>
-</nav>
-
-<section class="hero">
-  <div class="fade-up" style="max-width:620px">
-    <div class="hero-tag">Active · Delhi NCR · Loan Advisory</div>
-    <h1>The <em>smartest</em> way to get your home loan in Delhi NCR</h1>
-    <p class="hero-sub">CFA-grade analysis meets personal advisory. Compare 15+ lenders, get your exact rate in 60 seconds — and someone actually picks up the phone.</p>
-    <div class="hero-stats">
-      <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Lenders compared</span></div>
-      <div class="stat"><span class="stat-num">8.35%</span><span class="stat-label">Lowest rate today</span></div>
-      <div class="stat"><span class="stat-num">&lt;2hr</span><span class="stat-label">Response time</span></div>
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-n">N</span>ivesh<span class="logo-accent">Bhoomi</span>
+      </a>
+      <div class="nav-links">
+        <a href="blogs.html">Insights</a>
+        <a href="#cities">Cities</a>
+        <a href="home-loan.html">Home Loans</a>
+        <a href="#about">About</a>
+      </div>
+      <a href="#contact" class="nav-cta">Get Free Advice</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="hero-actions">
-      <a href="#consult" class="btn-primary">Get free consultation →</a>
-      <a href="#calculator" class="btn-secondary">Calculate EMI</a>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="blogs.html">Insights</a>
+      <a href="#cities">Cities</a>
+      <a href="home-loan.html">Home Loans</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="mobile-cta">Get Free Advice</a>
     </div>
-  </div>
-</section>
+  </nav>
 
-<div class="ticker-wrap">
-  <div class="ticker">
-    <div class="tick-item">SBI Home Loan <span class="tick-val">8.50% p.a.</span></div><div class="tick-dot"></div>
-    <div class="tick-item">HDFC <span class="tick-val">8.75% p.a.</span></div><div class="tick-dot"></div>
-    <div class="tick-item">Bajaj Finserv LAP <span class="tick-val">9.00% p.a.</span></div><div class="tick-dot"></div>
-    <div class="tick-item">ICICI Bank <span class="tick-val">8.75% p.a.</span></div><div class="tick-dot"></div>
-    <div class="tick-item">Kotak Mahindra <span class="tick-val">8.70% p.a.</span></div><div class="tick-dot"></div>
-    <div class="tick-item">Tata Capital <span class="tick-val">8.75% p.a.</span></div><div class="tick-dot"></div>
-    <div class="tick-item">Axis Bank <span class="tick-val">9.00% p.a.</span></div><div class="tick-dot"></div>
-    <div class="tick-item">PNB Housing <span class="tick-val">8.50% p.a.</span></div><div class="tick-dot"></div>
-    <div class="tick-item">SBI Home Loan <span class="tick-val">8.50% p.a.</span></div><div class="tick-dot"></div>
-    <div class="tick-item">HDFC <span class="tick-val">8.75% p.a.</span></div><div class="tick-dot"></div>
-    <div class="tick-item">Bajaj Finserv LAP <span class="tick-val">9.00% p.a.</span></div><div class="tick-dot"></div>
-    <div class="tick-item">ICICI Bank <span class="tick-val">8.75% p.a.</span></div><div class="tick-dot"></div>
-    <div class="tick-item">Tata Capital <span class="tick-val">8.75% p.a.</span></div>
-  </div>
-</div>
-
-<div class="calc-section" id="calculator">
-  <div class="calc-inner">
-    <p class="section-label">Tool — 01</p>
-    <h2>EMI <em>calculator</em></h2>
-    <div class="calc-grid">
-      <div class="calc-card fade-up">
-        <div class="calc-title">Home loan EMI calculator</div>
-        <div class="input-row">
-          <div class="input-label">Loan Amount <span id="amt-display">₹50 L</span></div>
-          <input type="range" id="loan-amt" min="500000" max="20000000" step="100000" value="5000000" oninput="calcEMI()">
-        </div>
-        <div class="input-row">
-          <div class="input-label">Interest Rate <span id="rate-display">8.50%</span></div>
-          <input type="range" id="int-rate" min="7" max="15" step="0.05" value="8.5" oninput="calcEMI()">
-        </div>
-        <div class="input-row">
-          <div class="input-label">Tenure <span id="tenure-display">20 years</span></div>
-          <input type="range" id="tenure" min="5" max="30" step="1" value="20" oninput="calcEMI()">
-        </div>
-        <div class="calc-result">
-          <div style="margin-bottom:1rem"><div class="result-label">Monthly EMI</div><div class="result-val" id="emi-result">—</div></div>
-          <div class="emi-bar-wrap"><div class="emi-bar-inner" id="emi-bar" style="width:50%"></div></div>
-          <div class="emi-bar-label"><span>Principal</span><span>Interest</span></div>
-          <div class="result-grid">
-            <div class="result-item"><span class="r-label">Total interest</span><span class="r-val" id="total-int">—</span></div>
-            <div class="result-item"><span class="r-label">Total payment</span><span class="r-val" id="total-pay">—</span></div>
-            <div class="result-item"><span class="r-label">Interest ratio</span><span class="r-val" id="int-ratio">—</span></div>
-            <div class="result-item"><span class="r-label">Break-even year</span><span class="r-val" id="break-yr">—</span></div>
-          </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-text">BHOOMI</div>
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="tag-dot"></span>
+        India's Tier-2 Real Estate Guide
+      </div>
+      <h1 class="hero-title">
+        Smart property.<br>
+        <em>Smarter</em> loans.
+      </h1>
+      <p class="hero-desc">Expert guides on buying plots, flats & homes in Lucknow, Jaipur and Delhi NCR — with real
+        loan advice built in.</p>
+      <div class="hero-actions">
+        <a href="#blogs" class="btn-primary">Read Latest Guides</a>
+        <a href="#loans" class="btn-secondary">Check Loan Eligibility</a>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat"><span class="h-num">50+</span><span class="h-label">In-depth guides</span></div>
+        <div class="h-divider"></div>
+        <div class="h-stat"><span class="h-num">3</span><span class="h-label">Cities covered</span></div>
+        <div class="h-divider"></div>
+        <div class="h-stat"><span class="h-num">Free</span><span class="h-label">Loan consultation</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card hc1">
+        <div class="hc-icon">🏗️</div>
+        <div class="hc-text">
+          <div class="hc-title">Plot loans in UP</div>
+          <div class="hc-sub">Complete 2025 guide</div>
         </div>
       </div>
-      <div class="cta-calc fade-up">
-        <h3>Your actual rate could be <em>lower</em></h3>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.7">The calculator shows published rates. Your real rate depends on CIBIL, employment, and property type. I find the right lender for your profile — free.</p>
-        <ul class="trust-list">
-          <li>Free service — lender pays me, not you</li>
-          <li>CFA Level II analysis on your case</li>
-          <li>15+ banks and NBFCs compared</li>
-          <li>Home loans, LAP &amp; balance transfers</li>
-          <li>Delhi, Noida, Gurugram, Ghaziabad</li>
-        </ul>
-        <a href="#consult" class="btn-primary" style="align-self:flex-start">Get my actual rate →</a>
-        <div class="lenders-row">
-          <div class="lender-chip">HDFC</div><div class="lender-chip">SBI</div><div class="lender-chip">ICICI</div>
-          <div class="lender-chip">Bajaj</div><div class="lender-chip">Kotak</div><div class="lender-chip">Axis</div>
-          <div class="lender-chip">Tata Capital</div><div class="lender-chip">Piramal</div><div class="lender-chip">+more</div>
+      <div class="hero-card hc2">
+        <div class="hc-icon">📊</div>
+        <div class="hc-text">
+          <div class="hc-title">Jaipur price trends</div>
+          <div class="hc-sub">Updated monthly</div>
         </div>
+      </div>
+      <div class="hero-card hc3">
+        <div class="hc-icon">🏦</div>
+        <div class="hc-text">
+          <div class="hc-title">PMAY 2.0 guide</div>
+          <div class="hc-sub">Check eligibility free</div>
+        </div>
+      </div>
+      <div class="hero-ring"></div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <span class="trust-label">Trusted guides on</span>
+      <div class="trust-pills">
+        <span class="pill">RERA Verification</span>
+        <span class="pill">Plot Loans</span>
+        <span class="pill">PMAY Schemes</span>
+        <span class="pill">EMI Calculation</span>
+        <span class="pill">City Investment</span>
+        <span class="pill">Builder Reviews</span>
       </div>
     </div>
   </div>
-</div>
 
-<section id="how" style="position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:5rem 2rem" class="fade-up">
-  <p class="section-label">Process — 02</p>
-  <h2>How it <em>works</em></h2>
-  <div class="steps-grid">
-    <div class="step"><span class="step-num">Step 01</span><h3>Share your profile</h3><p>Fill the form — income, CIBIL range, loan amount, property. Takes 90 seconds.</p></div>
-    <div class="step"><span class="step-num">Step 02</span><h3>I analyse your case</h3><p>CFA-grade review across 15+ lenders. Best rate-to-approval match for your profile.</p></div>
-    <div class="step"><span class="step-num">Step 03</span><h3>WhatsApp in 2 hours</h3><p>Personalised rate comparison, document checklist, and next steps. No sales pressure.</p></div>
-    <div class="step"><span class="step-num">Step 04</span><h3>Loan disbursed</h3><p>I handle paperwork, bank coordination, and follow-up until the money is in your account.</p></div>
-  </div>
-</section>
+  <!-- BLOGS -->
+  <section class="section blogs-section" id="blogs">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Latest insights</div>
+        <h2 class="section-title">Guides built for<br>real buyers</h2>
+      </div>
 
-<div id="consult" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-  <div style="max-width:var(--max);margin:0 auto;padding:5rem 2rem">
-    <div class="form-wrap">
-      <div class="fade-up">
-        <p class="section-label">Advisory — 03</p>
-        <h2>Get your <em>free</em> loan consultation</h2>
-        <p style="color:var(--muted);font-size:.95rem;line-height:1.7;margin-top:.8rem">I compare your profile across 15+ banks and NBFCs and tell you which lender gives the lowest rate with the least friction. No fees. No spam. Just a straight answer.</p>
-        <div class="author-bar">
-          <div class="author-avatar">PK</div>
-          <div><span class="author-name">Prashant Kumar</span><span class="author-cred">CFA Level II · Home Loan &amp; LAP DSA · Delhi NCR</span></div>
+      <div class="blog-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="loans">Home Loans</button>
+        <button class="filter-btn" data-filter="plots">Plots & Land</button>
+        <button class="filter-btn" data-filter="cities">City Guides</button>
+        <button class="filter-btn" data-filter="govt">Govt Schemes</button>
+      </div>
+
+      <div class="blog-grid" id="blogGrid">
+
+        <article class="blog-card featured" data-cat="plots">
+          <div class="bc-img bc-green">
+            <div class="bc-category">Plot Loans</div>
+            <div class="bc-read">8 min read</div>
+          </div>
+          <div class="bc-body">
+            <div class="bc-city">All India</div>
+            <h3 class="bc-title">Plot loan vs home loan — which is better for you in 2025?</h3>
+            <p class="bc-desc">A plain-language breakdown of rates, eligibility, tax benefits and which one to choose
+              based on your situation.</p>
+            <a href="blogs/plot-loan-vs-home-loan.html" class="bc-link">Read guide →</a>
+          </div>
+        </article>
+
+        <article class="blog-card" data-cat="govt">
+          <div class="bc-img bc-blue">
+            <div class="bc-category">Govt Scheme</div>
+            <div class="bc-read">6 min read</div>
+          </div>
+          <div class="bc-body">
+            <div class="bc-city">All India</div>
+            <h3 class="bc-title">PMAY 2.0 — eligibility, subsidy amount & how to apply</h3>
+            <p class="bc-desc">Everything first-time buyers need to know about Pradhan Mantri Awas Yojana 2.0 subsidies
+              in 2025.</p>
+            <a href="blogs/plot-loan-vs-home-loan.html" class="bc-link">Read guide →</a>
+          </div>
+        </article>
+
+        <article class="blog-card" data-cat="cities">
+          <div class="bc-img bc-amber">
+            <div class="bc-category">City Guide</div>
+            <div class="bc-read">10 min read</div>
+          </div>
+          <div class="bc-body">
+            <div class="bc-city">Lucknow</div>
+            <h3 class="bc-title">Best areas to buy plots in Lucknow under ₹20 lakh (2025)</h3>
+            <p class="bc-desc">Gomti Nagar Extension, Sultanpur Road, Shaheed Path — we break down which areas give the
+              best ROI.</p>
+            <a href="blogs/plot-loan-vs-home-loan.html" class="bc-link">Read guide →</a>
+          </div>
+        </article>
+
+        <article class="blog-card" data-cat="loans">
+          <div class="bc-img bc-coral">
+            <div class="bc-category">Home Loans</div>
+            <div class="bc-read">7 min read</div>
+          </div>
+          <div class="bc-body">
+            <div class="bc-city">All India</div>
+            <h3 class="bc-title">Home loan tax benefits — Section 80C & 24B explained</h3>
+            <p class="bc-desc">How to save up to ₹3.5 lakh per year in taxes on your home loan. A simple guide with real
+              examples.</p>
+            <a href="blogs/plot-loan-vs-home-loan.html" class="bc-link">Read guide →</a>
+          </div>
+        </article>
+
+        <article class="blog-card" data-cat="cities">
+          <div class="bc-img bc-blue">
+            <div class="bc-category">City Guide</div>
+            <div class="bc-read">9 min read</div>
+          </div>
+          <div class="bc-body">
+            <div class="bc-city">Jaipur</div>
+            <h3 class="bc-title">Jaipur real estate investment guide 2025 — areas, prices & ROI</h3>
+            <p class="bc-desc">Mansarovar Extension, Ajmer Road, Vaishali Nagar — where prices are rising and where to
+              avoid.</p>
+            <a href="blogs/plot-loan-vs-home-loan.html" class="bc-link">Read guide →</a>
+          </div>
+        </article>
+
+        <article class="blog-card" data-cat="plots">
+          <div class="bc-img bc-green">
+            <div class="bc-category">Plot Guide</div>
+            <div class="bc-read">8 min read</div>
+          </div>
+          <div class="bc-body">
+            <div class="bc-city">Delhi NCR</div>
+            <h3 class="bc-title">Yamuna Expressway plot investment — risks, returns & loan guide</h3>
+            <p class="bc-desc">Is Yamuna Expressway still worth buying in 2025? We analyse prices, upcoming
+              infrastructure and bank loan availability.</p>
+            <a href="blogs/plot-loan-vs-home-loan.html" class="bc-link">Read guide →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="blogs-cta">
+        <p>More guides coming every week</p>
+        <a href="#contact" class="btn-outline">Get notified →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITIES -->
+  <section class="section cities-section" id="cities">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-tag">Where we cover</div>
+        <h2 class="section-title">Three cities.<br>Deep expertise.</h2>
+      </div>
+      <div class="cities-grid">
+        <div class="city-card">
+          <div class="city-num">01</div>
+          <div class="city-name">Lucknow</div>
+          <div class="city-state">Uttar Pradesh</div>
+          <div class="city-tags">
+            <span>Plots</span><span>Flats</span><span>Loans</span>
+          </div>
+          <p class="city-desc">Fast-growing market with strong infrastructure push. Gomti Nagar Extension and Sultanpur
+            Road are the areas to watch.</p>
+          <div class="city-stat">Avg plot: ₹15–35L</div>
+        </div>
+        <div class="city-card city-featured">
+          <div class="city-num">02</div>
+          <div class="city-name">Delhi NCR</div>
+          <div class="city-state">Haryana / UP</div>
+          <div class="city-tags">
+            <span>Expressway</span><span>Flats</span><span>Affordable</span>
+          </div>
+          <p class="city-desc">We focus on affordable segments — Yamuna Expressway, Greater Noida West and Bhiwadi where
+            first-timers can still enter.</p>
+          <div class="city-stat">Avg flat: ₹30–60L</div>
+        </div>
+        <div class="city-card ">
+          <div class="city-num">03</div>
+          <div class="city-name">Jaipur</div>
+          <div class="city-state">Rajasthan</div>
+          <div class="city-tags">
+            <span>Plots</span><span>Villas</span><span>RERA</span>
+          </div>
+          <p class="city-desc">Pink City's real estate is booming thanks to tourism, IT growth and Delhi proximity.
+            Ajmer Road corridor is undervalued.</p>
+          <div class="city-stat">Avg plot: ₹18–45L</div>
         </div>
       </div>
-      <div class="fade-up">
-        <div class="contact-form" id="lead-form-ui">
-          <div class="form-header">Request free consultation <span class="form-badge">100% Free</span></div>
-          <div class="field-row">
-            <div class="field"><label>Full Name *</label><input type="text" id="f-name" placeholder="Amit Sharma"></div>
-            <div class="field"><label>Mobile *</label><input type="tel" id="f-phone" placeholder="+91 98765 43210"></div>
-          </div>
-          <div class="field">
-            <label>Loan Type *</label>
-            <select id="f-loan">
-              <option value="">Select loan type</option>
-              <option>Home Loan — New Purchase</option>
-              <option>Home Loan — Under Construction</option>
-              <option>Loan Against Property (LAP)</option>
-              <option>Home Loan Balance Transfer</option>
-              <option>Plot + Construction Loan</option>
-            </select>
-          </div>
-          <div class="field-row">
-            <div class="field"><label>Loan Amount</label>
-              <select id="f-amount"><option value="">Select range</option><option>₹20L – ₹50L</option><option>₹50L – ₹1Cr</option><option>₹1Cr – ₹2Cr</option><option>₹2Cr+</option></select>
+    </div>
+  </section>
+
+  <!-- EMI CALCULATOR -->
+  <section class="section calc-section" id="loans">
+    <div class="container">
+      <div class="calc-wrap">
+        <div class="calc-left">
+          <div class="section-tag">Loan tools</div>
+          <h2 class="section-title">Calculate your<br>EMI instantly</h2>
+          <p class="calc-desc">Get a quick sense of your monthly payment. Then speak to our loan advisor to find the
+            best bank for your profile — free of charge.</p>
+          <div class="loan-features">
+            <div class="lf-item">
+              <div class="lf-dot"></div>
+              <span>Compare 20+ banks & NBFCs</span>
             </div>
-            <div class="field"><label>Employment</label>
-              <select id="f-emp"><option value="">Select</option><option>Salaried — Private</option><option>Salaried — Govt / PSU</option><option>Self Employed — Business</option><option>Self Employed — Professional</option></select>
+            <div class="lf-item">
+              <div class="lf-dot"></div>
+              <span>Check PMAY subsidy eligibility</span>
+            </div>
+            <div class="lf-item">
+              <div class="lf-dot"></div>
+              <span>Plot loan specialists</span>
+            </div>
+            <div class="lf-item">
+              <div class="lf-dot"></div>
+              <span>48-hour approval assistance</span>
             </div>
           </div>
-          <div class="field"><label>City / Area</label><input type="text" id="f-city" placeholder="Noida, Gurugram, Delhi…"></div>
-          <button class="submit-btn" onclick="submitForm()">Get free consultation →</button>
-          <p class="form-note">Your details are private · WhatsApp response in &lt;2 hours</p>
+          <a href="#contact" class="btn-primary">Talk to loan advisor →</a>
         </div>
-        <div class="form-success" id="form-success">
-          <div class="success-icon">✓</div>
-          <h3 style="font-family:var(--serif);font-size:1.4rem;margin-bottom:.5rem">Request received</h3>
-          <p style="color:var(--muted);font-size:.85rem">I'll reach out on WhatsApp within 2 hours.<br>Or message directly: +91 81305 21740</p>
+        <div class="calc-right">
+          <div class="calc-card">
+            <div class="calc-field">
+              <label>Loan amount</label>
+              <div class="slider-row">
+                <input type="range" min="5" max="200" value="40" step="1" id="loanAmt" class="slider">
+                <span class="slider-val" id="loanAmtVal">₹40L</span>
+              </div>
+            </div>
+            <div class="calc-field">
+              <label>Interest rate (% per year)</label>
+              <div class="slider-row">
+                <input type="range" min="7" max="14" value="8.5" step="0.1" id="rate" class="slider">
+                <span class="slider-val" id="rateVal">8.5%</span>
+              </div>
+            </div>
+            <div class="calc-field">
+              <label>Loan tenure (years)</label>
+              <div class="slider-row">
+                <input type="range" min="5" max="30" value="20" step="1" id="tenure" class="slider">
+                <span class="slider-val" id="tenureVal">20 yrs</span>
+              </div>
+            </div>
+            <div class="calc-result">
+              <div class="cr-item">
+                <div class="cr-label">Monthly EMI</div>
+                <div class="cr-value" id="emi">₹34,722</div>
+              </div>
+              <div class="cr-divider"></div>
+              <div class="cr-item">
+                <div class="cr-label">Total interest</div>
+                <div class="cr-value small" id="totalInt">₹43.3L</div>
+              </div>
+              <div class="cr-item">
+                <div class="cr-label">Total payment</div>
+                <div class="cr-value small" id="totalPay">₹83.3L</div>
+              </div>
+            </div>
+            <a href="#contact" class="calc-cta">Get a better rate for your profile →</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<section id="blog" style="position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:5rem 2rem" class="fade-up">
-  <p class="section-label">Knowledge — 04</p>
-  <h2>Guides &amp; <em>insights</em></h2>
-  <div class="blog-grid">
-    <a href="blog/home-loan-delhi-ncr-guide.html" class="blog-card">
-      <span class="blog-tag">Home Loan · Delhi NCR</span>
-      <h3>How to get the best home loan rate in Delhi NCR in 2025</h3>
-      <p>Navigate lender options, CIBIL requirements, and documents that actually matter.</p>
-      <div class="blog-meta"><span>8 min read</span><span>Home Loan</span></div>
-    </a>
-    <a href="blog/lap-self-employed-guide.html" class="blog-card">
-      <span class="blog-tag">LAP · Self-Employed</span>
-      <h3>Loan Against Property for self-employed — complete 2025 guide</h3>
-      <p>Which NBFCs give LAP without 3 years of ITR? The honest answer.</p>
-      <div class="blog-meta"><span>6 min read</span><span>LAP</span></div>
-    </a>
-    <a href="blog/cibil-680-home-loan.html" class="blog-card">
-      <span class="blog-tag">CIBIL · Tips</span>
-      <h3>CIBIL 680 — which banks will still give you a home loan?</h3>
-      <p>Not all doors close at 750. Here's which lenders accept sub-750 profiles.</p>
-      <div class="blog-meta"><span>5 min read</span><span>CIBIL</span></div>
-    </a>
-  </div>
-  <div style="text-align:center;margin-top:2rem"><a href="blog/" class="btn-secondary">View all guides →</a></div>
-</section>
+  <!-- WHY US -->
+  <section class="section why-section" id="about">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-tag">Why NiveshBhoomi</div>
+        <h2 class="section-title">We do what big portals<br>don't bother with</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">◈</div>
+          <h3>Tier-2 focus</h3>
+          <p>While everyone covers Mumbai and Bengaluru, we go deep on Lucknow, Jaipur and NCR's affordable belt — where
+            real buyers are.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">◈</div>
+          <h3>Loan advice built in</h3>
+          <p>Every property guide includes which banks will fund it, typical rates, and eligibility — not just listings.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">◈</div>
+          <h3>No fluff, just facts</h3>
+          <p>We write for first-time buyers who need honest information, not for builders who want flattering coverage.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">◈</div>
+          <h3>Free consultation</h3>
+          <p>Tell us your budget and city. We'll send you 3 verified options with loan details — at zero cost to you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <div><a href="/" class="logo">Nivesh<span>Bhoomi</span></a><p class="footer-tagline">Real estate finance advisory · Delhi NCR</p></div>
-  <div class="footer-right">
-    <div class="footer-links"><a href="blog/">Blog</a><a href="tools/emi-calculator.html">EMI Calc</a><a href="#consult">Contact</a></div>
-    <div>All calculations are indicative. Consult a registered advisor before investing.</div>
-    <div>© 2025 NiveshBhoomi · niveshbhoomi.in</div>
-  </div>
-</footer>
+  <!-- CONTACT / LEAD FORM -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="contact-wrap">
+        <div class="contact-left">
+          <div class="section-tag light">Free consultation</div>
+          <h2 class="contact-title">Tell us what<br>you're looking for</h2>
+          <p class="contact-desc">Whether it's a ₹15L plot in Lucknow or a ₹50L flat in Jaipur — share your details and
+            we'll get back within 24 hours with real options and loan info.</p>
+          <div class="contact-promise">
+            <div class="cp-item">No spam, ever</div>
+            <div class="cp-item">No brokerage fee</div>
+            <div class="cp-item">Response in 24 hrs</div>
+          </div>
+        </div>
+        <div class="contact-right">
+          <!-- ✅ Replace YOUR@EMAIL.COM with your actual email address -->
+          <form class="lead-form" action="https://formsubmit.co/kumarprashant32742@gmail.com" method="POST">
+            <!-- FormSubmit hidden config -->
+            <input type="hidden" name="_subject" value="🏠 New Property Enquiry — NiveshBhoomi">
+            <input type="hidden" name="_next" value="https://niveshbhoomi.in/thank-you.html">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="Form Type" value="Property Enquiry">
 
-<a class="wa-btn" href="https://wa.me/918130521740?text=Hi%20Prashant%2C%20I%20need%20help%20with%20a%20home%20loan%20in%20Delhi%20NCR" target="_blank" rel="noopener"><div class="wa-dot"></div>WhatsApp now</a>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your name</label>
+                <input type="text" name="Full Name" placeholder="Rahul Sharma" required>
+              </div>
+              <div class="form-group">
+                <label>Phone number</label>
+                <input type="tel" name="Phone Number" placeholder="98XXXXXXXX" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Which city are you interested in?</label>
+              <select name="City" required>
+                <option value="">Select a city</option>
+                <option>Lucknow</option>
+                <option>Jaipur</option>
+                <option>Delhi NCR</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Property type</label>
+                <select name="Property Type">
+                  <option>Plot / Land</option>
+                  <option>Flat / Apartment</option>
+                  <option>Villa / Independent</option>
+                  <option>Commercial</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Budget</label>
+                <select name="Budget">
+                  <option>Under ₹20L</option>
+                  <option>₹20L – ₹40L</option>
+                  <option>₹40L – ₹70L</option>
+                  <option>₹70L – ₹1Cr</option>
+                  <option>Above ₹1Cr</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Do you need a home loan?</label>
+              <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="Loan Needed" value="Yes, I need loan help" checked>
+                  Yes, I need loan help</label>
+                <label class="radio-label"><input type="radio" name="Loan Needed" value="No, self-funded"> No,
+                  self-funded</label>
+                <label class="radio-label"><input type="radio" name="Loan Needed" value="Not sure yet"> Not sure
+                  yet</label>
+              </div>
+            </div>
+            <button type="submit" class="form-submit">Send my enquiry →</button>
+            <p class="form-note">Goes straight to our email. We respond within 24 hours.</p>
+            <div class="wa-fallback">
+              <span>Prefer WhatsApp?</span>
+              <a href="https://wa.me/918130521740?text=Hi%20NiveshBhoomi!%20I%20am%20looking%20for%20a%20property."
+                target="_blank" class="wa-btn">Chat on WhatsApp →</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- FORMSUBMIT — replace YOUR@EMAIL.COM with your actual email -->
-<form id="formsubmit-form" action="https://formsubmit.co/kumarprashant32742@gmail.com" method="POST" style="display:none">
-  <input type="hidden" name="_subject" value="New loan inquiry — NiveshBhoomi">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_next" value="https://niveshbhoomi.in/thankyou.html">
-  <input type="text" name="name"><input type="text" name="phone">
-  <input type="text" name="loan_type"><input type="text" name="loan_amount">
-  <input type="text" name="employment"><input type="text" name="city">
-</form>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">NiveshBhoomi</div>
+          <p>India's honest guide to real estate and home loans in Tier-2 cities.</p>
+        </div>
+        <div class="footer-links">
+          <div class="fl-col">
+            <div class="fl-head">Cities</div>
+            <a href="#cities">Lucknow</a>
+            <a href="#cities">Jaipur</a>
+            <a href="#cities">Delhi NCR</a>
+          </div>
+          <div class="fl-col">
+            <div class="fl-head">Topics</div>
+            <a href="#blogs">Plot loans</a>
+            <a href="#blogs">PMAY guide</a>
+            <a href="#blogs">City guides</a>
+            <a href="#loans">EMI calculator</a>
+          </div>
+          <div class="fl-col">
+            <div class="fl-head">Connect</div>
+            <a href="https://instagram.com/niveshbhoomi" target="_blank">Instagram</a>
+            <a href="https://wa.me/918130521740" target="_blank">WhatsApp</a>
+            <a href="mailto:hello@niveshbhoomi.in">Email us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 NiveshBhoomi. All rights reserved.</span>
+        <span>niveshbhoomi.in</span>
+      </div>
+    </div>
+  </footer>
 
-<script src="assets/js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
