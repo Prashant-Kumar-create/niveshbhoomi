@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Get the best home loan rates in Lucknow, Jaipur and Delhi NCR. Free consultation, 20+ banks compared, plot loans, PMAY subsidy — NiveshBhoomi loan experts.">
+  <title>Home Loan Assistance — NiveshBhoomi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/loan.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><span class="logo-n">N</span>ivesh<span class="logo-accent">Bhoomi</span></a>
+      <div class="nav-links">
+        <a href="blogs.html">Insights</a>
+        <a href="index.html#cities">Cities</a>
+        <a href="home-loan.html" style="color:var(--green);font-weight:500">Home Loans</a>
+        <a href="index.html#about">About</a>
+      </div>
+      <a href="#apply" class="nav-cta">Apply for Loan</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="blogs.html">Insights</a>
+      <a href="index.html#cities">Cities</a>
+      <a href="home-loan.html">Home Loans</a>
+      <a href="#apply" class="mobile-cta">Apply for Loan</a>
+    </div>
+  </nav>
+
+  <!-- LOAN HERO -->
+  <section class="loan-hero">
+    <div class="container">
+      <div class="lh-wrap">
+        <div class="lh-left">
+          <div class="hero-tag"><span class="tag-dot"></span>Free loan consultation</div>
+          <h1 class="hero-title">Get the <em>best rate</em><br>for your home loan</h1>
+          <p class="hero-desc">We compare 20+ banks and NBFCs to find the lowest rate for your profile. Plot loans, home
+            loans, PMAY subsidy — all covered. Zero brokerage fee.</p>
+          <div class="loan-badges">
+            <div class="lb-item">
+              <div class="lb-icon">✓</div><span>Response in 24 hours</span>
+            </div>
+            <div class="lb-item">
+              <div class="lb-icon">✓</div><span>No hidden charges</span>
+            </div>
+            <div class="lb-item">
+              <div class="lb-icon">✓</div><span>PMAY subsidy help</span>
+            </div>
+            <div class="lb-item">
+              <div class="lb-icon">✓</div><span>Plot loans available</span>
+            </div>
+          </div>
+        </div>
+        <!-- Quick EMI in hero -->
+        <div class="lh-right">
+          <div class="mini-calc">
+            <div class="mc-head">Quick EMI estimate</div>
+            <div class="mc-field">
+              <label>Loan amount</label>
+              <div class="slider-row">
+                <input type="range" min="5" max="200" value="40" step="1" id="loanAmt" class="slider">
+                <span class="slider-val" id="loanAmtVal">₹40L</span>
+              </div>
+            </div>
+            <div class="mc-field">
+              <label>Interest rate</label>
+              <div class="slider-row">
+                <input type="range" min="7" max="14" value="8.5" step="0.1" id="rate" class="slider">
+                <span class="slider-val" id="rateVal">8.5%</span>
+              </div>
+            </div>
+            <div class="mc-field">
+              <label>Tenure (years)</label>
+              <div class="slider-row">
+                <input type="range" min="5" max="30" value="20" step="1" id="tenure" class="slider">
+                <span class="slider-val" id="tenureVal">20 yrs</span>
+              </div>
+            </div>
+            <div class="mc-result">
+              <div class="mcr-main">
+                <div class="mcr-label">Monthly EMI</div>
+                <div class="mcr-val" id="emi">₹34,722</div>
+              </div>
+              <div class="mcr-side">
+                <div class="mcr-small"><span>Total interest</span><strong id="totalInt">₹43.3L</strong></div>
+                <div class="mcr-small"><span>Total payment</span><strong id="totalPay">₹83.3L</strong></div>
+              </div>
+            </div>
+            <a href="#apply" class="mc-cta">Get this rate or better →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOAN TYPES -->
+  <section class="section" style="background:var(--white)">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-tag">Loan products</div>
+        <h2 class="section-title">What we help you with</h2>
+      </div>
+      <div class="loan-types-grid">
+
+        <div class="lt-card lt-featured">
+          <div class="lt-icon">🏠</div>
+          <h3>Home loan</h3>
+          <div class="lt-rate">8.35% – 9.5% p.a.</div>
+          <p>For buying a flat, apartment or independent house. We compare SBI, HDFC, ICICI, LIC HFL and 15+ other
+            lenders to find the best rate for your profile.</p>
+          <ul>
+            <li>Salaried & self-employed</li>
+            <li>Up to 90% funding</li>
+            <li>Tenure up to 30 years</li>
+            <li>Pre-approved offers available</li>
+          </ul>
+          <a href="#apply" class="lt-btn">Apply now →</a>
+        </div>
+
+        <div class="lt-card">
+          <div class="lt-icon">🌿</div>
+          <h3>Plot loan</h3>
+          <div class="lt-rate">8.75% – 10.5% p.a.</div>
+          <p>For buying a residential plot or land. Very few banks offer this — we are specialists and know exactly
+            which lenders will fund your plot type.</p>
+          <ul>
+            <li>NA / non-agricultural plots</li>
+            <li>Up to 75% funding</li>
+            <li>Tenure up to 15 years</li>
+            <li>Agricultural land guidance</li>
+          </ul>
+          <a href="#apply" class="lt-btn">Apply now →</a>
+        </div>
+
+        <div class="lt-card">
+          <div class="lt-icon">🏗️</div>
+          <h3>Construction loan</h3>
+          <div class="lt-rate">8.5% – 10% p.a.</div>
+          <p>Already own a plot? Get funds to build your dream home. Disbursed in stages as construction progresses —
+            you only pay interest on the amount drawn.</p>
+          <ul>
+            <li>Stage-wise disbursement</li>
+            <li>Plot + construction combo</li>
+            <li>Approved map required</li>
+            <li>Self-employed friendly</li>
+          </ul>
+          <a href="#apply" class="lt-btn">Apply now →</a>
+        </div>
+
+        <div class="lt-card">
+          <div class="lt-icon">🎯</div>
+          <h3>PMAY subsidy</h3>
+          <div class="lt-rate">Up to ₹2.67L subsidy</div>
+          <p>Pradhan Mantri Awas Yojana 2.0 gives first-time buyers a subsidy on interest. We check your eligibility and
+            handle the entire application.</p>
+          <ul>
+            <li>EWS / LIG / MIG eligible</li>
+            <li>Annual income under ₹18L</li>
+            <li>First-time buyer required</li>
+            <li>Urban & rural both covered</li>
+          </ul>
+          <a href="#apply" class="lt-btn">Check eligibility →</a>
+        </div>
+
+        <div class="lt-card">
+          <div class="lt-icon">🔄</div>
+          <h3>Balance transfer</h3>
+          <div class="lt-rate">Save ₹2L – ₹8L+</div>
+          <p>Already have a home loan at a high rate? Transfer it to a cheaper lender. We calculate the exact savings
+            and handle all paperwork for free.</p>
+          <ul>
+            <li>Check if transfer saves money</li>
+            <li>Minimum 6 months old loan</li>
+            <li>Top-up available</li>
+            <li>Full paperwork support</li>
+          </ul>
+          <a href="#apply" class="lt-btn">Calculate savings →</a>
+        </div>
+
+        <div class="lt-card">
+          <div class="lt-icon">🏢</div>
+          <h3>Loan against property</h3>
+          <div class="lt-rate">9.5% – 12% p.a.</div>
+          <p>Unlock the value of your existing property. Use funds for business, education or any purpose — at much
+            lower rates than personal loans.</p>
+          <ul>
+            <li>Residential & commercial</li>
+            <li>Up to 60% of property value</li>
+            <li>Tenure up to 15 years</li>
+            <li>Business owners preferred</li>
+          </ul>
+          <a href="#apply" class="lt-btn">Apply now →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BANKS WE COMPARE -->
+  <section class="section banks-section">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-tag">Our network</div>
+        <h2 class="section-title">20+ lenders compared<br>for your benefit</h2>
+      </div>
+      <div class="banks-grid">
+        <div class="bank-pill">SBI</div>
+        <div class="bank-pill">HDFC Bank</div>
+        <div class="bank-pill">ICICI Bank</div>
+        <div class="bank-pill">Axis Bank</div>
+        <div class="bank-pill">Kotak Bank</div>
+        <div class="bank-pill">LIC HFL</div>
+        <div class="bank-pill">PNB Housing</div>
+        <div class="bank-pill">Bajaj Housing</div>
+        <div class="bank-pill">Tata Capital</div>
+        <div class="bank-pill">Aditya Birla HFL</div>
+        <div class="bank-pill">Bank of Baroda</div>
+        <div class="bank-pill">Union Bank</div>
+        <div class="bank-pill">Canara Bank</div>
+        <div class="bank-pill">Federal Bank</div>
+        <div class="bank-pill">Yes Bank</div>
+        <div class="bank-pill">+ 5 more NBFCs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section how-section" style="background:var(--white)">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-tag">Process</div>
+        <h2 class="section-title">How it works</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3>Share your details</h3>
+          <p>Fill the form below — takes 2 minutes. Tell us your income, city, and how much loan you need.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3>We compare lenders</h3>
+          <p>Our team checks your profile against 20+ banks and finds the best rate and terms you qualify for.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3>Get your options</h3>
+          <p>We send you the top 3 loan offers on WhatsApp within 24 hours. You choose — no pressure.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h3>We handle paperwork</h3>
+          <p>Once you pick a lender, we guide you through documents and follow up until disbursement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOAN APPLICATION FORM -->
+  <section class="section loan-form-section" id="apply">
+    <div class="container">
+      <div class="lf-wrap">
+        <div class="lf-left">
+          <div class="section-tag light">Free application</div>
+          <h2 class="contact-title">Apply for your<br>home loan today</h2>
+          <p class="contact-desc">Fill this form and our loan expert will call you within 24 hours with the best options
+            for your profile. Completely free — we earn from banks, not you.</p>
+          <div class="lf-trust">
+            <div class="lft-item">
+              <div class="lft-num">₹0</div>
+              <div class="lft-label">Fee to you</div>
+            </div>
+            <div class="lft-item">
+              <div class="lft-num">24h</div>
+              <div class="lft-label">Response time</div>
+            </div>
+            <div class="lft-item">
+              <div class="lft-num">20+</div>
+              <div class="lft-label">Banks compared</div>
+            </div>
+          </div>
+        </div>
+        <div class="lf-right">
+
+          <!-- ✅ FORMSUBMIT SETUP:
+             1. Replace kumarprashant32742@gmail.com below with your actual email
+             2. First submission will send you a confirmation email — click the link to activate
+             3. After that, every form submission lands in your inbox automatically
+        -->
+          <form class="lead-form" action="https://formsubmit.co/kumarprashant32742@gmail.com" method="POST">
+            <!-- FormSubmit config fields (invisible to user) -->
+            <input type="hidden" name="_subject" value="🏦 New Loan Application — NiveshBhoomi">
+            <input type="hidden" name="_next" value="https://niveshbhoomi.in/thank-you.html">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="Form Type" value="Home Loan Application">
+
+            <div class="form-section-label">Personal details</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full name</label>
+                <input type="text" name="Full Name" placeholder="Rahul Sharma" required>
+              </div>
+              <div class="form-group">
+                <label>Phone number</label>
+                <input type="tel" name="Phone Number" placeholder="98XXXXXXXX" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email (optional)</label>
+                <input type="email" name="Email" placeholder="you@email.com">
+              </div>
+              <div class="form-group">
+                <label>City</label>
+                <select name="City" required>
+                  <option value="">Select city</option>
+                  <option>Lucknow</option>
+                  <option>Jaipur</option>
+                  <option>Delhi NCR</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-section-label" style="margin-top:8px">Loan details</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Loan type</label>
+                <select name="Loan Type" required>
+                  <option value="">Select type</option>
+                  <option>Home loan (flat/house)</option>
+                  <option>Plot loan (land)</option>
+                  <option>Construction loan</option>
+                  <option>PMAY subsidy check</option>
+                  <option>Balance transfer</option>
+                  <option>Loan against property</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Loan amount needed</label>
+                <select name="Loan Amount">
+                  <option value="">Select range</option>
+                  <option>Under ₹15L</option>
+                  <option>₹15L – ₹30L</option>
+                  <option>₹30L – ₹50L</option>
+                  <option>₹50L – ₹75L</option>
+                  <option>₹75L – ₹1Cr</option>
+                  <option>Above ₹1Cr</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Employment type</label>
+                <select name="Employment Type">
+                  <option>Salaried</option>
+                  <option>Self-employed / Business</option>
+                  <option>Government employee</option>
+                  <option>NRI</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Monthly income (approx)</label>
+                <select name="Monthly Income">
+                  <option>Under ₹25,000</option>
+                  <option>₹25,000 – ₹50,000</option>
+                  <option>₹50,000 – ₹1L</option>
+                  <option>Above ₹1L</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Do you have a property in mind?</label>
+              <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="Property Status" value="Yes, shortlisted" checked>
+                  Yes, shortlisted</label>
+                <label class="radio-label"><input type="radio" name="Property Status" value="Still searching"> Still
+                  searching</label>
+                <label class="radio-label"><input type="radio" name="Property Status" value="Just checking eligibility">
+                  Just checking eligibility</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Anything specific you want to know? (optional)</label>
+              <textarea name="Message" placeholder="e.g. I want to know if I qualify for PMAY subsidy..."
+                rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Submit loan application →</button>
+            <p class="form-note">Details go to your email instantly. We never sell your data.</p>
+
+            <!-- WhatsApp fallback -->
+            <div class="wa-fallback">
+              <span>Prefer WhatsApp?</span>
+              <a href="https://wa.me/918130521740?text=Hi%20NiveshBhoomi!%20I%20want%20help%20with%20a%20home%20loan."
+                target="_blank" class="wa-btn">Chat on WhatsApp →</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section" style="background:var(--white)">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-tag">Common questions</div>
+        <h2 class="section-title">Loan FAQs</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-q">Can I get a loan for agricultural land?</div>
+          <div class="faq-a">Most banks don't fund agricultural land directly. However, if the land has NA
+            (Non-Agricultural) conversion or is in a RERA-approved layout, several NBFCs will fund it. We guide you
+            through this.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What is the minimum salary for a ₹40L home loan?</div>
+          <div class="faq-a">Typically ₹35,000–40,000/month take-home for a 20-year loan. But this varies by bank and
+            your existing EMIs. We assess your exact eligibility for free.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How long does loan approval take?</div>
+          <div class="faq-a">With complete documents, most banks approve in 7–15 working days. We help you prepare
+            documents correctly so there are no delays.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you charge any fee?</div>
+          <div class="faq-a">Absolutely zero fee from you. We earn a referral commission from banks when your loan is
+            disbursed. You get our full service free.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What documents are needed?</div>
+          <div class="faq-a">Basic documents: Aadhaar, PAN, 3 months salary slips (or 2 years ITR for self-employed),
+            bank statements, and property documents. We give you a complete checklist.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I transfer my existing home loan?</div>
+          <div class="faq-a">Yes. If your current rate is above 9%, a balance transfer could save you ₹2L–8L over the
+            remaining tenure. We calculate the exact benefit before you decide.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">NiveshBhoomi</div>
+          <p>India's honest guide to real estate and home loans in Tier-2 cities.</p>
+        </div>
+        <div class="footer-links">
+          <div class="fl-col">
+            <div class="fl-head">Loans</div>
+            <a href="#apply">Home loan</a>
+            <a href="#apply">Plot loan</a>
+            <a href="#apply">PMAY subsidy</a>
+            <a href="#apply">Balance transfer</a>
+          </div>
+          <div class="fl-col">
+            <div class="fl-head">Cities</div>
+            <a href="index.html#cities">Lucknow</a>
+            <a href="index.html#cities">Jaipur</a>
+            <a href="index.html#cities">Delhi NCR</a>
+          </div>
+          <div class="fl-col">
+            <div class="fl-head">Connect</div>
+            <a href="https://instagram.com/niveshbhoomi" target="_blank">Instagram</a>
+            <a href="https://wa.me/918130521740" target="_blank">WhatsApp</a>
+            <a href="mailto:hello@niveshbhoomi.in">Email us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 NiveshBhoomi. All rights reserved.</span>
+        <span>niveshbhoomi.in</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/loan.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Real estate and home loan guides for Lucknow, Jaipur and Delhi NCR. Expert articles on plot loans, PMAY, city investment guides and more — NiveshBhoomi.">
+  <title>All Guides & Insights — NiveshBhoomi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .blogs-hero {
+      padding: 110px 0 48px;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06)
+    }
+
+    .bh-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    .bh-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 32px
+    }
+
+    .bh-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      color: var(--ink)
+    }
+
+    .bh-title em {
+      color: var(--green);
+      font-style: italic
+    }
+
+    .bh-count {
+      font-size: 14px;
+      color: var(--ink-light);
+      flex-shrink: 0
+    }
+
+    .search-wrap {
+      position: relative;
+      max-width: 480px;
+      width: 100%
+    }
+
+    .search-wrap input {
+      width: 100%;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 50px;
+      padding: 11px 20px 11px 44px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s
+    }
+
+    .search-wrap input:focus {
+      border-color: var(--green)
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-light);
+      font-size: 16px;
+      pointer-events: none
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center
+    }
+
+    .filter-label {
+      font-size: 13px;
+      color: var(--ink-light);
+      margin-right: 4px
+    }
+
+    .filter-chip {
+      background: var(--white);
+      border: 1.5px solid rgba(0, 0, 0, 0.1);
+      color: var(--ink-muted);
+      font-size: 13px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif
+    }
+
+    .filter-chip:hover {
+      border-color: var(--green);
+      color: var(--green)
+    }
+
+    .filter-chip.active {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--white)
+    }
+
+    .filter-chip.active:hover {
+      background: var(--green-dark)
+    }
+
+    .blogs-main {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 48px;
+      align-items: start
+    }
+
+    /* Featured post */
+    .featured-post {
+      background: var(--green-deep);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center
+    }
+
+    .fp-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 12px
+    }
+
+    .fp-cat {
+      display: inline-block;
+      background: rgba(29, 158, 117, 0.25);
+      color: #9FE1CB;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-bottom: 12px
+    }
+
+    .fp-title {
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 12px
+    }
+
+    .fp-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.65;
+      margin-bottom: 20px
+    }
+
+    .fp-meta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.35)
+    }
+
+    .fp-btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--green-dark);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 22px;
+      border-radius: 50px;
+      transition: background 0.2s
+    }
+
+    .fp-btn:hover {
+      background: #E1F5EE
+    }
+
+    .fp-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    .fp-stat {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px
+    }
+
+    .fps-label {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 4px
+    }
+
+    .fps-val {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--white)
+    }
+
+    /* Section headers in list */
+    .list-section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin: 32px 0 16px
+    }
+
+    .lsh-title {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--ink)
+    }
+
+    .lsh-count {
+      font-size: 13px;
+      color: var(--ink-light)
+    }
+
+    /* Blog list items */
+    .blog-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0
+    }
+
+    .blog-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      transition: background 0.15s;
+      cursor: pointer
+    }
+
+    .blog-item:last-child {
+      border-bottom: none
+    }
+
+    .blog-item:hover .bi-title {
+      color: var(--green)
+    }
+
+    .bi-num {
+      font-family: 'Fraunces', serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.08);
+      line-height: 1;
+      padding-top: 4px;
+      text-align: center
+    }
+
+    .bi-body {}
+
+    .bi-tags {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      margin-bottom: 6px;
+      flex-wrap: wrap
+    }
+
+    .bi-cat {
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 10px;
+      border-radius: 50px
+    }
+
+    .bi-city {
+      font-size: 11px;
+      color: var(--ink-light);
+      background: var(--cream);
+      padding: 2px 8px;
+      border-radius: 50px;
+      border: 1px solid rgba(0, 0, 0, 0.08)
+    }
+
+    .bi-new {
+      background: #FAEEDA;
+      color: #633806;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 50px
+    }
+
+    .bi-title {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 6px;
+      transition: color 0.2s
+    }
+
+    .bi-desc {
+      font-size: 13px;
+      color: var(--ink-muted);
+      line-height: 1.6;
+      margin-bottom: 8px
+    }
+
+    .bi-foot {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 12px;
+      color: var(--ink-light)
+    }
+
+    .bi-read {
+      font-weight: 500;
+      color: var(--green)
+    }
+
+    .bi-foot a {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 500;
+      margin-left: auto
+    }
+
+    .bi-foot a:hover {
+      text-decoration: underline
+    }
+
+    /* Grid view (alternative) */
+    .blog-grid-view {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px
+    }
+
+    .bgv-card {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s
+    }
+
+    .bgv-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow)
+    }
+
+    .bgv-img {
+      height: 120px;
+      display: flex;
+      align-items: flex-end;
+      padding: 12px;
+      position: relative
+    }
+
+    .bgv-img.gc-green {
+      background: linear-gradient(135deg, #E1F5EE, #9FE1CB)
+    }
+
+    .bgv-img.gc-blue {
+      background: linear-gradient(135deg, #E6F1FB, #85B7EB)
+    }
+
+    .bgv-img.gc-amber {
+      background: linear-gradient(135deg, #FAEEDA, #EF9F27)
+    }
+
+    .bgv-img.gc-coral {
+      background: linear-gradient(135deg, #FAECE7, #F0997B)
+    }
+
+    .bgv-img.gc-purple {
+      background: linear-gradient(135deg, #EEEDFE, #AFA9EC)
+    }
+
+    .bgv-cat {
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 50px;
+      color: var(--ink)
+    }
+
+    .bgv-body {
+      padding: 16px
+    }
+
+    .bgv-city {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 5px
+    }
+
+    .bgv-title {
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.35;
+      margin-bottom: 8px
+    }
+
+    .bgv-foot {
+      font-size: 12px;
+      color: var(--ink-light);
+      display: flex;
+      justify-content: space-between
+    }
+
+    .bgv-foot a {
+      color: var(--green);
+      font-weight: 500;
+      font-size: 12px
+    }
+
+    /* View toggle */
+    .view-toggle {
+      display: flex;
+      gap: 4px;
+      background: var(--cream);
+      padding: 4px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(0, 0, 0, 0.08)
+    }
+
+    .vt-btn {
+      width: 32px;
+      height: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-light);
+      font-size: 14px;
+      transition: all 0.2s
+    }
+
+    .vt-btn.active {
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08)
+    }
+
+    /* No results */
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--ink-muted)
+    }
+
+    .no-results p {
+      font-size: 16px;
+      margin-bottom: 8px
+    }
+
+    .no-results span {
+      font-size: 13px
+    }
+
+    /* Sidebar */
+    .sidebar-sticky {
+      position: sticky;
+      top: 84px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px
+    }
+
+    .sb-card {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      border-radius: var(--radius);
+      padding: 20px 22px
+    }
+
+    .sb-head {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 14px
+    }
+
+    .topic-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0
+    }
+
+    .topic-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      transition: color 0.2s
+    }
+
+    .topic-item:last-child {
+      border-bottom: none
+    }
+
+    .topic-item:hover .ti-name {
+      color: var(--green)
+    }
+
+    .ti-name {
+      font-size: 14px;
+      color: var(--ink-muted);
+      transition: color 0.2s
+    }
+
+    .ti-count {
+      font-size: 12px;
+      background: var(--cream);
+      color: var(--ink-light);
+      padding: 2px 8px;
+      border-radius: 50px
+    }
+
+    .city-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .city-pill {
+      background: var(--cream);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--ink-muted);
+      cursor: pointer;
+      transition: all 0.2s
+    }
+
+    .city-pill:hover,
+    .city-pill.active {
+      background: var(--green-light);
+      border-color: var(--green);
+      color: var(--green-dark)
+    }
+
+    .newsletter-box {
+      background: var(--green-deep);
+      border-radius: var(--radius);
+      padding: 20px 22px
+    }
+
+    .nl-title {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 6px
+    }
+
+    .nl-desc {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.55;
+      margin-bottom: 14px
+    }
+
+    .nl-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 14px;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+      margin-bottom: 8px
+    }
+
+    .nl-input::placeholder {
+      color: rgba(255, 255, 255, 0.3)
+    }
+
+    .nl-btn {
+      width: 100%;
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      padding: 11px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s
+    }
+
+    .nl-btn:hover {
+      background: #24B385
+    }
+
+    .nl-note {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.25);
+      text-align: center;
+      margin-top: 8px
+    }
+
+    .nl-success {
+      display: none;
+      background: rgba(29, 158, 117, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      font-size: 13px;
+      color: #9FE1CB;
+      text-align: center;
+      margin-top: 8px
+    }
+
+    @media(max-width:900px) {
+      .blogs-main {
+        grid-template-columns: 1fr
+      }
+
+      .sidebar-sticky {
+        position: static
+      }
+
+      .featured-post {
+        grid-template-columns: 1fr
+      }
+
+      .fp-visual {
+        display: none
+      }
+    }
+
+    @media(max-width:600px) {
+      .blog-grid-view {
+        grid-template-columns: 1fr
+      }
+
+      .bh-top {
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .blog-item {
+        grid-template-columns: 48px 1fr;
+        gap: 12px
+      }
+
+      .bi-num {
+        font-size: 20px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><span class="logo-n">N</span>ivesh<span class="logo-accent">Bhoomi</span></a>
+      <div class="nav-links">
+        <a href="blogs.html" style="color:var(--green);font-weight:500">Insights</a>
+        <a href="index.html#cities">Cities</a>
+        <a href="home-loan.html">Home Loans</a>
+        <a href="index.html#about">About</a>
+      </div>
+      <a href="home-loan.html#apply" class="nav-cta">Get Loan Help</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="blogs.html">All Guides</a>
+      <a href="home-loan.html">Home Loans</a>
+      <a href="index.html#cities">Cities</a>
+      <a href="home-loan.html#apply" class="mobile-cta">Get Loan Help</a>
+    </div>
+  </nav>
+
+  <div class="blogs-hero">
+    <div class="bh-inner">
+      <div class="bh-top">
+        <div>
+          <div class="section-tag">All guides</div>
+          <h1 class="bh-title">Real estate &amp; loan<br><em>insights</em> for smart buyers</h1>
+        </div>
+        <div class="search-wrap">
+          <span class="search-icon">&#9906;</span>
+          <input type="text" placeholder="Search guides, cities, topics..." id="searchInput" oninput="filterBlogs()">
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <div class="filter-bar">
+          <span class="filter-label">Filter:</span>
+          <button class="filter-chip active" onclick="setFilter('all',this)">All guides</button>
+          <button class="filter-chip" onclick="setFilter('loans',this)">Home Loans</button>
+          <button class="filter-chip" onclick="setFilter('plots',this)">Plots &amp; Land</button>
+          <button class="filter-chip" onclick="setFilter('cities',this)">City Guides</button>
+          <button class="filter-chip" onclick="setFilter('govt',this)">Govt Schemes</button>
+          <button class="filter-chip" onclick="setFilter('projects',this)">Project Reviews</button>
+        </div>
+        <div class="view-toggle">
+          <button class="vt-btn active" id="listViewBtn" onclick="setView('list')" title="List view">&#9776;</button>
+          <button class="vt-btn" id="gridViewBtn" onclick="setView('grid')" title="Grid view">&#9633;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="blogs-main">
+    <div>
+
+      <!-- FEATURED POST -->
+      <div class="featured-post" id="featuredPost">
+        <div>
+          <div class="fp-label">Featured guide</div>
+          <div class="fp-cat">Plot Loans</div>
+          <h2 class="fp-title">Plot loan vs home loan — which is better for you in 2025?</h2>
+          <p class="fp-desc">A plain-language breakdown of rates, eligibility, tax benefits and which loan to choose
+            based on your situation — no jargon, real numbers.</p>
+          <div class="fp-meta">
+            <span>All India</span>
+            <span>·</span>
+            <span>8 min read</span>
+            <span>·</span>
+            <span>June 2025</span>
+          </div>
+          <br>
+          <a href="blogs/plot-loan-vs-home-loan.html" class="fp-btn">Read full guide →</a>
+        </div>
+        <div class="fp-visual">
+          <div class="fp-stat">
+            <div class="fps-label">Avg plot loan rate</div>
+            <div class="fps-val">8.75% – 10.5%</div>
+          </div>
+          <div class="fp-stat">
+            <div class="fps-label">Home loan rate</div>
+            <div class="fps-val">8.35% – 9.5%</div>
+          </div>
+          <div class="fp-stat">
+            <div class="fps-label">Max funding (home)</div>
+            <div class="fps-val">Up to 90%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTS COUNT + VIEW -->
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+        <div style="font-size:13px;color:var(--ink-light)" id="resultsCount">Showing 8 guides</div>
+      </div>
+
+      <!-- LIST VIEW -->
+      <div id="listView">
+
+        <!-- Section: Recently added -->
+        <div class="list-section-head">
+          <div class="lsh-title">Recently added</div>
+          <div class="lsh-count" id="recentCount">2 guides</div>
+        </div>
+        <div class="blog-list" id="recentList">
+
+          <div class="blog-item" data-cat="plots" data-city="all"
+            data-title="plot loan vs home loan which is better 2025"
+            onclick="location.href='blogs/plot-loan-vs-home-loan.html'">
+            <div class="bi-num">01</div>
+            <div class="bi-body">
+              <div class="bi-tags"><span class="bi-cat">Plot Loans</span><span class="bi-city">All India</span><span
+                  class="bi-new">New</span></div>
+              <div class="bi-title">Plot loan vs home loan — which is better for you in 2025?</div>
+              <div class="bi-desc">A plain-language breakdown of rates, eligibility, tax benefits and which loan to
+                choose based on your situation.</div>
+              <div class="bi-foot"><span class="bi-read">8 min read</span><span>June 2025</span><a
+                  href="blogs/plot-loan-vs-home-loan.html">Read guide →</a></div>
+            </div>
+          </div>
+
+          <div class="blog-item" data-cat="govt" data-city="all"
+            data-title="pmay 2.0 eligibility subsidy how to apply 2025" onclick="location.href='blogs/pmay-guide.html'">
+            <div class="bi-num">02</div>
+            <div class="bi-body">
+              <div class="bi-tags"><span class="bi-cat">Govt Scheme</span><span class="bi-city">All India</span><span
+                  class="bi-new">New</span></div>
+              <div class="bi-title">PMAY 2.0 — who is eligible and how to apply in 2025</div>
+              <div class="bi-desc">Everything first-time buyers need to know about Pradhan Mantri Awas Yojana 2.0
+                subsidies, income limits and application process.</div>
+              <div class="bi-foot"><span class="bi-read">6 min read</span><span>June 2025</span><a
+                  href="blogs/pmay-guide.html">Read guide →</a></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section: Loan guides -->
+        <div class="list-section-head">
+          <div class="lsh-title">Home loan guides</div>
+          <div class="lsh-count" id="loanCount">2 guides</div>
+        </div>
+        <div class="blog-list" id="loanList">
+
+          <div class="blog-item" data-cat="loans" data-city="all"
+            data-title="home loan tax benefit section 80c 24b explained"
+            onclick="location.href='blogs/home-loan-tax-guide.html'">
+            <div class="bi-num">03</div>
+            <div class="bi-body">
+              <div class="bi-tags"><span class="bi-cat">Home Loans</span><span class="bi-city">All India</span></div>
+              <div class="bi-title">Home loan tax benefits — Section 80C &amp; 24B explained simply</div>
+              <div class="bi-desc">How to save up to ₹3.5 lakh per year in taxes on your home loan. A simple guide with
+                real examples and numbers.</div>
+              <div class="bi-foot"><span class="bi-read">7 min read</span><span>May 2025</span><a
+                  href="blogs/home-loan-tax-guide.html">Read guide →</a></div>
+            </div>
+          </div>
+
+          <div class="blog-item" data-cat="loans" data-city="all"
+            data-title="can you get loan on agricultural land UP India"
+            onclick="location.href='blogs/agricultural-land-loan.html'">
+            <div class="bi-num">04</div>
+            <div class="bi-body">
+              <div class="bi-tags"><span class="bi-cat">Home Loans</span><span class="bi-city">Lucknow / UP</span></div>
+              <div class="bi-title">Can you get a loan on agricultural land in UP?</div>
+              <div class="bi-desc">Most banks say no — but there are ways. We explain NA conversion, which NBFCs will
+                fund ag land, and what the process looks like.</div>
+              <div class="bi-foot"><span class="bi-read">6 min read</span><span>May 2025</span><a
+                  href="blogs/agricultural-land-loan.html">Read guide →</a></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section: City guides -->
+        <div class="list-section-head">
+          <div class="lsh-title">City investment guides</div>
+          <div class="lsh-count" id="cityCount">3 guides</div>
+        </div>
+        <div class="blog-list" id="cityList">
+
+          <div class="blog-item" data-cat="cities" data-city="lucknow"
+            data-title="best areas buy plot lucknow under 20 lakh 2025"
+            onclick="location.href='blogs/lucknow-plot-guide.html'">
+            <div class="bi-num">05</div>
+            <div class="bi-body">
+              <div class="bi-tags"><span class="bi-cat">City Guide</span><span class="bi-city">Lucknow</span></div>
+              <div class="bi-title">Best areas to buy plots in Lucknow under ₹20 lakh (2025)</div>
+              <div class="bi-desc">Gomti Nagar Extension, Sultanpur Road, Shaheed Path — we break down which areas give
+                the best ROI for plot buyers right now.</div>
+              <div class="bi-foot"><span class="bi-read">10 min read</span><span>May 2025</span><a
+                  href="blogs/lucknow-plot-guide.html">Read guide →</a></div>
+            </div>
+          </div>
+
+          <div class="blog-item" data-cat="cities" data-city="jaipur"
+            data-title="jaipur real estate investment guide areas prices ROI 2025"
+            onclick="location.href='blogs/jaipur-investment-guide.html'">
+            <div class="bi-num">06</div>
+            <div class="bi-body">
+              <div class="bi-tags"><span class="bi-cat">City Guide</span><span class="bi-city">Jaipur</span></div>
+              <div class="bi-title">Jaipur real estate investment guide 2025 — areas, prices &amp; ROI</div>
+              <div class="bi-desc">Mansarovar Extension, Ajmer Road, Vaishali Nagar — where prices are rising, where to
+                avoid, and how to finance your Jaipur property.</div>
+              <div class="bi-foot"><span class="bi-read">9 min read</span><span>April 2025</span><a
+                  href="blogs/jaipur-investment-guide.html">Read guide →</a></div>
+            </div>
+          </div>
+
+          <div class="blog-item" data-cat="cities" data-city="delhi"
+            data-title="yamuna expressway plot investment risk returns loan 2025"
+            onclick="location.href='blogs/yamuna-expressway-guide.html'">
+            <div class="bi-num">07</div>
+            <div class="bi-body">
+              <div class="bi-tags"><span class="bi-cat">City Guide</span><span class="bi-city">Delhi NCR</span></div>
+              <div class="bi-title">Yamuna Expressway plot investment — risks, returns &amp; loan guide</div>
+              <div class="bi-desc">Is Yamuna Expressway still worth buying in 2025? We analyse prices, upcoming
+                infrastructure and which banks will fund these plots.</div>
+              <div class="bi-foot"><span class="bi-read">8 min read</span><span>April 2025</span><a
+                  href="blogs/yamuna-expressway-guide.html">Read guide →</a></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section: Govt schemes -->
+        <div class="list-section-head">
+          <div class="lsh-title">Government scheme guides</div>
+          <div class="lsh-count" id="govtCount">1 guide</div>
+        </div>
+        <div class="blog-list" id="govtList">
+
+          <div class="blog-item" data-cat="govt" data-city="all"
+            data-title="RERA UP Rajasthan how to check project registered"
+            onclick="location.href='blogs/rera-check-guide.html'">
+            <div class="bi-num">08</div>
+            <div class="bi-body">
+              <div class="bi-tags"><span class="bi-cat">Govt Scheme</span><span class="bi-city">Lucknow / Jaipur</span>
+              </div>
+              <div class="bi-title">RERA UP &amp; Rajasthan — how to check if a project is registered</div>
+              <div class="bi-desc">Step-by-step guide to verifying any builder or project on the RERA portal before you
+                pay a booking amount. Takes 5 minutes.</div>
+              <div class="bi-foot"><span class="bi-read">5 min read</span><span>March 2025</span><a
+                  href="blogs/rera-check-guide.html">Read guide →</a></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- No results -->
+        <div class="no-results" id="noResults" style="display:none">
+          <p>No guides found for "<span id="noResultsTerm"></span>"</p>
+          <span>Try a different keyword or browse all guides above</span>
+        </div>
+
+      </div>
+
+      <!-- GRID VIEW (hidden by default) -->
+      <div id="gridView" style="display:none">
+        <div class="blog-grid-view">
+          <a href="blogs/plot-loan-vs-home-loan.html" class="bgv-card">
+            <div class="bgv-img gc-green"><span class="bgv-cat">Plot Loans</span></div>
+            <div class="bgv-body">
+              <div class="bgv-city">All India</div>
+              <div class="bgv-title">Plot loan vs home loan — which is better?</div>
+              <div class="bgv-foot"><span>8 min read</span><span class="bgv-foot-link">Read →</span></div>
+            </div>
+          </a>
+          <a href="blogs/pmay-guide.html" class="bgv-card">
+            <div class="bgv-img gc-blue"><span class="bgv-cat">Govt Scheme</span></div>
+            <div class="bgv-body">
+              <div class="bgv-city">All India</div>
+              <div class="bgv-title">PMAY 2.0 — eligibility &amp; how to apply</div>
+              <div class="bgv-foot"><span>6 min read</span><span>Read →</span></div>
+            </div>
+          </a>
+          <a href="blogs/home-loan-tax-guide.html" class="bgv-card">
+            <div class="bgv-img gc-coral"><span class="bgv-cat">Home Loans</span></div>
+            <div class="bgv-body">
+              <div class="bgv-city">All India</div>
+              <div class="bgv-title">Section 80C &amp; 24B tax benefits explained</div>
+              <div class="bgv-foot"><span>7 min read</span><span>Read →</span></div>
+            </div>
+          </a>
+          <a href="blogs/agricultural-land-loan.html" class="bgv-card">
+            <div class="bgv-img gc-green"><span class="bgv-cat">Home Loans</span></div>
+            <div class="bgv-body">
+              <div class="bgv-city">Lucknow / UP</div>
+              <div class="bgv-title">Can you get a loan on agricultural land in UP?</div>
+              <div class="bgv-foot"><span>6 min read</span><span>Read →</span></div>
+            </div>
+          </a>
+          <a href="blogs/lucknow-plot-guide.html" class="bgv-card">
+            <div class="bgv-img gc-amber"><span class="bgv-cat">City Guide</span></div>
+            <div class="bgv-body">
+              <div class="bgv-city">Lucknow</div>
+              <div class="bgv-title">Best areas for plots in Lucknow under ₹20L</div>
+              <div class="bgv-foot"><span>10 min read</span><span>Read →</span></div>
+            </div>
+          </a>
+          <a href="blogs/jaipur-investment-guide.html" class="bgv-card">
+            <div class="bgv-img gc-blue"><span class="bgv-cat">City Guide</span></div>
+            <div class="bgv-body">
+              <div class="bgv-city">Jaipur</div>
+              <div class="bgv-title">Jaipur real estate investment guide 2025</div>
+              <div class="bgv-foot"><span>9 min read</span><span>Read →</span></div>
+            </div>
+          </a>
+          <a href="blogs/yamuna-expressway-guide.html" class="bgv-card">
+            <div class="bgv-img gc-purple"><span class="bgv-cat">City Guide</span></div>
+            <div class="bgv-body">
+              <div class="bgv-city">Delhi NCR</div>
+              <div class="bgv-title">Yamuna Expressway plots — risks, returns &amp; loans</div>
+              <div class="bgv-foot"><span>8 min read</span><span>Read →</span></div>
+            </div>
+          </a>
+          <a href="blogs/rera-check-guide.html" class="bgv-card">
+            <div class="bgv-img gc-coral"><span class="bgv-cat">Govt Scheme</span></div>
+            <div class="bgv-body">
+              <div class="bgv-city">Lucknow / Jaipur</div>
+              <div class="bgv-title">RERA check — how to verify a project registration</div>
+              <div class="bgv-foot"><span>5 min read</span><span>Read →</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ADD MORE BLOGS NOTE -->
+      <div
+        style="margin-top:40px;padding:20px 24px;background:var(--cream);border-radius:var(--radius);border:1px dashed rgba(0,0,0,0.12);text-align:center">
+        <p style="font-size:14px;color:var(--ink-muted);margin-bottom:4px">More guides published every week</p>
+        <p style="font-size:13px;color:var(--ink-light)">Subscribe below to get new guides in your WhatsApp</p>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar-sticky">
+
+      <div class="sb-card">
+        <div class="sb-head">Browse by topic</div>
+        <div class="topic-list">
+          <div class="topic-item" onclick="setFilter('all',null)"><span class="ti-name">All guides</span><span
+              class="ti-count">8</span></div>
+          <div class="topic-item" onclick="setFilter('loans',null)"><span class="ti-name">Home loans</span><span
+              class="ti-count">3</span></div>
+          <div class="topic-item" onclick="setFilter('plots',null)"><span class="ti-name">Plot &amp; land
+              buying</span><span class="ti-count">2</span></div>
+          <div class="topic-item" onclick="setFilter('cities',null)"><span class="ti-name">City guides</span><span
+              class="ti-count">3</span></div>
+          <div class="topic-item" onclick="setFilter('govt',null)"><span class="ti-name">Govt schemes</span><span
+              class="ti-count">2</span></div>
+        </div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-head">Browse by city</div>
+        <div class="city-pills">
+          <span class="city-pill active" onclick="setCity('all',this)">All cities</span>
+          <span class="city-pill" onclick="setCity('lucknow',this)">Lucknow</span>
+          <span class="city-pill" onclick="setCity('jaipur',this)">Jaipur</span>
+          <span class="city-pill" onclick="setCity('delhi',this)">Delhi NCR</span>
+        </div>
+      </div>
+
+      <div class="newsletter-box">
+        <div class="nl-title">Get new guides<br>on WhatsApp</div>
+        <p class="nl-desc">We publish 2–3 guides a week. Enter your number and we'll send new ones directly.</p>
+        <input type="tel" class="nl-input" placeholder="Your WhatsApp number" id="nlPhone">
+        <button class="nl-btn" onclick="subscribeNewsletter()">Notify me →</button>
+        <div class="nl-note">No spam. Unsubscribe any time.</div>
+        <div class="nl-success" id="nlSuccess">Done! We'll send new guides on WhatsApp.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">NiveshBhoomi</div>
+          <p>India's honest guide to real estate and home loans in Tier-2 cities.</p>
+        </div>
+        <div class="footer-links">
+          <div class="fl-col">
+            <div class="fl-head">Quick links</div>
+            <a href="index.html">Home</a>
+            <a href="blogs.html">All guides</a>
+            <a href="home-loan.html">Home loans</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+          <div class="fl-col">
+            <div class="fl-head">Cities</div>
+            <a href="index.html#cities">Lucknow</a>
+            <a href="index.html#cities">Jaipur</a>
+            <a href="index.html#cities">Delhi NCR</a>
+          </div>
+          <div class="fl-col">
+            <div class="fl-head">Connect</div>
+            <a href="https://instagram.com/niveshbhoomi" target="_blank">Instagram</a>
+            <a href="https://wa.me/918130521740" target="_blank">WhatsApp</a>
+            <a href="mailto:hello@niveshbhoomi.in">Email us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 NiveshBhoomi. All rights reserved.</span>
+        <span>niveshbhoomi.in</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    let activeFilter = 'all';
+    let activeCity = 'all';
+
+    function setFilter(cat, btn) {
+      activeFilter = cat;
+      document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      applyFilters();
+    }
+
+    function setCity(city, btn) {
+      activeCity = city;
+      document.querySelectorAll('.city-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      applyFilters();
+    }
+
+    function filterBlogs() { applyFilters(); }
+
+    function applyFilters() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('.blog-item');
+      let visible = 0;
+
+      items.forEach(item => {
+        const cat = item.dataset.cat;
+        const city = item.dataset.city;
+        const title = item.dataset.title;
+        const matchCat = activeFilter === 'all' || cat === activeFilter;
+        const matchCity = activeCity === 'all' || city === activeCity || city === 'all';
+        const matchSearch = !search || title.includes(search);
+        const show = matchCat && matchCity && matchSearch;
+        item.style.display = show ? 'grid' : 'none';
+        if (show) visible++;
+      });
+
+      // Show/hide sections based on visible items
+      ['recentList', 'loanList', 'cityList', 'govtList'].forEach(id => {
+        const section = document.getElementById(id);
+        if (!section) return;
+        const hasVisible = Array.from(section.querySelectorAll('.blog-item')).some(i => i.style.display !== 'none');
+        section.previousElementSibling.style.display = hasVisible ? 'flex' : 'none';
+        section.style.display = hasVisible ? 'flex' : 'none';
+      });
+
+      document.getElementById('resultsCount').textContent = 'Showing ' + visible + ' guide' + (visible !== 1 ? 's' : '');
+      document.getElementById('featuredPost').style.display = (activeFilter === 'all' && !search) ? 'grid' : 'none';
+      document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+      if (visible === 0) document.getElementById('noResultsTerm').textContent = search;
+    }
+
+    function setView(view) {
+      document.getElementById('listView').style.display = view === 'list' ? 'block' : 'none';
+      document.getElementById('gridView').style.display = view === 'grid' ? 'block' : 'none';
+      document.getElementById('listViewBtn').classList.toggle('active', view === 'list');
+      document.getElementById('gridViewBtn').classList.toggle('active', view === 'grid');
+    }
+
+    function subscribeNewsletter() {
+      const phone = document.getElementById('nlPhone').value;
+      if (!phone) return;
+      const msg = 'Hi NiveshBhoomi! Please add me to your weekly guides list. My number: ' + phone;
+      document.getElementById('nlSuccess').style.display = 'block';
+      document.getElementById('nlPhone').style.display = 'none';
+      document.querySelector('.nl-btn').style.display = 'none';
+      window.open('https://wa.me/918130521740?text=' + encodeURIComponent(msg), '_blank');
+    }
+  </script>
+</body>
+
+</html>
