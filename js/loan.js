@@ -48,7 +48,7 @@ function handleLoanSubmit(e) {
     document.getElementById('loanSuccess').style.display = 'block';
     btn.style.display = 'none';
     // Replace with your actual number
-    window.open('https://wa.me/91XXXXXXXXXX?text=' + msg, '_blank');
+    window.open('https://wa.me/918130521740?text=' + msg, '_blank');
   }, 600);
 }
 
