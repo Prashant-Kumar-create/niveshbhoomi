@@ -82,7 +82,7 @@ function handleSubmit(e) {
     document.getElementById('formSuccess').style.display = 'block';
     btn.style.display = 'none';
     // Opens WhatsApp — replace 91XXXXXXXXXX with your actual number
-    window.open('https://wa.me/91XXXXXXXXXX?text=' + msg, '_blank');
+    window.open('https://wa.me/918130521740?text=' + msg, '_blank');
   }, 600);
 }
 
