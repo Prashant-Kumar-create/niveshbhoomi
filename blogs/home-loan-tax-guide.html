@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ▼ SEO -->
+    <meta name="description"
+        content="How to save up to ₹3.5 lakh per year in taxes on your home loan. Section 80C and 24B explained simply with real numbers and examples for Indian homebuyers.">
+    <meta property="og:title" content="Home Loan Tax Benefits — Section 80C & 24B Explained Simply | NiveshBhoomi">
+    <meta property="og:description"
+        content="Save up to ₹3.5 lakh per year in taxes on your home loan. A plain-language guide to Section 80C, 24B, and 80EE with real examples.">
+    <title>Home Loan Tax Benefits — Section 80C & 24B Explained | NiveshBhoomi</title>
+    <!-- ▲ SEO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+
+    <style>
+        /* ── Page-level overrides / extras ── */
+        :root {
+            --accent: #1a6b3c;
+            --accent-light: #e8f5ee;
+            --accent-mid: #2d9b5a;
+            --warn: #b45309;
+            --warn-bg: #fffbeb;
+            --info: #1e40af;
+            --info-bg: #eff6ff;
+        }
+
+        /* Tax breakdown hero card */
+        .tax-hero {
+            background: linear-gradient(135deg, #0f4c28 0%, #1a6b3c 60%, #2d9b5a 100%);
+            border-radius: 16px;
+            padding: 36px 32px;
+            color: #fff;
+            margin: 32px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tax-hero::before {
+            content: '₹';
+            position: absolute;
+            right: -10px;
+            top: -20px;
+            font-size: 180px;
+            font-family: 'Fraunces', serif;
+            color: rgba(255, 255, 255, 0.06);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .tax-hero-label {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 8px;
+        }
+
+        .tax-hero-amount {
+            font-family: 'Fraunces', serif;
+            font-size: 52px;
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .tax-hero-sub {
+            opacity: 0.85;
+            font-size: 15px;
+        }
+
+        .tax-hero-row {
+            display: flex;
+            gap: 24px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .tax-hero-item {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            padding: 14px 18px;
+            flex: 1;
+            min-width: 130px;
+        }
+
+        .thi-section {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 4px;
+        }
+
+        .thi-amount {
+            font-family: 'Fraunces', serif;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .thi-label {
+            font-size: 12px;
+            opacity: 0.75;
+            margin-top: 2px;
+        }
+
+        /* Section pill headers */
+        .section-pill {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Example box */
+        .example-box {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent);
+            border-radius: 0 12px 12px 0;
+            padding: 24px 28px;
+            margin: 28px 0;
+        }
+
+        .example-box .ex-title {
+            font-family: 'Fraunces', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 14px;
+        }
+
+        .example-box .ex-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #dee2e6;
+            font-size: 14px;
+            gap: 16px;
+        }
+
+        .example-box .ex-row:last-child {
+            border-bottom: none;
+        }
+
+        .example-box .ex-row .ex-val {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .example-box .ex-total {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0 4px;
+            font-weight: 600;
+            font-size: 16px;
+            border-top: 2px solid var(--accent);
+            margin-top: 4px;
+        }
+
+        .example-box .ex-total .ex-val {
+            color: var(--accent);
+        }
+
+        /* Step-by-step list */
+        .steps-list {
+            counter-reset: steps;
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .steps-list li {
+            counter-increment: steps;
+            position: relative;
+            padding: 0 0 28px 56px;
+        }
+
+        .steps-list li::before {
+            content: counter(steps);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fraunces', serif;
+            font-size: 16px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .steps-list li::after {
+            content: '';
+            position: absolute;
+            left: 17px;
+            top: 36px;
+            bottom: 0;
+            width: 2px;
+            background: #e9ecef;
+        }
+
+        .steps-list li:last-child::after {
+            display: none;
+        }
+
+        .steps-list li .step-head {
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+
+        .steps-list li p {
+            color: #555;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Comparison strip */
+        .regime-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 28px 0;
+        }
+
+        .regime-card {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .regime-card.old-regime {
+            border-color: var(--accent);
+        }
+
+        .regime-card .rc-badge {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .old-regime .rc-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+
+        .new-regime .rc-badge {
+            background: #f1f3f5;
+            color: #666;
+        }
+
+        .regime-card .rc-title {
+            font-family: 'Fraunces', serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .regime-card .rc-verdict {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .regime-card .rc-verdict strong {
+            color: #1a1a1a;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #e9ecef;
+            padding: 20px 0;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .faq-a {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .tax-hero-amount {
+                font-size: 38px;
+            }
+
+            .regime-compare {
+                grid-template-columns: 1fr;
+            }
+
+            .tax-hero-row {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="logo"><span class="logo-n">N</span>ivesh<span
+                    class="logo-accent">Bhoomi</span></a>
+            <div class="nav-links">
+                <a href="../index.html#blogs">Insights</a>
+                <a href="../index.html#cities">Cities</a>
+                <a href="../home-loan.html">Home Loans</a>
+                <a href="../index.html#about">About</a>
+            </div>
+            <a href="../home-loan.html#apply" class="nav-cta">Get Loan Help</a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#blogs">Insights</a>
+            <a href="../home-loan.html">Home Loans</a>
+            <a href="../home-loan.html#apply" class="mobile-cta">Get Loan Help</a>
+        </div>
+    </nav>
+
+    <!-- BLOG HEADER -->
+    <div class="blog-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="../index.html#blogs">Insights</a> / <span>Home Loan Tax
+                    Benefits</span>
+            </div>
+
+            <div class="blog-meta-top">
+                <span class="bm-cat">Home Loans</span>
+                <span class="bm-city">All India</span>
+                <span class="bm-read">9 min read</span>
+                <span class="bm-date">Updated: June 2025</span>
+            </div>
+
+            <h1 class="blog-title">Home loan tax benefits — Section 80C &amp; 24B explained simply</h1>
+
+            <p class="blog-subtitle">How to save up to ₹3.5 lakh per year in taxes on your home loan. A simple guide
+                with real examples and numbers.</p>
+
+            <div class="blog-author">
+                <div class="author-avatar">NB</div>
+                <div>
+                    <div class="author-name">NiveshBhoomi Team</div>
+                    <div class="author-label">Real estate &amp; loan experts</div>
+                </div>
+                <div class="share-btns">
+                    <a href="#" onclick="shareWhatsApp()" class="share-btn share-wa">Share on WhatsApp</a>
+                    <a href="#" onclick="copyLink()" class="share-btn share-copy" id="copyBtn">Copy link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOG BODY -->
+    <div class="blog-body">
+        <div class="blog-container">
+
+            <!-- TABLE OF CONTENTS -->
+            <div class="toc">
+                <div class="toc-title">In this guide</div>
+                <ol class="toc-list">
+                    <li><a href="#overview">How much can you actually save?</a></li>
+                    <li><a href="#section-24b">Section 24B — interest deduction</a></li>
+                    <li><a href="#section-80c">Section 80C — principal deduction</a></li>
+                    <li><a href="#section-80ee">Section 80EE — first-time buyer bonus</a></li>
+                    <li><a href="#real-example">Real example with numbers</a></li>
+                    <li><a href="#old-vs-new">Old regime vs new regime</a></li>
+                    <li><a href="#how-to-claim">How to claim these benefits</a></li>
+                    <li><a href="#faq">Common questions</a></li>
+                </ol>
+            </div>
+
+            <!-- MAIN CONTENT -->
+            <div class="blog-content">
+
+                <p class="lead-para">Most people know a home loan comes with tax benefits — but very few actually know
+                    how much they can save, or how to claim it correctly. If you're in the 30% tax bracket, a home loan
+                    can genuinely put <strong>₹1 lakh+ back in your pocket every year</strong>. Here's exactly how.</p>
+
+                <!-- Tax Hero Card -->
+                <div id="overview" class="tax-hero">
+                    <div class="tax-hero-label">Maximum annual tax saving on a home loan</div>
+                    <div class="tax-hero-amount">₹3.5 Lakh</div>
+                    <div class="tax-hero-sub">Combined limit across all three sections (for old tax regime)</div>
+                    <div class="tax-hero-row">
+                        <div class="tax-hero-item">
+                            <div class="thi-section">Section 24B</div>
+                            <div class="thi-amount">₹2L</div>
+                            <div class="thi-label">on interest paid</div>
+                        </div>
+                        <div class="tax-hero-item">
+                            <div class="thi-section">Section 80C</div>
+                            <div class="thi-amount">₹1.5L</div>
+                            <div class="thi-label">on principal repaid</div>
+                        </div>
+                        <div class="tax-hero-item">
+                            <div class="thi-section">Section 80EE</div>
+                            <div class="thi-amount">₹50K</div>
+                            <div class="thi-label">first-time buyers only</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-callout callout-info">
+                    <div class="callout-icon">💡</div>
+                    <div><strong>Important first:</strong> These deductions only apply if you file under the <strong>old
+                            tax regime</strong>. If you've opted for the new tax regime (default from FY 2023-24), you
+                        cannot claim these. We'll explain how to choose at the end.</div>
+                </div>
+
+                <!-- SECTION 24B -->
+                <h2 id="section-24b">Section 24B — deduction on home loan interest</h2>
+                <span class="section-pill">Section 24B</span>
+
+                <p>Section 24B allows you to deduct the <strong>interest you pay on your home loan</strong> from your
+                    taxable income — up to ₹2 lakh per year.</p>
+
+                <p>This is typically the biggest tax benefit for most homeowners, since in the early years of a loan,
+                    most of your EMI goes towards interest.</p>
+
+                <div class="blog-table-wrap">
+                    <table class="blog-table">
+                        <thead>
+                            <tr>
+                                <th>Situation</th>
+                                <th>Max deduction</th>
+                                <th>Condition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Self-occupied property</td>
+                                <td>₹2,00,000/year</td>
+                                <td>You live in the house</td>
+                            </tr>
+                            <tr>
+                                <td>Let-out property (rented)</td>
+                                <td>No upper limit</td>
+                                <td>Full interest deductible, but rental income is taxed</td>
+                            </tr>
+                            <tr>
+                                <td>Under-construction property</td>
+                                <td>₹2,00,000/year</td>
+                                <td>Construction must finish within 5 years of loan</td>
+                            </tr>
+                            <tr>
+                                <td>Pre-construction interest</td>
+                                <td>₹2,00,000/year</td>
+                                <td>Claimed in 5 equal instalments after possession</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="blog-callout callout-warn">
+                    <div class="callout-icon">⚠️</div>
+                    <div><strong>5-year rule:</strong> If your house is under construction and possession is delayed
+                        beyond 5 years from when the loan was taken, your interest deduction cap drops sharply to just
+                        <strong>₹30,000</strong>. Always check possession dates before buying under-construction
+                        property.</div>
+                </div>
+
+                <!-- SECTION 80C -->
+                <h2 id="section-80c">Section 80C — deduction on principal repayment</h2>
+                <span class="section-pill">Section 80C</span>
+
+                <p>Every EMI has two parts: interest and principal. Section 80C lets you claim a deduction on the
+                    <strong>principal portion</strong> — up to ₹1.5 lakh per year.</p>
+
+                <p>But here's the catch — this ₹1.5 lakh limit is <em>shared</em> with all other Section 80C investments
+                    like PPF, ELSS, NSC, and insurance premiums. So if you've already invested ₹1.5L in PPF and ELSS,
+                    you won't get extra room for your home loan principal.</p>
+
+                <div class="blog-table-wrap">
+                    <table class="blog-table">
+                        <thead>
+                            <tr>
+                                <th>What counts under Section 80C</th>
+                                <th>Limit (shared)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Home loan principal repayment</td>
+                                <td rowspan="5" style="vertical-align:middle; font-weight:600; text-align:center;">
+                                    ₹1,50,000 total</td>
+                            </tr>
+                            <tr>
+                                <td>PPF contribution</td>
+                            </tr>
+                            <tr>
+                                <td>ELSS mutual funds</td>
+                            </tr>
+                            <tr>
+                                <td>Life insurance premium</td>
+                            </tr>
+                            <tr>
+                                <td>NSC, 5-year FD, etc.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Also note: stamp duty and registration charges paid when you buy the house are also eligible under
+                    80C — but only in the year you pay them.</p>
+
+                <div class="blog-callout callout-warn">
+                    <div class="callout-icon">⚠️</div>
+                    <div><strong>Lock-in condition:</strong> If you sell the property within 5 years of possession, the
+                        deductions you claimed under 80C will be <strong>reversed and added back</strong> to your income
+                        in the year of sale. Don't sell too soon.</div>
+                </div>
+
+                <!-- SECTION 80EE -->
+                <h2 id="section-80ee">Section 80EE — first-time buyer bonus</h2>
+                <span class="section-pill">Section 80EE</span>
+
+                <p>If you are buying your <strong>first home ever</strong>, you get an additional ₹50,000 deduction on
+                    interest — over and above the ₹2 lakh limit of Section 24B.</p>
+
+                <p>To qualify for Section 80EE, all of these must be true:</p>
+
+                <ul>
+                    <li>You should not own any other residential property in your name on the date of loan sanction</li>
+                    <li>The loan must have been sanctioned between 1 April 2016 and 31 March 2017 (Section 80EE)
+                        <em>or</em> between 1 April 2019 and 31 March 2022 (Section 80EEA)</li>
+                    <li>The property value must be ₹45 lakh or less (for 80EEA)</li>
+                    <li>The loan amount must be ₹35 lakh or less (for 80EEA)</li>
+                </ul>
+
+                <div class="blog-callout callout-info">
+                    <div class="callout-icon">💡</div>
+                    <div><strong>80EEA is the one to check:</strong> Most first-time buyers in 2019–2022 will qualify
+                        under Section 80EEA which gives an extra ₹1.5 lakh deduction on interest (not just ₹50K). This
+                        was specifically designed for affordable housing. Check your loan sanction date to know which
+                        one applies.</div>
+                </div>
+
+                <!-- REAL EXAMPLE -->
+                <h2 id="real-example">Real example — how much tax does Rahul save?</h2>
+
+                <p>Let's take a real example to make this concrete. Rahul is a salaried employee in Lucknow earning ₹12
+                    lakh per year. He took a ₹40 lakh home loan at 8.5% for 20 years in FY 2023-24.</p>
+
+                <p><strong>His EMI:</strong> ~₹34,700/month &nbsp;|&nbsp; <strong>Annual EMI:</strong> ~₹4.16 lakh</p>
+
+                <p>In Year 1, here's roughly how his EMI splits:</p>
+
+                <div class="example-box">
+                    <div class="ex-title">📊 Rahul's Year 1 home loan breakdown</div>
+                    <div class="ex-row"><span>Annual interest paid</span> <span class="ex-val">₹3,36,000</span></div>
+                    <div class="ex-row"><span>Annual principal repaid</span> <span class="ex-val">~₹80,000</span></div>
+                    <div class="ex-row"><span>Total EMI paid</span> <span class="ex-val">₹4,16,400</span></div>
+                </div>
+
+                <p>Now here's how much tax he saves:</p>
+
+                <div class="example-box">
+                    <div class="ex-title">💰 Rahul's annual tax savings</div>
+                    <div class="ex-row">
+                        <span>Section 24B — interest paid ₹3.36L, capped at <strong>₹2L</strong></span>
+                        <span class="ex-val">₹2,00,000 deduction</span>
+                    </div>
+                    <div class="ex-row">
+                        <span>Section 80C — principal ₹80K (assuming no other 80C investments)</span>
+                        <span class="ex-val">₹80,000 deduction</span>
+                    </div>
+                    <div class="ex-row">
+                        <span>Total deductions from home loan</span>
+                        <span class="ex-val">₹2,80,000</span>
+                    </div>
+                    <div class="ex-row">
+                        <span>Tax saved at 30% slab rate</span>
+                        <span class="ex-val" style="color: #1a6b3c;">₹84,000/year</span>
+                    </div>
+                    <div class="ex-total">
+                        <span>Effective monthly tax saving</span>
+                        <span class="ex-val">₹7,000/month</span>
+                    </div>
+                </div>
+
+                <p>So out of Rahul's ₹34,700 EMI, he effectively saves ₹7,000 in taxes — bringing his <strong>net EMI
+                        cost to just ₹27,700</strong>. That's a meaningful difference every month.</p>
+
+                <p>If Rahul also qualifies for 80EEA (₹1.5L extra deduction), his additional tax saving would be another
+                    <strong>₹45,000/year</strong>.</p>
+
+                <!-- OLD VS NEW REGIME -->
+                <h2 id="old-vs-new">Old tax regime vs new tax regime — which one wins?</h2>
+
+                <p>Since FY 2023-24, the new tax regime is the <strong>default</strong>. If you do nothing, you're in
+                    it. And in the new regime, you <strong>cannot claim Section 24B or 80C deductions</strong>.</p>
+
+                <div class="regime-compare">
+                    <div class="regime-card old-regime">
+                        <span class="rc-badge">Old Regime</span>
+                        <div class="rc-title">Better if you have a home loan</div>
+                        <div class="rc-verdict">
+                            You can claim all home loan deductions — 24B, 80C, 80EEA. If your total deductions exceed
+                            <strong>~₹3.75 lakh</strong>, the old regime usually saves more tax.
+                        </div>
+                    </div>
+                    <div class="regime-card new-regime">
+                        <span class="rc-badge">New Regime</span>
+                        <div class="rc-title">Better if deductions are low</div>
+                        <div class="rc-verdict">
+                            Lower tax rates but <strong>no home loan deductions</strong>. Good for people who rent, have
+                            no investments, or whose loan is mostly paid off.
+                        </div>
+                    </div>
+                </div>
+
+                <p><strong>Quick rule of thumb:</strong> If your annual interest payment on the home loan is over ₹2
+                    lakh and you're in the 30% tax bracket, stick with the old regime — you'll almost certainly save
+                    more.</p>
+
+                <div class="blog-callout callout-info">
+                    <div class="callout-icon">💡</div>
+                    <div>You can switch between regimes every year (if you're a salaried employee). Salaried employees
+                        with no business income can choose each year when filing ITR. Use a tax calculator or consult a
+                        CA to compare before filing.</div>
+                </div>
+
+                <!-- HOW TO CLAIM -->
+                <h2 id="how-to-claim">How to actually claim these benefits</h2>
+
+                <p>Claiming these benefits is straightforward — here's the step-by-step process:</p>
+
+                <ol class="steps-list">
+                    <li>
+                        <div class="step-head">Get your loan statement from the bank</div>
+                        <p>Every year, ask your bank (SBI, HDFC, ICICI etc.) for the Home Loan Interest Certificate. It
+                            breaks down your annual interest paid and principal repaid. Available on net banking or at
+                            branch.</p>
+                    </li>
+                    <li>
+                        <div class="step-head">Submit to your employer (for TDS adjustment)</div>
+                        <p>If you're salaried, submit the certificate to your HR/payroll team. They will reduce TDS
+                            deducted from your salary for the remaining months. Do this before December each year to get
+                            maximum benefit in the same year.</p>
+                    </li>
+                    <li>
+                        <div class="step-head">Fill in ITR-1 or ITR-2 correctly</div>
+                        <p>Under "House Property" section — enter your interest under 24B. Under "Chapter VI-A
+                            deductions" — enter principal under 80C. Ensure you file under the old regime (select
+                            explicitly when filing).</p>
+                    </li>
+                    <li>
+                        <div class="step-head">Keep documents handy</div>
+                        <p>Keep your sanction letter, interest certificate, possession letter, and registration
+                            documents. The IT department may ask for proof, especially if you claim large deductions.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="step-head">Joint loan? Both owners can claim separately</div>
+                        <p>If the loan and property are jointly owned (e.g., husband and wife, both co-borrowers), each
+                            person can independently claim up to ₹2L under 24B and ₹1.5L under 80C. That effectively
+                            doubles the household savings.</p>
+                    </li>
+                </ol>
+
+                <!-- FAQ -->
+                <h2 id="faq">Common questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-q">Can I claim both Section 24B and 80C for the same loan?</div>
+                    <div class="faq-a">Yes, absolutely. They cover different parts of your EMI — 24B covers interest,
+                        80C covers principal. You can claim both simultaneously for the same home loan.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">What if my property is under construction and not yet possessed?</div>
+                    <div class="faq-a">You cannot claim 80C deductions until you get possession. For 24B, the
+                        pre-construction interest is totalled and then claimed in 5 equal instalments starting the year
+                        you get possession — up to ₹2L per year limit.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">I have two home loans. Can I claim deductions on both?</div>
+                    <div class="faq-a">For Section 24B, yes — you can claim interest on both properties, but the
+                        combined cap for self-occupied properties is still ₹2 lakh. If one property is rented out, the
+                        interest on it is fully deductible (no cap). For Section 80C, the ₹1.5L overall cap applies
+                        regardless of number of properties.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">Is stamp duty and registration cost deductible?</div>
+                    <div class="faq-a">Yes. Stamp duty, registration fees, and other costs paid when buying the property
+                        can be claimed under Section 80C — but only in the year these expenses are paid, not in future
+                        years.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">What if my loan interest is more than ₹2 lakh?</div>
+                    <div class="faq-a">For a self-occupied property, the cap is ₹2 lakh regardless of actual interest
+                        paid. The excess cannot be carried forward. However, if you let out the property on rent, there
+                        is no cap — the full interest can be deducted (though rental income is then taxable).</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">Can an NRI claim these home loan tax benefits?</div>
+                    <div class="faq-a">Yes — NRIs who buy a property in India and pay Indian income tax can claim
+                        Section 24B and 80C deductions, subject to the same rules. However, TDS implications for NRIs
+                        are different and it's worth consulting a tax advisor.</div>
+                </div>
+
+                <p style="margin-top: 36px;">If you're planning to take a home loan and want to understand how much you
+                    can actually save on taxes for your specific situation, our loan advisors can help — free of charge.
+                </p>
+
+            </div>
+            <!-- ▲ END MAIN CONTENT ▲ -->
+
+            <!-- INLINE LOAN CTA -->
+            <div class="blog-loan-cta">
+                <div class="blc-text">
+                    <div class="blc-title">Want to maximise your home loan tax savings?</div>
+                    <div class="blc-sub">We'll help you find the best loan structure and explain exactly how much you'll
+                        save — free.</div>
+                </div>
+                <a href="../home-loan.html#apply" class="btn-primary">Talk to a loan advisor →</a>
+            </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="blog-sidebar">
+
+            <!-- Lead form in sidebar -->
+            <div class="sidebar-form">
+                <div class="sf-title">Planning to buy a home?</div>
+                <p class="sf-desc">Tell us your city and budget — we'll help you find the right loan with maximum tax
+                    benefits.</p>
+                <form action="https://formsubmit.co/kumarprashant32742@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="📖 Blog Lead — NiveshBhoomi Tax Guide">
+                    <input type="hidden" name="_next" value="https://niveshbhoomi.in/thank-you.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="Form Type" value="Blog Sidebar — Tax Guide">
+                    <input type="text" name="Full Name" placeholder="Your name" required>
+                    <input type="tel" name="Phone Number" placeholder="Phone (WhatsApp)" required>
+                    <select name="City">
+                        <option>Lucknow</option>
+                        <option>Jaipur</option>
+                        <option>Delhi NCR</option>
+                        <option>Other</option>
+                    </select>
+                    <select name="Budget">
+                        <option>Under ₹20L</option>
+                        <option>₹20L – ₹40L</option>
+                        <option>₹40L – ₹70L</option>
+                        <option>Above ₹70L</option>
+                    </select>
+                    <button type="submit" class="sidebar-btn">Send enquiry →</button>
+                </form>
+            </div>
+
+            <!-- Related posts -->
+            <div class="sidebar-related">
+                <div class="sr-title">Related guides</div>
+                <div class="related-posts">
+                    <a href="plot-loan-vs-home-loan.html" class="related-item">
+                        <div class="ri-cat">Plot Loans</div>
+                        <div class="ri-title">Plot loan vs home loan — which is better in 2025?</div>
+                    </a>
+                    <a href="PMAY-2.0-eligibility-subsidy-apply.html" class="related-item">
+                        <div class="ri-cat">Govt Scheme</div>
+                        <div class="ri-title">PMAY 2.0 — eligibility, subsidy &amp; how to apply</div>
+                    </a>
+                    <a href="lucknow-plot-guide.html" class="related-item">
+                        <div class="ri-cat">City Guide</div>
+                        <div class="ri-title">Best areas for plots in Lucknow under ₹20L</div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">NiveshBhoomi</div>
+                    <p>India's honest guide to real estate and home loans in Tier-2 cities.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="fl-col">
+                        <div class="fl-head">Loans</div>
+                        <a href="../home-loan.html">Home loan</a>
+                        <a href="../home-loan.html">Plot loan</a>
+                        <a href="../home-loan.html">PMAY subsidy</a>
+                    </div>
+                    <div class="fl-col">
+                        <div class="fl-head">Cities</div>
+                        <a href="../index.html#cities">Lucknow</a>
+                        <a href="../index.html#cities">Jaipur</a>
+                        <a href="../index.html#cities">Delhi NCR</a>
+                    </div>
+                    <div class="fl-col">
+                        <div class="fl-head">Connect</div>
+                        <a href="https://instagram.com/niveshbhoomi" target="_blank">Instagram</a>
+                        <a href="https://wa.me/918130521740" target="_blank">WhatsApp</a>
+                        <a href="mailto:hello@niveshbhoomi.in">Email us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 NiveshBhoomi. All rights reserved.</span>
+                <span>niveshbhoomi.in</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function shareWhatsApp() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('How to save ₹3.5 lakh/year in taxes on your home loan — Section 80C & 24B explained: ');
+            window.open('https://wa.me/?text=' + text + url, '_blank');
+        }
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href);
+            const btn = document.getElementById('copyBtn');
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy link', 2000);
+        }
+    </script>
+</body>
+
+</html>
